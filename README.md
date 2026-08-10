@@ -4,6 +4,8 @@
 
 I'm a physicist focused on **X-ray Science**, **Optics**, and **XRD Analysis**. My work involves developing and deploying software solutions to analyze complex experimental data and accelerate scientific discovery.
 
+![](./profile-3d-contrib/profile-season-animate.svg)
+
 ## What I Do
 
 - **Analyze X-ray Data:** I specialize in analyzing data from techniques like **X-ray Diffraction (XRD)** and **Reflectometry**, extracting meaningful insights into material structures.
