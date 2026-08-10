@@ -6,12 +6,16 @@ on:
     - cron: "0 0 * * *"
   workflow_dispatch:
 
+# 리포지토리에 푸시할 수 있도록 권한을 직접 부여합니다.
+permissions:
+  contents: write
+
 jobs:
   build:
     runs-on: ubuntu-latest
     name: generate-github-profile-3d-contrib
     steps:
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v4
       - uses: yoshi389111/github-profile-3d-contrib@0.7.1
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
