@@ -1,45 +1,39 @@
 # Isaac Yong (용이삭)
 
-**X-ray physicist · Scientific software developer**
+**X-ray physics · Scientific computing**
 
-XRD · XRR · CDI / BCDI · XFEL · Computational Physics
+M.S. student in Physics at Sogang University.
 
-I work on X-ray experiments and build the software around them —
-from simulation and inverse problems to detector-data pipelines and beamline tools.
+I work with X-ray scattering and coherent imaging, and build scientific
+software around experiments — from simulation and inverse problems to
+data pipelines and beamline tools.
 
----
+## Things I Build
 
-## Selected Work
+### [ReflectoLearn](https://github.com/NaNIsaac/ReflectoLearn)
 
-| | Project | |
-|---|---|---|
-| 🪞 | **[ReflectoLearn](...)** | Differentiable XRR inversion |
-| ⚡ | **[CordaX](...)** | Ultrafast X-ray data pipelines |
-| 🌊 | **[QoraPhase](...)** | CDI / BCDI phase retrieval |
-| 🔬 | **[Beamline Toolkit](...)** | X-ray tools for the experimental hutch |
-| ▣ | **[roi_rectangle](...)** | Detector-image ROI utilities |
-| ⌘ | **[codigest](...)** | Codebase context for LLMs |
+Differentiable X-ray reflectivity inversion with neural inference and
+physics-based refinement.
 
----
+### [CordaX](https://github.com/NaNIsaac/CordaX)
 
-## Research & Tools
+Reproducible analysis pipelines for time-resolved X-ray experiments at PAL-XFEL.
 
-**Physics**  
-X-ray scattering · XRR · XRD · CDI / BCDI · XFEL · X-ray optics
+### [QoraPhase](https://github.com/NaNIsaac/QoraPhase)
 
-**Computing**  
-Python · JAX · PyTorch · NumPy · SciPy · xarray · Zarr · DuckDB
+JAX-based phase retrieval for coherent X-ray diffraction imaging.
 
-**Tooling**  
-uv · pytest · Git · GitHub Actions · PowerShell · JavaScript / TypeScript
-
----
+[Beamline Toolkit](https://github.com/NaNIsaac/xray) ·
+[roi_rectangle](https://github.com/NaNIsaac/roi_rectangle) ·
+[codigest](https://github.com/NaNIsaac/codigest)
 
 ## Contributions
 
-![](./profile-3d-contrib/profile-season-animate.svg)
+<p align="center">
+  <img src="./profile-3d-contrib/profile-season-animate.svg" width="100%" />
+</p>
 
 ---
 
-🌐 **[xray.ooguy.com](https://xray.ooguy.com)** ·
-✉️ **[Email](mailto:isaacyong@naver.com)**
+[xray.ooguy.com](https://xray.ooguy.com) ·
+[Email](mailto:isaacyong@naver.com)
