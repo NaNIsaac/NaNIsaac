@@ -4,28 +4,35 @@
 
 M.S. student in Physics at Sogang University.
 
-I work with X-ray scattering and coherent imaging, and build scientific
-software around experiments — from simulation and inverse problems to
-data pipelines and beamline tools.
+I study X-ray scattering and diffraction, and build scientific software
+for simulation, inverse problems, coherent imaging, and experimental data analysis.
 
 ## Things I Build
 
+### [QoraFlow](https://github.com/NaNIsaac/QoraFlow)
+A scientific data toolkit for processing and analyzing
+time-resolved X-ray experiments at PAL-XFEL.
+
 ### [ReflectoLearn](https://github.com/NaNIsaac/ReflectoLearn)
-
-Differentiable X-ray reflectivity inversion with neural inference and
-physics-based refinement.
-
-### [CordaX](https://github.com/NaNIsaac/CordaX)
-
-Reproducible analysis pipelines for time-resolved X-ray experiments at PAL-XFEL.
+Differentiable X-ray reflectivity modeling, neural inference,
+and physics-based refinement for thin-film inverse problems.
 
 ### [QoraPhase](https://github.com/NaNIsaac/QoraPhase)
+A JAX-native, composable phase-retrieval framework
+for coherent diffraction imaging.
 
-JAX-based phase retrieval for coherent X-ray diffraction imaging.
+### [TraTT](https://github.com/NaNIsaac/TraTT)
+Time-dependent dynamical X-ray diffraction simulations
+for transient acoustic Bragg satellites.
 
-[Beamline Toolkit](https://github.com/NaNIsaac/xray) ·
+### [xray.ooguy](https://github.com/NaNIsaac/xray_ooguy)
+Offline X-ray calculators and beamtime tools designed
+to run on the machines actually sitting in the hutch.
+
+**Also:**  
 [roi_rectangle](https://github.com/NaNIsaac/roi_rectangle) ·
-[codigest](https://github.com/NaNIsaac/codigest)
+[codigest](https://github.com/NaNIsaac/codigest) ·
+[QoraGeom](https://github.com/NaNIsaac/QoraGeom)
 
 ## Contributions
 
