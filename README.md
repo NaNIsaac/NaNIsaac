@@ -2,11 +2,18 @@
 
 **X-ray physics · Scientific computing**
 
+<img src="./assets/name-cdi.gif" width="100%" alt="The name NaNIsaac recovered from its diffraction intensity by phase retrieval" />
+
+<sub>Only the intensity |F|² goes in. [QoraPhase](https://github.com/NaNIsaac/QoraPhase) recovers the lost phase and the object; <a href="./scripts/name_gif.py">script</a>.</sub>
+
 M.S. student in Physics at Sogang University.
 
 I study X-ray scattering and diffraction, and build the software around the experiment:
 simulation, inverse problems, coherent imaging, and beamtime data analysis.
 Longer write-ups live on [my website](https://nanisaac.github.io).
+
+**Now:** poster P2.17 at the KPS 2026 Fall Meeting, Jeju, 22 October:
+transient formation of acoustic Bragg satellites ([TraTT](https://github.com/NaNIsaac/TraTT)).
 
 | Science | Tools |
 |---|---|
