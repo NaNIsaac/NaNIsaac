@@ -42,3 +42,6 @@ transient formation of acoustic Bragg satellites ([TraTT](https://github.com/NaN
 [Notes](https://nanisaac.github.io/notes/) ·
 [X-ray tools](https://xray.ooguy.com) ·
 [Email](mailto:isaacyong@naver.com)
+
+
+Note: My GitHub username was changed from "SJB7777" to "NaNIsaac" in October 2026.
