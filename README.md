@@ -39,17 +39,17 @@ transient formation of acoustic Bragg satellites ([TraTT](https://github.com/NaN
 
 <sub>Pepper (후추), my black-and-tan Shiba Inu, takes care of the contribution garden.</sub>
 
-<picture>
-  <source media="(prefers-color-scheme: dark)" srcset="./assets/pepper/pepper-harvest-dark.svg" />
-  <img src="./assets/pepper/pepper-harvest-light.svg" width="100%" alt="Animated pixel-art Pepper harvesting my GitHub contribution garden" />
-</picture>
-
-<sub>GitHub contribution data, refreshed daily with GitHub Actions. [How it works](./scripts/pepper_harvest.py).</sub>
 
 <picture>
-  <source media="(prefers-color-scheme: dark)" srcset="./profile-3d-contrib/profile-night-view.svg" />
-  <img src="./profile-3d-contrib/profile-season-animate.svg" width="100%" alt="3D contribution graph" />
+  <source media="(prefers-color-scheme: dark)"
+          srcset="./assets/pepper/pepper-harvest-dark.svg?v=2" />
+  <source media="(prefers-color-scheme: light)"
+          srcset="./assets/pepper/pepper-harvest-light.svg?v=2" />
+  <img src="./assets/pepper/pepper-harvest-light.svg?v=2"
+       width="100%"
+       alt="Pepper harvesting GitHub contributions" />
 </picture>
+
 
 [Website](https://nanisaac.github.io) ·
 [Notes](https://nanisaac.github.io/notes/) ·
