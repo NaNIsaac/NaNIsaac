@@ -42,10 +42,10 @@ transient formation of acoustic Bragg satellites ([TraTT](https://github.com/NaN
 
 <picture>
   <source media="(prefers-color-scheme: dark)"
-          srcset="./assets/pepper/pepper-harvest-dark.svg?v=2" />
+          srcset="./assets/pepper/pepper-harvest-dark.svg?v=3" />
   <source media="(prefers-color-scheme: light)"
-          srcset="./assets/pepper/pepper-harvest-light.svg?v=2" />
-  <img src="./assets/pepper/pepper-harvest-light.svg?v=2"
+          srcset="./assets/pepper/pepper-harvest-light.svg?v=3" />
+  <img src="./assets/pepper/pepper-harvest-light.svg?v=3"
        width="100%"
        alt="Pepper harvesting GitHub contributions" />
 </picture>

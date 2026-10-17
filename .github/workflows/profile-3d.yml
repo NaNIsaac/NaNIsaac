@@ -8,7 +8,7 @@ on:
   push:
     paths:
       - "scripts/pepper_harvest.py"
-      - "assets/pepper/*.png"
+      - "assets/pepper/frames/*.png"
       - ".github/workflows/profile-3d.yml"
 
 permissions:
