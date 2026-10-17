@@ -34,6 +34,17 @@ transient formation of acoustic Bragg satellites ([TraTT](https://github.com/NaN
 - [python/cpython](https://github.com/python/cpython) · [gh-159190: IDLE: Show full syntax error diagnostics in Shell](https://github.com/python/cpython/pull/159189) · open
 <!-- contrib:end -->
 
+### Pepper's Harvest
+
+<sub>Pepper (후추), my black-and-tan Shiba Inu, takes care of the contribution garden.</sub>
+
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="./assets/pepper/pepper-harvest-dark.svg" />
+  <img src="./assets/pepper/pepper-harvest-light.svg" width="100%" alt="Animated pixel-art Pepper harvesting my GitHub contribution garden" />
+</picture>
+
+<sub>GitHub contribution data, refreshed daily with GitHub Actions. [How it works](./scripts/pepper_harvest.py).</sub>
+
 <picture>
   <source media="(prefers-color-scheme: dark)" srcset="./profile-3d-contrib/profile-night-view.svg" />
   <img src="./profile-3d-contrib/profile-season-animate.svg" width="100%" alt="3D contribution graph" />

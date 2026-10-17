@@ -2,11 +2,15 @@ name: GitHub-Profile-3D-Contrib
 
 on:
   schedule:
-    # 매일 한국 시간 기준 오전 9시(UTC 00:00)에 자동 실행
+    # Every day at 09:00 KST (00:00 UTC)
     - cron: "0 0 * * *"
   workflow_dispatch:
+  push:
+    paths:
+      - "scripts/pepper_harvest.py"
+      - "assets/pepper/*.png"
+      - ".github/workflows/profile-3d.yml"
 
-# 리포지토리에 푸시할 수 있도록 권한을 직접 부여합니다.
 permissions:
   contents: write
 
@@ -24,10 +28,14 @@ jobs:
         run: python3 scripts/update_contrib.py
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      - name: Generate Pepper's contribution garden
+        run: python3 scripts/pepper_harvest.py --username "$GITHUB_REPOSITORY_OWNER" --output-dir assets/pepper
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       - name: Commit & Push
         run: |
           git config user.name github-actions[bot]
           git config user.email 41898282+github-actions[bot]@users.noreply.github.com
-          git add profile-3d-contrib/ README.md
-          git commit -m "chore: refresh contrib graph and PR list" || exit 0
+          git add profile-3d-contrib/ README.md assets/pepper/pepper-harvest-light.svg assets/pepper/pepper-harvest-dark.svg
+          git commit -m "chore: refresh contribution graphs, Pepper and PR list" || exit 0
           git push
