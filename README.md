@@ -26,11 +26,12 @@ transient formation of acoustic Bragg satellites ([TraTT](https://github.com/NaN
 **Upstream**
 
 <!-- contrib:start -->
+- [Q07K/prompt-gallery](https://github.com/Q07K/prompt-gallery) · [Make accessories optional in X-ray film photo guidance](https://github.com/Q07K/prompt-gallery/pull/21) · merged
 - [Q07K/prompt-gallery](https://github.com/Q07K/prompt-gallery) · [Add hospital X-ray film prompt with approved example](https://github.com/Q07K/prompt-gallery/pull/18) · merged
 - [dkriegner/xrayutilities](https://github.com/dkriegner/xrayutilities) · [feat(KinematicalMultiBeamModel): optional non-integer thicknesses](https://github.com/dkriegner/xrayutilities/pull/248) · open
 - [tomopy/tomopy](https://github.com/tomopy/tomopy) · [DOC: Describe the roi argument of normalize_roi correctly](https://github.com/tomopy/tomopy/pull/664) · open
 - [clatlan/cdiutils](https://github.com/clatlan/cdiutils) · [Fix int32 overflow in SpaceConverter.get_transformation_matrix](https://github.com/clatlan/cdiutils/pull/112) · open
-- [pydata/xarray](https://github.com/pydata/xarray) · [DOC: Link windowed operations tutorial from computation guide](https://github.com/pydata/xarray/pull/11720) · open
+- [pydata/xarray](https://github.com/pydata/xarray) · [DOC: Link windowed operations tutorial from computation guide](https://github.com/pydata/xarray/pull/11720) · merged
 - [python/cpython](https://github.com/python/cpython) · [gh-159190: IDLE: Show full syntax error diagnostics in Shell](https://github.com/python/cpython/pull/159189) · open
 <!-- contrib:end -->
 
