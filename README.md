@@ -1,9 +1,12 @@
-# Isaac Yong (용이삭)
+<div align="center">
 
-**X-ray physics · Scientific computing** · M.S. student in Physics, Sogang University
+<h1>Isaac Yong (용이삭)</h1>
 
-| [Website](https://nanisaac.github.io) | [Notes](https://nanisaac.github.io/notes/) | [Blog](https://blog.naver.com/sjbpepper) | [X-ray tools](https://xray.ooguy.com) | [Email](mailto:isaacyong@naver.com) |
-|:---:|:---:|:---:|:---:|:---:|
+<p><b>X-ray physics · Scientific computing</b><br>M.S. student in Physics, Sogang University</p>
+
+<p><b><a href="https://nanisaac.github.io">Website</a></b> &nbsp;·&nbsp; <b><a href="https://nanisaac.github.io/notes/">Notes</a></b> &nbsp;·&nbsp; <b><a href="https://blog.naver.com/sjbpepper">Blog</a></b> &nbsp;·&nbsp; <b><a href="https://xray.ooguy.com">X-ray tools</a></b> &nbsp;·&nbsp; <b><a href="mailto:isaacyong@naver.com">Email</a></b></p>
+
+</div>
 
 <img src="./assets/phase-retrieval.gif" width="100%" alt="The name NaNIsaac recovered from its diffraction intensity by phase retrieval" />
 
