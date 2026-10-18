@@ -20,7 +20,7 @@ import qoraphase as qp
 
 N, CYCLE = 192, 30
 STEPS = [1, 2, 3, 4, 5, 6, 8, 10, 12, 15, 18, 22, 26, 30]
-BG, FG = "#0d1117", "#8b949e"
+BG, FG, ACCENT, TRACK = "#0d1117", "#8b949e", "#58a6ff", "#21262d"
 OUT = Path(__file__).parents[1] / "assets" / "name-cdi.gif"
 
 fig = plt.figure(figsize=(4, 0.9), dpi=56)
@@ -46,26 +46,38 @@ def rec(cycles: int, seed: int) -> qp.Reconstruction:
 
 seed = min(range(12), key=lambda s: float(rec(STEPS[-1], s).error))
 # Runs are deterministic per seed, so rerunning to k cycles gives the frame at k.
-frames = [np.abs(np.asarray(qp.align_to(rec(k, seed).object, obj))) for k in STEPS]
-print(f"seed {seed}, final Fourier error {rec(STEPS[-1], seed).error:.1e}")
+runs = [rec(k, seed) for k in STEPS]
+frames = [np.abs(np.asarray(qp.align_to(r.object, obj))) for r in runs]
+errors = [float(r.error) for r in runs]
+print(f"seed {seed}, final Fourier error {errors[-1]:.1e}")
 
 crop = (slice(N // 2 - 20, N // 2 + 20), slice(N // 2 - 70, N // 2 + 70))
-fig, axes = plt.subplots(1, 2, figsize=(8, 2.4), gridspec_kw={"width_ratios": [1, 2.9]},
-                         facecolor=BG)
-for ax in axes:
+total = CYCLE * STEPS[-1]
+fig = plt.figure(figsize=(8, 2.6), facecolor=BG)
+grid = fig.add_gridspec(2, 2, width_ratios=[1, 2.9], height_ratios=[6, 1], hspace=0.25)
+ax_f, ax_r, ax_p = fig.add_subplot(grid[:, 0]), fig.add_subplot(grid[0, 1]), fig.add_subplot(grid[1, 1])
+for ax in (ax_f, ax_r, ax_p):
     ax.set_axis_off()
 q = slice(N // 2 - 56, N // 2 + 56)
-axes[0].imshow(np.log10(intensity + 1e-5)[q, q], cmap="turbo", vmin=-4)
-axes[0].set_title("measured |F|²", color=FG, fontsize=9, family="monospace")
-im = axes[1].imshow(frames[0][crop], cmap="gray", vmin=0, vmax=1)
-title = axes[1].set_title("", color=FG, fontsize=9, family="monospace")
-fig.tight_layout()
+ax_f.imshow(np.log10(intensity + 1e-5)[q, q], cmap="turbo", vmin=-4)
+ax_f.set_title("measured |F|²", color=FG, fontsize=9, family="monospace")
+im = ax_r.imshow(frames[0][crop], cmap="gray", vmin=0, vmax=1)
+ax_r.set_title("phase retrieval, support found from data", color=FG, fontsize=9, family="monospace")
+ax_p.set_xlim(0, total)
+ax_p.set_ylim(0, 1)
+ax_p.barh(0.3, total, height=0.35, color=TRACK)
+bar = ax_p.barh(0.3, 0, height=0.35, color=ACCENT)[0]
+label = ax_p.text(0, 0.85, "", color=FG, fontsize=8.5, family="monospace", va="center")
+score = ax_p.text(total, 0.85, "", color=FG, fontsize=8.5, family="monospace", va="center", ha="right")
+fig.subplots_adjust(left=0.02, right=0.98, top=0.88, bottom=0.04, wspace=0.06)
 
 
 def update(i: int) -> None:
     k = min(i, len(STEPS) - 1)
     im.set_data(frames[k][crop])
-    title.set_text(f"phase retrieval, {CYCLE * STEPS[k]} iterations, support found from data")
+    bar.set_width(CYCLE * STEPS[k])
+    label.set_text(f"iteration {CYCLE * STEPS[k]:>3} / {total}")
+    score.set_text(f"Fourier error {errors[k]:.1e}")
 
 
 OUT.parent.mkdir(exist_ok=True)
