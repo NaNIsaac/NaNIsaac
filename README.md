@@ -2,7 +2,7 @@
 
 **X-ray physics · Scientific computing**
 
-<img src="./assets/name-cdi.gif" width="100%" alt="The name NaNIsaac recovered from its diffraction intensity by phase retrieval" />
+<img src="./assets/name-cdi.gif?v=2" width="100%" alt="The name NaNIsaac recovered from its diffraction intensity by phase retrieval" />
 
 <sub>Only the intensity |F|² goes in. [QoraPhase](https://github.com/NaNIsaac/QoraPhase) recovers the lost phase and the object; <a href="./scripts/name_gif.py">script</a>.</sub>
 
