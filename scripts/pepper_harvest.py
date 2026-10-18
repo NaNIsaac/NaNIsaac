@@ -26,13 +26,13 @@ PALETTES = {
         "background": "#f6f7f5", "text": "#252c29", "muted": "#66736b",
         "empty": "#e8eeea", "grass": ["#e8eeea", "#b9ddb3", "#85c781", "#4b9e5b", "#276d43"],
         "blades": ["#a8bcaa", "#6da974", "#3b8550", "#286d3e", "#174d32"],
-        "foot": "#6b5d50", "soil": "#8a6a4a", "pit": "#4a3626", "clod": "#9b7450", "ring": "#d9a441", "shadow": "#1d2a22",
+        "foot": "#6b5d50", "soil": "#8a6a4a", "pit": "#4a3626", "clod": "#9b7450", "sprout": "#3fae4f", "sprout_edge": "#1f5e2a", "ring": "#d9a441", "shadow": "#1d2a22",
     },
     "dark": {
         "background": "#0d1117", "text": "#e6edf3", "muted": "#9aa7aa",
         "empty": "#18221e", "grass": ["#18221e", "#133d2a", "#18683c", "#29954d", "#49c16e"],
         "blades": ["#314c3a", "#277e49", "#34a35c", "#54d77c", "#8bea9e"],
-        "foot": "#c9b8a2", "soil": "#6f5640", "pit": "#2a1f16", "clod": "#c49a6c", "ring": "#e8b44b", "shadow": "#000000",
+        "foot": "#c9b8a2", "soil": "#6f5640", "pit": "#2a1f16", "clod": "#c49a6c", "sprout": "#7be38c", "sprout_edge": "#1d4d2a", "ring": "#e8b44b", "shadow": "#000000",
     },
 }
 QUERY = """query($login: String!) {
@@ -307,12 +307,12 @@ def make_svg(weeks: list[list[dict]], *, theme: str, username: str,
                      f'fill="none" stroke="{p["ring"]}" stroke-width="1.4" opacity="0">'
                      + svg_anim_visibility([(s0, d1)], duration) + "</rect>")
         parts.append(f'<rect x="{x}" y="{y}" width="{TILE}" height="{TILE}" rx="1.5" fill="{p["soil"]}" opacity="0">'
-                     + ramp([(d0, 0), (d0 + .4, 1), (e1 + 3.2, 1), (e1 + 4.6, 0)], duration) + "</rect>")
+                     + ramp([(d0, 0), (d0 + .4, 1), (e1 + 4.4, 1), (e1 + 5.4, 0)], duration) + "</rect>")
         parts.append(f'<rect x="{x + 2}" y="{y + 3}" width="{TILE - 4}" height="{TILE - 5}" rx="1.5" fill="{p["pit"]}" opacity="0">'
-                     + ramp([(d0 + .3, 0), (d1, 1), (e1 + 2.2, 1), (e1 + 3.2, 0)], duration) + "</rect>")
+                     + ramp([(d0 + .3, 0), (d1, 1), (e1 + .8, 1), (e1 + 1.6, 0)], duration) + "</rect>")
         for i, (mx, my, mw, mh) in enumerate([(-4, 6, 4, 3), (-3, 4, 2, 2), (-6, 8, 3, 2)]):
             parts.append(f'<rect x="{x + mx}" y="{y + my}" width="{mw}" height="{mh}" rx=".8" fill="{p["soil"]}" opacity="0">'
-                         + ramp([(d0 + .3 + i * .25, 0), (d0 + .5 + i * .25, 1), (e1 + 2.4, 1), (e1 + 3.4, 0)], duration) + "</rect>")
+                         + ramp([(d0 + .3 + i * .25, 0), (d0 + .5 + i * .25, 1), (e1 + 1.0, 1), (e1 + 1.8, 0)], duration) + "</rect>")
         # Clods land ahead of the nose and behind the front paws, where the grass shows them.
         clods = [(9, -8), (-12, 9), (14, -3), (-18, 11), (6, -12), (-8, 12), (17, -9), (-15, 7), (11, -14)]
         for i, (dx, dy) in enumerate(clods):
@@ -323,9 +323,18 @@ def make_svg(weeks: list[list[dict]], *, theme: str, username: str,
                            f'values="0 0;0 0;{dx / 2} {dy - 12};{dx} {dy};{dx} {dy}" '
                            f'keyTimes="0;{key(t, duration)};{key(t + .25, duration)};{key(t + .5, duration)};1" '
                            f'dur="{fmt(duration)}s" repeatCount="indefinite"/></rect>')
-        sprout = (f'<path d="M{x + 5} {y + 8} l0 -3 M{x + 5} {y + 6} l-2 -2 M{x + 5} {y + 6} l2 -1.5" '
-                  f'stroke="{p["blades"][2]}" stroke-width="1.1" stroke-linecap="round" fill="none" opacity="0">')
-        parts.append(sprout + ramp([(e1 + 2.6, 0), (e1 + 3.2, 1), (e1 + 4.2, 1), (e1 + 4.8, 0)], duration) + "</path>")
+        # Once the hole is filled a sprout grows out of it, then the tile turns back to grass.
+        g0, g1 = e1 + 1.4, e1 + 2.6
+        parts.append(f'<g transform="translate({x + TILE / 2} {y + TILE - 2})" opacity="0">'
+                     + ramp([(g0, 0), (g0 + .2, 1), (e1 + 5.2, 1), (e1 + 5.8, 0)], duration)
+                     + f'<g fill="{p["sprout"]}" stroke="{p["sprout_edge"]}" stroke-width=".6">'
+                     + '<animateTransform attributeName="transform" type="scale" values="0.15;0.15;1;1" '
+                       f'keyTimes="0;{key(g0, duration)};{key(min(g1, duration - .01), duration)};1" '
+                       f'dur="{fmt(duration)}s" repeatCount="indefinite"/>'
+                     + '<rect x="-.8" y="-9" width="1.6" height="9" rx=".6"/>'
+                     + '<ellipse cx="-3" cy="-8" rx="3.2" ry="1.7" transform="rotate(-28 -3 -8)"/>'
+                     + '<ellipse cx="3" cy="-10" rx="3.2" ry="1.7" transform="rotate(24 3 -10)"/>'
+                     + "</g></g>")
         # The treat pops out of the hole and is gone on the first bite, right where it lay.
         bx, by = x + TILE / 2, y + TILE / 2
         rise, gone = d1 - 0.35, e0 + 0.3  # from here on the bone is in the chew frames
