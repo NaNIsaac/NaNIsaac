@@ -2,7 +2,7 @@
 
 **X-ray physics · Scientific computing**
 
-<img src="./assets/name-cdi.gif?v=2" width="100%" alt="The name NaNIsaac recovered from its diffraction intensity by phase retrieval" />
+<img src="./assets/name-cdi.gif" width="100%" alt="The name NaNIsaac recovered from its diffraction intensity by phase retrieval" />
 
 <sub>Only the intensity |F|² goes in. [QoraPhase](https://github.com/NaNIsaac/QoraPhase) recovers the lost phase and the object; <a href="./scripts/name_gif.py">script</a>.</sub>
 
@@ -34,26 +34,21 @@ transient formation of acoustic Bragg satellites ([TraTT](https://github.com/NaN
 - [pydata/xarray](https://github.com/pydata/xarray) · [DOC: Link windowed operations tutorial from computation guide](https://github.com/pydata/xarray/pull/11720) · merged
 <!-- contrib:end -->
 
-### Pepper's Harvest
-
 <sub>Pepper (후추), my black-and-tan Shiba Inu, takes care of the contribution garden.</sub>
-
 
 <picture>
   <source media="(prefers-color-scheme: dark)"
-          srcset="./assets/pepper/pepper-harvest-dark.svg?v=3" />
+          srcset="./assets/pepper/pepper-harvest-dark.svg" />
   <source media="(prefers-color-scheme: light)"
-          srcset="./assets/pepper/pepper-harvest-light.svg?v=3" />
-  <img src="./assets/pepper/pepper-harvest-light.svg?v=3"
+          srcset="./assets/pepper/pepper-harvest-light.svg" />
+  <img src="./assets/pepper/pepper-harvest-light.svg"
        width="100%"
        alt="Pepper harvesting GitHub contributions" />
 </picture>
-
 
 [Website](https://nanisaac.github.io) ·
 [Notes](https://nanisaac.github.io/notes/) ·
 [X-ray tools](https://xray.ooguy.com) ·
 [Email](mailto:isaacyong@naver.com)
 
-
-Note: My GitHub username was changed from "SJB7777" to "NaNIsaac" in October 2026.
+<sub>Formerly SJB7777; renamed to NaNIsaac in October 2026.</sub>

@@ -1,4 +1,4 @@
-name: GitHub-Profile-3D-Contrib
+name: Profile refresh
 
 on:
   schedule:
@@ -9,7 +9,7 @@ on:
     paths:
       - "scripts/pepper_harvest.py"
       - "assets/pepper/frames/*.png"
-      - ".github/workflows/profile-3d.yml"
+      - ".github/workflows/profile.yml"
 
 permissions:
   contents: write
@@ -17,13 +17,8 @@ permissions:
 jobs:
   build:
     runs-on: ubuntu-latest
-    name: generate-github-profile-3d-contrib
     steps:
       - uses: actions/checkout@v7
-      - uses: yoshi389111/github-profile-3d-contrib@0.7.1
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          USERNAME: ${{ github.repository_owner }}
       - name: Update upstream PR list
         run: python3 scripts/update_contrib.py
         env:
@@ -36,6 +31,6 @@ jobs:
         run: |
           git config user.name github-actions[bot]
           git config user.email 41898282+github-actions[bot]@users.noreply.github.com
-          git add profile-3d-contrib/ README.md assets/pepper/pepper-harvest-light.svg assets/pepper/pepper-harvest-dark.svg
-          git commit -m "chore: refresh contribution graphs, Pepper and PR list" || exit 0
+          git add README.md assets/pepper/pepper-harvest-light.svg assets/pepper/pepper-harvest-dark.svg
+          git commit -m "chore: refresh Pepper and PR list" || exit 0
           git push
