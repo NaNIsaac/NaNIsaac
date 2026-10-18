@@ -2,10 +2,8 @@
 
 **X-ray physics · Scientific computing** · M.S. student in Physics, Sogang University
 
-[Website](https://nanisaac.github.io) ·
-[Notes](https://nanisaac.github.io/notes/) ·
-[X-ray tools](https://xray.ooguy.com) ·
-[Email](mailto:isaacyong@naver.com)
+| [Website](https://nanisaac.github.io) | [Notes](https://nanisaac.github.io/notes/) | [Blog](https://blog.naver.com/sjbpepper) | [X-ray tools](https://xray.ooguy.com) | [Email](mailto:isaacyong@naver.com) |
+|:---:|:---:|:---:|:---:|:---:|
 
 <img src="./assets/phase-retrieval.gif" width="100%" alt="The name NaNIsaac recovered from its diffraction intensity by phase retrieval" />
 
