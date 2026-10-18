@@ -2,7 +2,7 @@
 # requires-python = ">=3.12"
 # dependencies = ["qoraphase"]
 # ///
-"""Regenerate assets/name-cdi.gif: the name recovered from its diffraction intensity.
+"""Regenerate assets/phase-retrieval.gif: the name recovered from its diffraction intensity.
 
 uv run scripts/name_gif.py
 """
@@ -20,8 +20,8 @@ import qoraphase as qp
 
 N, CYCLE = 192, 30
 STEPS = [1, 2, 3, 4, 5, 6, 8, 10, 12, 15, 18, 22, 26, 30]
-BG, FG, ACCENT, TRACK = "#0d1117", "#8b949e", "#58a6ff", "#21262d"
-OUT = Path(__file__).parents[1] / "assets" / "name-cdi.gif"
+BG, FG, ACCENT, TRACK = "#0d1117", "#8b949e", "#484f58", "#161b22"
+OUT = Path(__file__).parents[1] / "assets" / "phase-retrieval.gif"
 
 fig = plt.figure(figsize=(4, 0.9), dpi=56)
 fig.text(0.5, 0.5, "NaNIsaac", ha="center", va="center", fontsize=26,
@@ -54,7 +54,7 @@ print(f"seed {seed}, final Fourier error {errors[-1]:.1e}")
 crop = (slice(N // 2 - 20, N // 2 + 20), slice(N // 2 - 70, N // 2 + 70))
 total = CYCLE * STEPS[-1]
 fig = plt.figure(figsize=(8, 2.6), facecolor=BG)
-grid = fig.add_gridspec(2, 2, width_ratios=[1, 2.9], height_ratios=[6, 1], hspace=0.25)
+grid = fig.add_gridspec(2, 2, width_ratios=[1, 2.9], height_ratios=[8, 1], hspace=0.2)
 ax_f, ax_r, ax_p = fig.add_subplot(grid[:, 0]), fig.add_subplot(grid[0, 1]), fig.add_subplot(grid[1, 1])
 for ax in (ax_f, ax_r, ax_p):
     ax.set_axis_off()
@@ -65,10 +65,10 @@ im = ax_r.imshow(frames[0][crop], cmap="gray", vmin=0, vmax=1)
 ax_r.set_title("phase retrieval, support found from data", color=FG, fontsize=9, family="monospace")
 ax_p.set_xlim(0, total)
 ax_p.set_ylim(0, 1)
-ax_p.barh(0.3, total, height=0.35, color=TRACK)
-bar = ax_p.barh(0.3, 0, height=0.35, color=ACCENT)[0]
-label = ax_p.text(0, 0.85, "", color=FG, fontsize=8.5, family="monospace", va="center")
-score = ax_p.text(total, 0.85, "", color=FG, fontsize=8.5, family="monospace", va="center", ha="right")
+ax_p.barh(0.25, total, height=0.12, color=TRACK)
+bar = ax_p.barh(0.25, 0, height=0.12, color=ACCENT)[0]
+label = ax_p.text(0, 0.8, "", color=FG, fontsize=8, family="monospace", va="center")
+score = ax_p.text(total, 0.8, "", color=FG, fontsize=8, family="monospace", va="center", ha="right")
 fig.subplots_adjust(left=0.02, right=0.98, top=0.88, bottom=0.04, wspace=0.06)
 
 
