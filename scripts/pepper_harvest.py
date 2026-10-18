@@ -101,12 +101,14 @@ MOUTH = (66, 58)       # open mouth in eat0; it closes on the treat's tile
 PAW_X = 58             # front paws, between the two strides
 SPEED = 62.0           # px/s; four walk frames per stride keep the paws from sliding
 STEP = 0.12            # seconds per walk frame
-FRAMES = ("walk0", "walk1", "walk2", "walk3", "sniff0", "sniff1",
-          "dig0", "dig1", "eat0", "eat1", "sit0", "sit1")
+FRAMES = ("walk0", "walk1", "walk2", "walk3", "sniff0", "sniff1", "dig0", "dig1",
+          "eat0", "chew0", "chew1", "hop0", "hop1", "sit0", "sit1")
 POSES = {  # action: (frames, seconds per frame)
     "sniff": (("sniff0", "sniff1"), 0.25),
     "dig": (("dig0", "dig1"), 0.14),
-    "eat": (("eat0", "eat1"), 0.2),
+    "bite": (("eat0",), 0.3),
+    "chew": (("chew0", "chew1"), 0.2),
+    "hop": (("hop0", "hop1"), 0.25),
     "sit": (("sit0", "sit1"), 0.18),
     "stand": (("walk0",), 1.0),
 }
@@ -262,11 +264,13 @@ def make_svg(weeks: list[list[dict]], *, theme: str, username: str,
         tl.walk(gx, gy)
         sniff = tl.pose("sniff", 1.0)
         dig = tl.pose("dig", 1.2)
-        eat = tl.pose("eat", 1.2)
-        tl.pose("stand", 0.25)
+        bite = tl.pose("bite", 0.3)
+        tl.pose("chew", 1.0)
+        eat = (bite[0], tl.pose("hop", 0.5)[1])
+        tl.pose("stand", 0.2)
         scenes.append({"col": col, "row": row, "sniff": sniff, "dig": dig, "eat": eat})
     tl.walk(min(width - FRAME_W * SCALE - 6, tl.x + 70), lane(3))
-    sit = tl.pose("sit", 3.4)
+    sit = tl.pose("sit", 3.0)
     duration = tl.t + 0.4
     tl.keys.append((duration, tl.x, tl.y))
     tl.shown["sit0"].append((sit[1], duration))
@@ -324,7 +328,7 @@ def make_svg(weeks: list[list[dict]], *, theme: str, username: str,
         parts.append(sprout + ramp([(e1 + 2.6, 0), (e1 + 3.2, 1), (e1 + 4.2, 1), (e1 + 4.8, 0)], duration) + "</path>")
         # The treat pops out of the hole and is gone on the first bite, right where it lay.
         bx, by = x + TILE / 2, y + TILE / 2
-        rise, gone = d1 - 0.35, e0 + 0.3
+        rise, gone = d1 - 0.35, e0 + 0.3  # from here on the bone is in the chew frames
         parts.append(f'<g opacity="0">{bone_shape(bx, by)}'
                      + svg_anim_visibility([(rise, gone)], duration)
                      + '<animateTransform attributeName="transform" type="translate" '

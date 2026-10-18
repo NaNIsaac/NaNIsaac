@@ -23,9 +23,17 @@ CANVAS = (86, 68)
 WALK_HEIGHT = 64  # art pixels from ear tip to paw in the walk row
 N4 = ((1, 0), (-1, 0), (0, 1), (0, -1))
 N8 = N4 + ((1, 1), (1, -1), (-1, 1), (-1, -1))
-NAMES = (("walk0", "walk1", "walk2", "walk3"),
-         ("sniff0", "sniff1", "dig0", "dig1"),
-         ("eat0", "eat1", "sit0", "sit1"))
+# Per sheet: the row whose height sets the scale, a size trim, and frame names by
+# grid cell (None = unused). The sheets draw Pepper at different sizes; sheet2's dog
+# is also a little longer for his height, so it gets trimmed to match walk0's length.
+SHEETS = (
+    ("sheet.png", 0, 1.0, (("walk0", "walk1", "walk2", "walk3"),
+                           ("sniff0", "sniff1", None, None),
+                           ("eat0", None, "sit0", "sit1"))),
+    ("sheet2.png", 0, 0.94, (("dig0", "dig1"),
+                       ("chew0", "chew1"),
+                       ("hop0", "hop1"))),
+)
 
 
 def dark(p: tuple[int, ...]) -> bool:
@@ -90,8 +98,12 @@ def bands(profile: list[int], min_len: int = 20) -> list[tuple[int, int]]:
     return out
 
 
-def cut_sheet(sheet: Image.Image) -> list[list[Image.Image]]:
-    """Split the sheet into its poses by the empty gaps between them."""
+def cut_sheet(sheet: Image.Image) -> list[list[tuple[Image.Image, int]]]:
+    """Split the sheet into its poses by the empty gaps between them.
+
+    Each pose comes with its height above the lowest paw in its row, so a jump
+    keeps its lift.
+    """
     solid = sheet.getchannel("A").point(lambda v: 255 if v > 128 else 0)
     w, h = solid.size
     data = solid.load()
@@ -102,14 +114,15 @@ def cut_sheet(sheet: Image.Image) -> list[list[Image.Image]]:
         line = []
         for x0, x1 in cols:
             cell = sheet.crop((x0, y0, x1, y1))
-            line.append(cell.crop(cell.getchannel("A").point(lambda v: 255 if v > 128 else 0).getbbox()))
+            box = cell.getchannel("A").point(lambda v: 255 if v > 128 else 0).getbbox()
+            line.append((cell.crop(box), (y1 - y0) - box[3]))
         grid.append(line)
     return grid
 
 
-def pixelate(cells: list[Image.Image], scale: float) -> list[Image.Image]:
+def pixelate(cells: list[tuple[Image.Image, float]]) -> list[Image.Image]:
     """Average back to art pixels, then snap alpha and share one 32-colour palette."""
-    small = [c.resize((round(c.width * scale), round(c.height * scale)), Image.BOX) for c in cells]
+    small = [c.resize((round(c.width * k), round(c.height * k)), Image.BOX) for c, k in cells]
     strip = Image.new("RGB", (sum(im.width for im in small), max(im.height for im in small)))
     x = 0
     for im in small:
@@ -124,10 +137,10 @@ def pixelate(cells: list[Image.Image], scale: float) -> list[Image.Image]:
     return out
 
 
-def place(frame: Image.Image, x: int) -> Image.Image:
-    """Paws on the canvas bottom row, left edge at x."""
+def place(frame: Image.Image, x: int, lift: int = 0) -> Image.Image:
+    """Paws on the canvas bottom row (or lift pixels above it), left edge at x."""
     canvas = Image.new("RGBA", CANVAS)
-    canvas.alpha_composite(frame, (x, CANVAS[1] - frame.height))
+    canvas.alpha_composite(frame, (x, CANVAS[1] - frame.height - lift))
     return canvas
 
 
@@ -138,18 +151,25 @@ def tail_x(im: Image.Image) -> int:
 
 
 def main() -> None:
-    grid = cut_sheet(Image.open(SRC / "sheet.png").convert("RGBA"))
-    scale = WALK_HEIGHT / max(im.height for im in grid[0])
-    frames = pixelate([im for line in grid for im in line], scale)
+    cells, names = [], []
+    for file, ref_row, trim, layout in SHEETS:
+        grid = cut_sheet(Image.open(SRC / file).convert("RGBA"))
+        scale = trim * WALK_HEIGHT / max(im.height for im, _ in grid[ref_row])
+        for row_names, row in zip(layout, grid):
+            for name, (im, gap) in zip(row_names, row):
+                if name:
+                    cells.append((im, scale))
+                    names.append((name, round(gap * scale)))
+    frames = pixelate(cells)
     OUT.mkdir(exist_ok=True)
     for old in OUT.glob("*.png"):
         old.unlink()
-    for name, im in zip((n for line in NAMES for n in line), frames):
+    for (name, lift), im in zip(names, frames):
         im = clean(im)
         side = not name.startswith("sit")
         x = 4 - tail_x(im) if side else (CANVAS[0] - im.width) // 2
-        place(im, x).save(OUT / f"{name}.png")
-    print(f"wrote {len(frames)} frames to {OUT} (scale {scale:.4f})")
+        place(im, x, lift if name.startswith("hop") else 0).save(OUT / f"{name}.png")
+    print(f"wrote {len(frames)} frames to {OUT}")
 
 
 if __name__ == "__main__":

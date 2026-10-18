@@ -71,7 +71,7 @@ class HarvestTests(unittest.TestCase):
         svg = render(demo_contributions())
         dur = float(re.search(r'dur="([\d.]+)s"', svg).group(1))
         seen = {visible_at(svg, t / 10)[0][:-1] for t in range(int(dur * 10))}
-        self.assertEqual(seen, {'walk', 'sniff', 'dig', 'eat', 'sit'})
+        self.assertEqual(seen, {'walk', 'sniff', 'dig', 'eat', 'chew', 'hop', 'sit'})
         self.assertEqual(visible_at(svg, dur - 0.05)[0][:-1], 'sit')
 
     def test_treats_are_genuine_contribution_days(self):
