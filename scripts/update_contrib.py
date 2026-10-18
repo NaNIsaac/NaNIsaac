@@ -34,11 +34,12 @@ def line(pr: dict) -> str | None:
         state = "open"
     else:
         return None
-    return f"- [{repo}](https://github.com/{repo}) · [{pr['title']}]({pr['html_url']}) · {state}"
+    return f"- `{repo}` [{pr['title']}]({pr['html_url']}) <sub>{state}</sub>"
 
 
 def main() -> None:
     lines = [l for pr in search() if (l := line(pr))][:LIMIT]
+    lines.sort(key=lambda l: l.endswith("<sub>open</sub>"))  # merged first, newest first within each
     block = "\n".join(lines) or "- none yet"
     text = README.read_text(encoding="utf-8")
     new = re.sub(
