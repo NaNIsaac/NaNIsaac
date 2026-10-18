@@ -2,13 +2,15 @@
 # requires-python = ">=3.12"
 # dependencies = ["pillow"]
 # ///
-"""Build Pepper's animation frames from the hand-drawn source sprites.
+"""Build Pepper's animation frames from the sprite sheet.
 
 uv run scripts/pepper_sprites.py
 
-Sources in assets/pepper/src/ are left untouched. Every frame is written to
-assets/pepper/frames/ on one canvas with the paws on the same baseline, so
-pepper_harvest.py can swap frames without the dog jumping or resizing.
+assets/pepper/src/sheet.png is a 4 x 3 grid drawn at roughly 4.4 screen pixels
+per art pixel, with soft edges. Each pose is cut out, brought back to one art
+pixel per pixel with a single shared scale and palette, cleaned of edge fringe,
+and written to assets/pepper/frames/ on one canvas with the paws on the bottom
+row, so pepper_harvest.py can swap frames without the dog jumping or resizing.
 """
 
 from pathlib import Path
@@ -18,12 +20,12 @@ from PIL import Image
 PEPPER = Path(__file__).parents[1] / "assets" / "pepper"
 SRC, OUT = PEPPER / "src", PEPPER / "frames"
 CANVAS = (86, 68)
+WALK_HEIGHT = 64  # art pixels from ear tip to paw in the walk row
 N4 = ((1, 0), (-1, 0), (0, 1), (0, -1))
 N8 = N4 + ((1, 1), (1, -1), (-1, 1), (-1, -1))
-
-# walk_a geometry: legs start at LEG_ROW; back and front leg pairs by x range.
-LEG_ROW = 52
-BACK, FRONT = (0, 31), (32, 66)
+NAMES = (("walk0", "walk1", "walk2", "walk3"),
+         ("sniff0", "sniff1", "dig0", "dig1"),
+         ("eat0", "eat1", "sit0", "sit1"))
 
 
 def dark(p: tuple[int, ...]) -> bool:
@@ -76,60 +78,49 @@ def clean(im: Image.Image) -> Image.Image:
     return im
 
 
-def legs(base: Image.Image, back: str, front: str) -> Image.Image:
-    """Redraw the two leg pairs below LEG_ROW: 'none', 'flip' (other stride) or 'gather'."""
-    out, src, (w, h) = base.copy(), base.load(), base.size
-    px = out.load()
-    for y in range(LEG_ROW, h):
-        for x in range(w):
-            px[x, y] = (0, 0, 0, 0)
-    for (x0, x1), op in ((BACK, back), (FRONT, front)):
-        cx = (x0 + x1 - 1) / 2
-        for y in range(LEG_ROW, h):
-            for x in range(x0, x1):
-                sx = {"flip": round(2 * cx - x), "gather": round(cx + (x - cx) / 0.62)}.get(op, x)
-                if x0 <= sx < x1 and src[sx, y][3]:
-                    px[x, y] = src[sx, y]
+def bands(profile: list[int], min_len: int = 20) -> list[tuple[int, int]]:
+    out, start = [], None
+    for i, v in enumerate(profile + [0]):
+        if v and start is None:
+            start = i
+        elif not v and start is not None:
+            if i - start > min_len:
+                out.append((start, i))
+            start = None
     return out
 
 
-def rotate_part(base: Image.Image, box: tuple[int, int, int, int], pivot: tuple[int, int],
-                degrees: float, refill: tuple[int, int, int, int] | None = None) -> Image.Image:
-    """Rotate the pixels inside box about pivot, clockwise for positive degrees.
-
-    Pixels inside refill that the turned part no longer covers keep their original
-    colour, so the neck stays joined to the body instead of showing a cut.
-    """
-    part = Image.new("RGBA", base.size)
-    part.paste(base.crop(box), box[:2])
-    out = base.copy()
-    out.paste((0, 0, 0, 0), box)
-    out.alpha_composite(part.rotate(-degrees, resample=Image.NEAREST, center=pivot))
-    if refill:
-        src, px = base.load(), out.load()
-        x0, y0, x1, y1 = refill
-        for y in range(y0, y1):
-            for x in range(x0, x1):
-                if not px[x, y][3]:
-                    px[x, y] = src[x, y]
-    return out
+def cut_sheet(sheet: Image.Image) -> list[list[Image.Image]]:
+    """Split the sheet into its poses by the empty gaps between them."""
+    solid = sheet.getchannel("A").point(lambda v: 255 if v > 128 else 0)
+    w, h = solid.size
+    data = solid.load()
+    rows = bands([sum(1 for x in range(0, w, 2) if data[x, y]) for y in range(h)])
+    cols = bands([sum(1 for y in range(0, h, 2) if data[x, y]) for x in range(w)])
+    grid = []
+    for y0, y1 in rows:
+        line = []
+        for x0, x1 in cols:
+            cell = sheet.crop((x0, y0, x1, y1))
+            line.append(cell.crop(cell.getchannel("A").point(lambda v: 255 if v > 128 else 0).getbbox()))
+        grid.append(line)
+    return grid
 
 
-def lower_head(base: Image.Image, degrees: float) -> Image.Image:
-    """Bend at the shoulder so the nose points at the grass; legs stay planted."""
-    padded = Image.new("RGBA", (base.width + 8, base.height))
-    padded.paste(base)
-    padded.paste((0, 0, 0, 0), (36, 0, 46, 25))  # the raised neck line of the upright pose
-    out = rotate_part(padded, (46, 0, padded.width, LEG_ROW), (46, 42), degrees,
-                      refill=(36, 25, 54, LEG_ROW))
-    # Close the new back line: outline on top, back fur below, like the rest of the back.
-    px, fur = out.load(), padded.getpixel((30, 34))
-    for x in range(36, 54):
-        top = next((y for y in range(20, LEG_ROW) if px[x, y][3]), None)
-        if top is not None and not dark(px[x, top]):
-            px[x, top] = (0, 0, 0, 255)
-            for y in range(top + 1, min(top + 4, LEG_ROW)):
-                px[x, y] = fur
+def pixelate(cells: list[Image.Image], scale: float) -> list[Image.Image]:
+    """Average back to art pixels, then snap alpha and share one 32-colour palette."""
+    small = [c.resize((round(c.width * scale), round(c.height * scale)), Image.BOX) for c in cells]
+    strip = Image.new("RGB", (sum(im.width for im in small), max(im.height for im in small)))
+    x = 0
+    for im in small:
+        strip.paste(im.convert("RGB"), (x, 0))
+        x += im.width
+    palette = strip.quantize(32, method=Image.Quantize.MAXCOVERAGE)
+    out = []
+    for im in small:
+        rgb = im.convert("RGB").quantize(palette=palette, dither=Image.Dither.NONE).convert("RGBA")
+        rgb.putalpha(im.getchannel("A").point(lambda v: 255 if v > 110 else 0))
+        out.append(rgb)
     return out
 
 
@@ -140,32 +131,25 @@ def place(frame: Image.Image, x: int) -> Image.Image:
     return canvas
 
 
+def tail_x(im: Image.Image) -> int:
+    """Left edge of the curled tail (top half), the steadiest point between side poses."""
+    top = im.crop((0, 0, im.width, im.height // 2))
+    return top.getchannel("A").getbbox()[0]
+
+
 def main() -> None:
-    walk = clean(Image.open(SRC / "walk_a.png"))
-    sit = clean(Image.open(SRC / "sit.png"))
-    frames = {
-        "walk0": legs(walk, "none", "none"),
-        "walk1": legs(walk, "gather", "gather"),
-        "walk2": legs(walk, "flip", "flip"),
-        "walk3": legs(walk, "gather", "gather"),
-        "sniff0": lower_head(walk, 38),
-        "sniff1": lower_head(walk, 43),
-        "dig0": legs(lower_head(walk, 40), "none", "flip"),
-        "dig1": legs(lower_head(walk, 40), "none", "gather"),
-        "eat0": lower_head(walk, 30),
-        "eat1": lower_head(walk, 22),
-    }
+    grid = cut_sheet(Image.open(SRC / "sheet.png").convert("RGBA"))
+    scale = WALK_HEIGHT / max(im.height for im in grid[0])
+    frames = pixelate([im for line in grid for im in line], scale)
     OUT.mkdir(exist_ok=True)
     for old in OUT.glob("*.png"):
         old.unlink()
-    for name, im in frames.items():
-        place(im, 2).save(OUT / f"{name}.png")
-    # Seated finale: tail sways between two positions.
-    tail, root = (42, 36, sit.width, sit.height - 4), (44, sit.height - 8)
-    seam = (40, 36, 50, sit.height - 4)
-    place(rotate_part(sit, tail, root, -7, refill=seam), 12).save(OUT / "sit0.png")
-    place(rotate_part(sit, tail, root, 7, refill=seam), 12).save(OUT / "sit1.png")
-    print(f"wrote {len(frames) + 2} frames to {OUT}")
+    for name, im in zip((n for line in NAMES for n in line), frames):
+        im = clean(im)
+        side = not name.startswith("sit")
+        x = 4 - tail_x(im) if side else (CANVAS[0] - im.width) // 2
+        place(im, x).save(OUT / f"{name}.png")
+    print(f"wrote {len(frames)} frames to {OUT} (scale {scale:.4f})")
 
 
 if __name__ == "__main__":

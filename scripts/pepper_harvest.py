@@ -97,9 +97,9 @@ def fmt(num: float) -> str:
 # one canvas with the paws on its bottom row.
 PITCH, TILE, LEFT, TOP = 13, 10, 24, 46
 FRAME_W, FRAME_H, SCALE = 86, 68, 0.8
-NOSE = (82, 32)        # nose tip in the head-down frames
-MOUTH = (78, 38)
-PAW_X = 46             # front paws, between the two strides
+NOSE = (74, 47)        # nose tip in the head-down frames
+MOUTH = (74, 52)
+PAW_X = 58             # front paws, between the two strides
 SPEED = 62.0           # px/s; four walk frames per stride keep the paws from sliding
 STEP = 0.12            # seconds per walk frame
 FRAMES = ("walk0", "walk1", "walk2", "walk3", "sniff0", "sniff1",
