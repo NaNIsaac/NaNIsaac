@@ -26,13 +26,13 @@ PALETTES = {
         "background": "#f6f7f5", "text": "#252c29", "muted": "#66736b",
         "empty": "#e8eeea", "grass": ["#e8eeea", "#b9ddb3", "#85c781", "#4b9e5b", "#276d43"],
         "blades": ["#a8bcaa", "#6da974", "#3b8550", "#286d3e", "#174d32"],
-        "foot": "#6b5d50", "soil": "#8a6a4a", "ring": "#d9a441", "shadow": "#1d2a22",
+        "foot": "#6b5d50", "soil": "#8a6a4a", "pit": "#4a3626", "clod": "#9b7450", "ring": "#d9a441", "shadow": "#1d2a22",
     },
     "dark": {
         "background": "#0d1117", "text": "#e6edf3", "muted": "#9aa7aa",
         "empty": "#18221e", "grass": ["#18221e", "#133d2a", "#18683c", "#29954d", "#49c16e"],
         "blades": ["#314c3a", "#277e49", "#34a35c", "#54d77c", "#8bea9e"],
-        "foot": "#c9b8a2", "soil": "#6f5640", "ring": "#e8b44b", "shadow": "#000000",
+        "foot": "#c9b8a2", "soil": "#6f5640", "pit": "#2a1f16", "clod": "#c49a6c", "ring": "#e8b44b", "shadow": "#000000",
     },
 }
 QUERY = """query($login: String!) {
@@ -97,8 +97,7 @@ def fmt(num: float) -> str:
 # one canvas with the paws on its bottom row.
 PITCH, TILE, LEFT, TOP = 13, 10, 24, 46
 FRAME_W, FRAME_H, SCALE = 86, 68, 0.8
-NOSE = (74, 47)        # nose tip in the head-down frames
-MOUTH = (74, 52)
+MOUTH = (66, 58)       # open mouth in eat0; it closes on the treat's tile
 PAW_X = 58             # front paws, between the two strides
 SPEED = 62.0           # px/s; four walk frames per stride keep the paws from sliding
 STEP = 0.12            # seconds per walk frame
@@ -159,6 +158,15 @@ def fade(t0: float, t1: float, t2: float, peak: float, duration: float) -> str:
     pairs = [(k, v) for i, (k, v) in enumerate(zip(keys, vals)) if i == 0 or k > keys[i - 1]]
     return (f'<animate attributeName="opacity" values="{";".join(fmt(v) for _, v in pairs)}" '
             f'keyTimes="{";".join(key(k, duration) for k, _ in pairs)}" '
+            f'dur="{fmt(duration)}s" repeatCount="indefinite"/>')
+
+
+def ramp(points: list[tuple[float, float]], duration: float) -> str:
+    """Opacity through (time, value) points, linear in between, 0 outside."""
+    pts = [(0.0, 0.0)] + sorted((min(max(t, 0.001), duration - 0.001), v) for t, v in points) + [(duration, 0.0)]
+    keep = [pts[0]] + [b for a, b in zip(pts, pts[1:]) if b[0] > a[0]]
+    return (f'<animate attributeName="opacity" values="{";".join(fmt(v) for _, v in keep)}" '
+            f'keyTimes="{";".join(key(t, duration) for t, _ in keep)}" '
             f'dur="{fmt(duration)}s" repeatCount="indefinite"/>')
 
 
@@ -236,22 +244,28 @@ def make_svg(weeks: list[list[dict]], *, theme: str, username: str,
     dog_h = FRAME_H * SCALE
 
     def stand_at(col: int, row: int) -> tuple[float, float]:
-        """Group origin that puts the head-down nose at the left edge of a tile."""
-        tx, ty = LEFT + col * PITCH, TOP + row * PITCH
-        return tx - NOSE[0] * SCALE, max(TOP - dog_h + 18, ty + 5 - NOSE[1] * SCALE)
+        """Group origin that puts the eating mouth on the centre of a tile."""
+        cx, cy = LEFT + col * PITCH + TILE / 2, TOP + row * PITCH + TILE / 2
+        return cx - MOUTH[0] * SCALE, cy - MOUTH[1] * SCALE
 
-    tl = Timeline(-FRAME_W * SCALE - 8, TOP + 3 * PITCH - dog_h + 10)
+    def lane(row: float) -> float:
+        """Group y that puts the paws on a given grid row (rows may be fractional)."""
+        return TOP + row * PITCH + TILE - dog_h + 2
+
+    tl = Timeline(-FRAME_W * SCALE - 8, lane(3))
     tl.pose("stand", 0.2)
     scenes = []
-    for col, row in treats:
-        tl.walk(*stand_at(col, row))
+    for i, (col, row) in enumerate(treats):
+        gx, gy = stand_at(col, row)
+        # Wander through another row on the way so the route is not a straight line.
+        tl.walk((tl.x + gx) / 2, lane(5.2 if i % 2 == 0 else 0.6))
+        tl.walk(gx, gy)
         sniff = tl.pose("sniff", 1.0)
         dig = tl.pose("dig", 1.2)
         eat = tl.pose("eat", 1.2)
         tl.pose("stand", 0.25)
-        scenes.append({"col": col, "row": row, "sniff": sniff, "dig": dig, "eat": eat,
-                       "mouth": (tl.x + MOUTH[0] * SCALE, tl.y + MOUTH[1] * SCALE)})
-    tl.walk(min(width - FRAME_W * SCALE - 6, tl.x + 70), TOP + 3 * PITCH - dog_h + 10)
+        scenes.append({"col": col, "row": row, "sniff": sniff, "dig": dig, "eat": eat})
+    tl.walk(min(width - FRAME_W * SCALE - 6, tl.x + 70), lane(3))
     sit = tl.pose("sit", 3.4)
     duration = tl.t + 0.4
     tl.keys.append((duration, tl.x, tl.y))
@@ -279,32 +293,44 @@ def make_svg(weeks: list[list[dict]], *, theme: str, username: str,
                 parts.append(f'<path d="M{x + 5} {y + 8} l-2 -3 M{x + 5} {y + 8} l0 -5 M{x + 5} {y + 8} l2 -3" '
                              f'stroke="{p["blades"][level]}" stroke-width=".8" fill="none" stroke-linecap="round"/>')
 
-    # Only the chosen tiles react: a ring while sniffing, soil while digging.
+    # Only the chosen tiles react. Pepper digs a hole, dirt flies back past his
+    # paws and piles up beside it; after he eats, the hole fills and grass sprouts.
+    flying = []  # dirt clods, drawn over Pepper so they are not hidden by his body
     for s in scenes:
         x, y = LEFT + s["col"] * PITCH, TOP + s["row"] * PITCH
         (s0, _), (d0, d1), (e0, e1) = s["sniff"], s["dig"], s["eat"]
         parts.append(f'<rect class="event" x="{x - 1}" y="{y - 1}" width="{TILE + 2}" height="{TILE + 2}" rx="2" '
                      f'fill="none" stroke="{p["ring"]}" stroke-width="1.4" opacity="0">'
                      + svg_anim_visibility([(s0, d1)], duration) + "</rect>")
-        parts.append(f'<rect x="{x + 1}" y="{y + 1}" width="{TILE - 2}" height="{TILE - 2}" rx="1" fill="{p["soil"]}" opacity="0">'
-                     + fade(d0, d0 + 0.5, e1 + 1.2, 0.9, duration) + "</rect>")
-        for i, (dx, dy) in enumerate([(-2, -3), (4, -5), (10, -2)]):
-            t = d0 + 0.12 + i * 0.3
-            parts.append(f'<rect x="{x + 3}" y="{y + 2}" width="2" height="2" fill="{p["soil"]}" opacity="0">'
-                         + fade(t, t + 0.05, t + 0.45, 1, duration)
+        parts.append(f'<rect x="{x}" y="{y}" width="{TILE}" height="{TILE}" rx="1.5" fill="{p["soil"]}" opacity="0">'
+                     + ramp([(d0, 0), (d0 + .4, 1), (e1 + 3.2, 1), (e1 + 4.6, 0)], duration) + "</rect>")
+        parts.append(f'<rect x="{x + 2}" y="{y + 3}" width="{TILE - 4}" height="{TILE - 5}" rx="1.5" fill="{p["pit"]}" opacity="0">'
+                     + ramp([(d0 + .3, 0), (d1, 1), (e1 + 2.2, 1), (e1 + 3.2, 0)], duration) + "</rect>")
+        for i, (mx, my, mw, mh) in enumerate([(-4, 6, 4, 3), (-3, 4, 2, 2), (-6, 8, 3, 2)]):
+            parts.append(f'<rect x="{x + mx}" y="{y + my}" width="{mw}" height="{mh}" rx=".8" fill="{p["soil"]}" opacity="0">'
+                         + ramp([(d0 + .3 + i * .25, 0), (d0 + .5 + i * .25, 1), (e1 + 2.4, 1), (e1 + 3.4, 0)], duration) + "</rect>")
+        # Clods land ahead of the nose and behind the front paws, where the grass shows them.
+        clods = [(9, -8), (-12, 9), (14, -3), (-18, 11), (6, -12), (-8, 12), (17, -9), (-15, 7), (11, -14)]
+        for i, (dx, dy) in enumerate(clods):
+            t = d0 + 0.05 + i * 0.12
+            flying.append(f'<rect x="{x + 3}" y="{y + 3}" width="3.4" height="3.4" rx=".8" fill="{p["clod"]}" opacity="0">'
+                         + fade(t, t + 0.04, t + 0.55, 1, duration)
                          + f'<animateTransform attributeName="transform" type="translate" '
-                           f'values="0 0;0 0;{dx} {dy};{dx} {dy}" keyTimes="0;{key(t, duration)};{key(t + .45, duration)};1" '
+                           f'values="0 0;0 0;{dx / 2} {dy - 12};{dx} {dy};{dx} {dy}" '
+                           f'keyTimes="0;{key(t, duration)};{key(t + .25, duration)};{key(t + .5, duration)};1" '
                            f'dur="{fmt(duration)}s" repeatCount="indefinite"/></rect>')
-        # The treat rises out of the tile near the end of digging, then goes to the mouth.
+        sprout = (f'<path d="M{x + 5} {y + 8} l0 -3 M{x + 5} {y + 6} l-2 -2 M{x + 5} {y + 6} l2 -1.5" '
+                  f'stroke="{p["blades"][2]}" stroke-width="1.1" stroke-linecap="round" fill="none" opacity="0">')
+        parts.append(sprout + ramp([(e1 + 2.6, 0), (e1 + 3.2, 1), (e1 + 4.2, 1), (e1 + 4.8, 0)], duration) + "</path>")
+        # The treat pops out of the hole and is gone on the first bite, right where it lay.
         bx, by = x + TILE / 2, y + TILE / 2
-        rise, grab, gone = d1 - 0.35, e0 + 0.35, e0 + 0.45
-        mx, my = s["mouth"][0] - bx, s["mouth"][1] - by
+        rise, gone = d1 - 0.35, e0 + 0.3
         parts.append(f'<g opacity="0">{bone_shape(bx, by)}'
                      + svg_anim_visibility([(rise, gone)], duration)
                      + '<animateTransform attributeName="transform" type="translate" '
-                       f'values="0 3;0 3;0 -5;0 -5;{fmt(mx)} {fmt(my)};{fmt(mx)} {fmt(my)}" '
-                       f'keyTimes="0;{key(rise, duration)};{key(rise + .25, duration)};{key(e0, duration)};'
-                       f'{key(grab, duration)};1" dur="{fmt(duration)}s" repeatCount="indefinite"/></g>')
+                       f'values="0 3;0 3;0 -2;0 -2;0 0" '
+                       f'keyTimes="0;{key(rise, duration)};{key(rise + .25, duration)};{key(e0, duration)};1" '
+                       f'dur="{fmt(duration)}s" repeatCount="indefinite"/></g>')
 
     # Paw prints where the front paws land; each fades after PRINT_LIFE seconds.
     feet = dog_h - 1
@@ -325,6 +351,7 @@ def make_svg(weeks: list[list[dict]], *, theme: str, username: str,
                      f'style="image-rendering:pixelated" href="{sprite_data(assets_dir / "frames" / (name + ".png"))}" opacity="0">'
                      + svg_anim_visibility(tl.shown[name], duration) + "</image>")
     parts.append("</g>")
+    parts.extend(flying)
     parts.append("</svg>")
     svg = "\n".join(parts) + "\n"
     ET.fromstring(svg)
