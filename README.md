@@ -32,7 +32,6 @@ transient formation of acoustic Bragg satellites ([TraTT](https://github.com/NaN
 - [tomopy/tomopy](https://github.com/tomopy/tomopy) · [DOC: Describe the roi argument of normalize_roi correctly](https://github.com/tomopy/tomopy/pull/664) · open
 - [clatlan/cdiutils](https://github.com/clatlan/cdiutils) · [Fix int32 overflow in SpaceConverter.get_transformation_matrix](https://github.com/clatlan/cdiutils/pull/112) · open
 - [pydata/xarray](https://github.com/pydata/xarray) · [DOC: Link windowed operations tutorial from computation guide](https://github.com/pydata/xarray/pull/11720) · merged
-- [python/cpython](https://github.com/python/cpython) · [gh-159190: IDLE: Show full syntax error diagnostics in Shell](https://github.com/python/cpython/pull/159189) · open
 <!-- contrib:end -->
 
 ### Pepper's Harvest
