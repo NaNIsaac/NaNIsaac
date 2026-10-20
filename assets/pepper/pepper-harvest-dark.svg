@@ -2,11 +2,11 @@
  width="734" height="170" viewBox="0 0 734 170" role="img"
  aria-label="Pepper the Shiba Inu exploring NaNIsaac's GitHub contribution garden">
 <title>Pepper's Harvest — NaNIsaac</title>
-<desc>1,950 contributions · through 2026-10-19. Pepper sniffs out 3 treats among contribution days.</desc>
+<desc>2,111 contributions · through 2026-10-20. Pepper sniffs out 3 treats among contribution days.</desc>
 <rect width="734" height="170" rx="12" fill="#0d1117"/>
 <text x="24" y="24" font-family="Arial,sans-serif" font-size="13" font-weight="bold" fill="#e6edf3">Pepper's Harvest</text>
 <text x="710" y="23" text-anchor="end" font-family="Arial,sans-serif" font-size="10" fill="#9aa7aa">NaNIsaac</text>
-<text x="24" y="157" font-family="Arial,sans-serif" font-size="10" fill="#9aa7aa">1,950 contributions · through 2026-10-19</text>
+<text x="24" y="157" font-family="Arial,sans-serif" font-size="10" fill="#9aa7aa">2,111 contributions · through 2026-10-20</text>
 <rect x="24" y="46" width="10" height="10" rx="1.5" fill="#18221e"/>
 <rect x="24" y="59" width="10" height="10" rx="1.5" fill="#18221e"/>
 <rect x="24" y="72" width="10" height="10" rx="1.5" fill="#18221e"/>
@@ -35,7 +35,7 @@
 <rect x="63" y="98" width="10" height="10" rx="1.5" fill="#133d2a"/>
 <rect x="63" y="111" width="10" height="10" rx="1.5" fill="#18683c"/>
 <rect x="63" y="124" width="10" height="10" rx="1.5" fill="#133d2a"/>
-<rect x="76" y="46" width="10" height="10" rx="1.5" fill="#18683c"/>
+<rect x="76" y="46" width="10" height="10" rx="1.5" fill="#133d2a"/>
 <rect x="76" y="59" width="10" height="10" rx="1.5" fill="#133d2a"/>
 <rect x="76" y="72" width="10" height="10" rx="1.5" fill="#18221e"/>
 <rect x="76" y="85" width="10" height="10" rx="1.5" fill="#133d2a"/>
@@ -45,7 +45,7 @@
 <rect x="89" y="46" width="10" height="10" rx="1.5" fill="#133d2a"/>
 <rect x="89" y="59" width="10" height="10" rx="1.5" fill="#133d2a"/>
 <rect x="89" y="72" width="10" height="10" rx="1.5" fill="#133d2a"/>
-<rect x="89" y="85" width="10" height="10" rx="1.5" fill="#18683c"/>
+<rect x="89" y="85" width="10" height="10" rx="1.5" fill="#133d2a"/>
 <rect x="89" y="98" width="10" height="10" rx="1.5" fill="#133d2a"/>
 <rect x="89" y="111" width="10" height="10" rx="1.5" fill="#133d2a"/>
 <rect x="89" y="124" width="10" height="10" rx="1.5" fill="#133d2a"/>
@@ -70,10 +70,10 @@
 <rect x="128" y="98" width="10" height="10" rx="1.5" fill="#18221e"/>
 <rect x="128" y="111" width="10" height="10" rx="1.5" fill="#133d2a"/>
 <rect x="128" y="124" width="10" height="10" rx="1.5" fill="#133d2a"/>
-<rect x="141" y="46" width="10" height="10" rx="1.5" fill="#18683c"/>
-<rect x="141" y="59" width="10" height="10" rx="1.5" fill="#18683c"/>
+<rect x="141" y="46" width="10" height="10" rx="1.5" fill="#133d2a"/>
+<rect x="141" y="59" width="10" height="10" rx="1.5" fill="#133d2a"/>
 <rect x="141" y="72" width="10" height="10" rx="1.5" fill="#133d2a"/>
-<rect x="141" y="85" width="10" height="10" rx="1.5" fill="#18683c"/>
+<rect x="141" y="85" width="10" height="10" rx="1.5" fill="#133d2a"/>
 <rect x="141" y="98" width="10" height="10" rx="1.5" fill="#18221e"/>
 <rect x="141" y="111" width="10" height="10" rx="1.5" fill="#18221e"/>
 <rect x="141" y="124" width="10" height="10" rx="1.5" fill="#18221e"/>
@@ -301,10 +301,8 @@
 <rect x="557" y="98" width="10" height="10" rx="1.5" fill="#133d2a"/>
 <rect x="557" y="111" width="10" height="10" rx="1.5" fill="#18221e"/>
 <rect x="557" y="124" width="10" height="10" rx="1.5" fill="#133d2a"/>
-<rect x="570" y="46" width="10" height="10" rx="1.5" fill="#29954d"/>
-<path d="M575 54 l-2 -3 M575 54 l0 -5 M575 54 l2 -3" stroke="#54d77c" stroke-width=".8" fill="none" stroke-linecap="round"/>
-<rect x="570" y="59" width="10" height="10" rx="1.5" fill="#29954d"/>
-<path d="M575 67 l-2 -3 M575 67 l0 -5 M575 67 l2 -3" stroke="#54d77c" stroke-width=".8" fill="none" stroke-linecap="round"/>
+<rect x="570" y="46" width="10" height="10" rx="1.5" fill="#18683c"/>
+<rect x="570" y="59" width="10" height="10" rx="1.5" fill="#18683c"/>
 <rect x="570" y="72" width="10" height="10" rx="1.5" fill="#18683c"/>
 <rect x="570" y="85" width="10" height="10" rx="1.5" fill="#133d2a"/>
 <rect x="570" y="98" width="10" height="10" rx="1.5" fill="#133d2a"/>
@@ -313,7 +311,7 @@
 <rect x="583" y="46" width="10" height="10" rx="1.5" fill="#18221e"/>
 <rect x="583" y="59" width="10" height="10" rx="1.5" fill="#18221e"/>
 <rect x="583" y="72" width="10" height="10" rx="1.5" fill="#133d2a"/>
-<rect x="583" y="85" width="10" height="10" rx="1.5" fill="#18683c"/>
+<rect x="583" y="85" width="10" height="10" rx="1.5" fill="#133d2a"/>
 <rect x="583" y="98" width="10" height="10" rx="1.5" fill="#133d2a"/>
 <rect x="583" y="111" width="10" height="10" rx="1.5" fill="#18221e"/>
 <rect x="583" y="124" width="10" height="10" rx="1.5" fill="#18221e"/>
@@ -323,14 +321,12 @@
 <rect x="596" y="85" width="10" height="10" rx="1.5" fill="#18221e"/>
 <rect x="596" y="98" width="10" height="10" rx="1.5" fill="#133d2a"/>
 <rect x="596" y="111" width="10" height="10" rx="1.5" fill="#133d2a"/>
-<rect x="596" y="124" width="10" height="10" rx="1.5" fill="#29954d"/>
-<path d="M601 132 l-2 -3 M601 132 l0 -5 M601 132 l2 -3" stroke="#54d77c" stroke-width=".8" fill="none" stroke-linecap="round"/>
+<rect x="596" y="124" width="10" height="10" rx="1.5" fill="#18683c"/>
 <rect x="609" y="46" width="10" height="10" rx="1.5" fill="#133d2a"/>
-<rect x="609" y="59" width="10" height="10" rx="1.5" fill="#49c16e"/>
-<path d="M614 67 l-2 -3 M614 67 l0 -5 M614 67 l2 -3" stroke="#8bea9e" stroke-width=".8" fill="none" stroke-linecap="round"/>
+<rect x="609" y="59" width="10" height="10" rx="1.5" fill="#29954d"/>
+<path d="M614 67 l-2 -3 M614 67 l0 -5 M614 67 l2 -3" stroke="#54d77c" stroke-width=".8" fill="none" stroke-linecap="round"/>
 <rect x="609" y="72" width="10" height="10" rx="1.5" fill="#18221e"/>
-<rect x="609" y="85" width="10" height="10" rx="1.5" fill="#29954d"/>
-<path d="M614 93 l-2 -3 M614 93 l0 -5 M614 93 l2 -3" stroke="#54d77c" stroke-width=".8" fill="none" stroke-linecap="round"/>
+<rect x="609" y="85" width="10" height="10" rx="1.5" fill="#18683c"/>
 <rect x="609" y="98" width="10" height="10" rx="1.5" fill="#18221e"/>
 <rect x="609" y="111" width="10" height="10" rx="1.5" fill="#18221e"/>
 <rect x="609" y="124" width="10" height="10" rx="1.5" fill="#18221e"/>
@@ -342,7 +338,7 @@
 <rect x="622" y="111" width="10" height="10" rx="1.5" fill="#18221e"/>
 <rect x="622" y="124" width="10" height="10" rx="1.5" fill="#18221e"/>
 <rect x="635" y="46" width="10" height="10" rx="1.5" fill="#18221e"/>
-<rect x="635" y="59" width="10" height="10" rx="1.5" fill="#18221e"/>
+<rect x="635" y="59" width="10" height="10" rx="1.5" fill="#133d2a"/>
 <rect x="635" y="72" width="10" height="10" rx="1.5" fill="#18221e"/>
 <rect x="635" y="85" width="10" height="10" rx="1.5" fill="#133d2a"/>
 <rect x="635" y="98" width="10" height="10" rx="1.5" fill="#18221e"/>
@@ -359,8 +355,7 @@
 <rect x="661" y="59" width="10" height="10" rx="1.5" fill="#18221e"/>
 <rect x="661" y="72" width="10" height="10" rx="1.5" fill="#18221e"/>
 <rect x="661" y="85" width="10" height="10" rx="1.5" fill="#133d2a"/>
-<rect x="661" y="98" width="10" height="10" rx="1.5" fill="#29954d"/>
-<path d="M666 106 l-2 -3 M666 106 l0 -5 M666 106 l2 -3" stroke="#54d77c" stroke-width=".8" fill="none" stroke-linecap="round"/>
+<rect x="661" y="98" width="10" height="10" rx="1.5" fill="#18683c"/>
 <rect x="661" y="111" width="10" height="10" rx="1.5" fill="#18683c"/>
 <rect x="661" y="124" width="10" height="10" rx="1.5" fill="#133d2a"/>
 <rect x="674" y="46" width="10" height="10" rx="1.5" fill="#18221e"/>
@@ -373,18 +368,19 @@
 <rect x="687" y="46" width="10" height="10" rx="1.5" fill="#133d2a"/>
 <rect x="687" y="59" width="10" height="10" rx="1.5" fill="#133d2a"/>
 <rect x="687" y="72" width="10" height="10" rx="1.5" fill="#133d2a"/>
-<rect x="687" y="85" width="10" height="10" rx="1.5" fill="#29954d"/>
-<path d="M692 93 l-2 -3 M692 93 l0 -5 M692 93 l2 -3" stroke="#54d77c" stroke-width=".8" fill="none" stroke-linecap="round"/>
+<rect x="687" y="85" width="10" height="10" rx="1.5" fill="#18683c"/>
 <rect x="687" y="98" width="10" height="10" rx="1.5" fill="#49c16e"/>
 <path d="M692 106 l-2 -3 M692 106 l0 -5 M692 106 l2 -3" stroke="#8bea9e" stroke-width=".8" fill="none" stroke-linecap="round"/>
 <rect x="687" y="111" width="10" height="10" rx="1.5" fill="#49c16e"/>
 <path d="M692 119 l-2 -3 M692 119 l0 -5 M692 119 l2 -3" stroke="#8bea9e" stroke-width=".8" fill="none" stroke-linecap="round"/>
-<rect x="687" y="124" width="10" height="10" rx="1.5" fill="#49c16e"/>
-<path d="M692 132 l-2 -3 M692 132 l0 -5 M692 132 l2 -3" stroke="#8bea9e" stroke-width=".8" fill="none" stroke-linecap="round"/>
-<rect x="700" y="46" width="10" height="10" rx="1.5" fill="#49c16e"/>
-<path d="M705 54 l-2 -3 M705 54 l0 -5 M705 54 l2 -3" stroke="#8bea9e" stroke-width=".8" fill="none" stroke-linecap="round"/>
+<rect x="687" y="124" width="10" height="10" rx="1.5" fill="#29954d"/>
+<path d="M692 132 l-2 -3 M692 132 l0 -5 M692 132 l2 -3" stroke="#54d77c" stroke-width=".8" fill="none" stroke-linecap="round"/>
+<rect x="700" y="46" width="10" height="10" rx="1.5" fill="#29954d"/>
+<path d="M705 54 l-2 -3 M705 54 l0 -5 M705 54 l2 -3" stroke="#54d77c" stroke-width=".8" fill="none" stroke-linecap="round"/>
 <rect x="700" y="59" width="10" height="10" rx="1.5" fill="#49c16e"/>
 <path d="M705 67 l-2 -3 M705 67 l0 -5 M705 67 l2 -3" stroke="#8bea9e" stroke-width=".8" fill="none" stroke-linecap="round"/>
+<rect x="700" y="72" width="10" height="10" rx="1.5" fill="#49c16e"/>
+<path d="M705 80 l-2 -3 M705 80 l0 -5 M705 80 l2 -3" stroke="#8bea9e" stroke-width=".8" fill="none" stroke-linecap="round"/>
 <rect class="event" x="179" y="58" width="12" height="12" rx="2" fill="none" stroke="#e8b44b" stroke-width="1.4" opacity="0"><animate attributeName="opacity" values="0;1;0;0" keyTimes="0;0.134955;0.212237;1" calcMode="discrete" dur="28.467s" repeatCount="indefinite"/></rect>
 <rect x="180" y="59" width="10" height="10" rx="1.5" fill="#6f5640" opacity="0"><animate attributeName="opacity" values="0;0;1;1;0;0" keyTimes="0;0.170083;0.184135;0.430035;0.465163;1" dur="28.467s" repeatCount="indefinite"/></rect>
 <rect x="182" y="62" width="6" height="5" rx="1.5" fill="#2a1f16" opacity="0"><animate attributeName="opacity" values="0;0;1;1;0;0" keyTimes="0;0.180622;0.212237;0.303572;0.331675;1" dur="28.467s" repeatCount="indefinite"/></rect>
