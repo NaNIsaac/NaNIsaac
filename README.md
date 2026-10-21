@@ -24,10 +24,12 @@ transient formation of acoustic Bragg satellites ([TraTT](https://github.com/NaN
 | Science | Tools |
 |---|---|
 | [QoraPhase](https://github.com/NaNIsaac/QoraPhase) · JAX phase retrieval for CDI and BCDI | [codigest](https://github.com/NaNIsaac/codigest) · codebase, diffs and terminal output as LLM context |
-| [ReflectoLearn](https://github.com/NaNIsaac/ReflectoLearn) · differentiable X-ray reflectivity fitting | [deai](https://github.com/NaNIsaac/deai) · strip AI co-author trailers from git history |
-| [QoraFlow](https://github.com/NaNIsaac/QoraFlow) · time-resolved X-ray data at PAL-XFEL | [hanfix](https://github.com/NaNIsaac/hanfix) · re-run commands typed in the Korean layout |
-| [TraTT](https://github.com/NaNIsaac/TraTT) · time-dependent Takagi-Taupin diffraction | [clippath](https://github.com/NaNIsaac/clippath) · clipboard screenshot to a file path for terminal agents |
-| [xray.ooguy](https://xray.ooguy.com) · offline calculators for old beamline PCs | [roi_rectangle](https://github.com/NaNIsaac/roi_rectangle) · rectangular ROIs for NumPy images |
+| [QoraPhaseCU](https://github.com/NaNIsaac/QoraPhaseCU) · phase retrieval in C++/CUDA, with a measured optimization log | [deai](https://github.com/NaNIsaac/deai) · strip AI co-author trailers from git history |
+| [QoraHolo](https://github.com/NaNIsaac/QoraHolo) · holotomography (ODT) reconstruction in C++/CUDA | [hanfix](https://github.com/NaNIsaac/hanfix) · re-run commands typed in the Korean layout |
+| [ReflectoLearn](https://github.com/NaNIsaac/ReflectoLearn) · differentiable X-ray reflectivity fitting | [clippath](https://github.com/NaNIsaac/clippath) · clipboard screenshot to a file path for terminal agents |
+| [QoraFlow](https://github.com/NaNIsaac/QoraFlow) · time-resolved X-ray data at PAL-XFEL | [roi_rectangle](https://github.com/NaNIsaac/roi_rectangle) · rectangular ROIs for NumPy images |
+| [TraTT](https://github.com/NaNIsaac/TraTT) · time-dependent Takagi-Taupin diffraction | |
+| [xray.ooguy](https://xray.ooguy.com) · offline calculators for old beamline PCs | |
 
 ### Upstream
 
