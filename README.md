@@ -4,7 +4,7 @@
 
 <p><b>X-ray physics · Scientific computing</b><br>M.S. student in Physics, Sogang University</p>
 
-<p><b><a href="https://nanisaac.github.io">Website</a></b> &nbsp;·&nbsp; <b><a href="https://nanisaac.github.io/notes/">Notes</a></b> &nbsp;·&nbsp; <b><a href="https://nanisaac.github.io/stats/">Stats</a></b> &nbsp;·&nbsp; <b><a href="https://blog.naver.com/sjbpepper">Blog</a></b> &nbsp;·&nbsp; <b><a href="mailto:isaacyong@naver.com">Email</a></b></p>
+<p><b><a href="https://nanisaac.github.io">Website</a></b> &nbsp;·&nbsp; <b><a href="https://nanisaac.github.io/docs/">Docs</a></b> &nbsp;·&nbsp; <b><a href="https://nanisaac.github.io/notes/">Notes</a></b> &nbsp;·&nbsp; <b><a href="https://nanisaac.github.io/stats/">Stats</a></b> &nbsp;·&nbsp; <b><a href="https://blog.naver.com/sjbpepper">Blog</a></b> &nbsp;·&nbsp; <b><a href="mailto:isaacyong@naver.com">Email</a></b></p>
 
 </div>
 
@@ -23,10 +23,10 @@ transient formation of acoustic Bragg satellites ([TraTT](https://github.com/NaN
 
 | Science | Tools |
 |---|---|
-| [QoraPhase](https://github.com/NaNIsaac/QoraPhase) · JAX phase retrieval for CDI and BCDI | [codigest](https://github.com/NaNIsaac/codigest) · codebase, diffs and terminal output as LLM context |
+| [QoraPhase](https://github.com/NaNIsaac/QoraPhase) ([docs](https://nanisaac.github.io/docs/qoraphase/)) · JAX phase retrieval for CDI and BCDI | [codigest](https://github.com/NaNIsaac/codigest) ([docs](https://nanisaac.github.io/codigest/)) · codebase, diffs and terminal output as LLM context |
 | [QoraPhaseCU](https://github.com/NaNIsaac/QoraPhaseCU) · phase retrieval in C++/CUDA, with a measured optimization log | [deai](https://github.com/NaNIsaac/deai) · strip AI co-author trailers from git history |
 | [QoraHolo](https://github.com/NaNIsaac/QoraHolo) · holotomography (ODT) reconstruction in C++/CUDA | [hanfix](https://github.com/NaNIsaac/hanfix) · re-run commands typed in the Korean layout |
-| [ReflectoLearn](https://github.com/NaNIsaac/ReflectoLearn) · differentiable X-ray reflectivity fitting | [clippath](https://github.com/NaNIsaac/clippath) · clipboard screenshot to a file path for terminal agents |
+| [ReflectoLearn](https://github.com/NaNIsaac/ReflectoLearn) ([docs](https://nanisaac.github.io/docs/reflectolearn/)) · differentiable X-ray reflectivity fitting | [clippath](https://github.com/NaNIsaac/clippath) · clipboard screenshot to a file path for terminal agents |
 | [QoraFlow](https://github.com/NaNIsaac/QoraFlow) · time-resolved X-ray data at PAL-XFEL | [roi_rectangle](https://github.com/NaNIsaac/roi_rectangle) · rectangular ROIs for NumPy images |
 | [TraTT](https://github.com/NaNIsaac/TraTT) · time-dependent Takagi-Taupin diffraction | |
 | [xray.ooguy](https://xray.ooguy.com) · offline calculators for old beamline PCs | |
