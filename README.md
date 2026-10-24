@@ -16,7 +16,7 @@ I study X-ray scattering and diffraction, and build the software around the expe
 simulation, inverse problems, coherent imaging, and beamtime data analysis.
 Longer write-ups live on [my website](https://nanisaac.github.io).
 
-**Current research:** transient formation of acoustic Bragg satellites in time-dependent dynamical X-ray diffraction ([TraTT](https://github.com/NaNIsaac/TraTT)).
+**Current research:** transient formation of acoustic Bragg satellites in time-dependent dynamical X-ray diffraction ([TraTT](https://github.com/NaNIsaac-Research/TraTT)).
 
 **Recent presentation:** poster P2.17, KPS 2026 Fall Meeting, Jeju, October 22, 2026.
 
@@ -29,7 +29,7 @@ Longer write-ups live on [my website](https://nanisaac.github.io).
 | [QoraHolo](https://github.com/NaNIsaac/QoraHolo) · holotomography (ODT) reconstruction in C++/CUDA | [hanfix](https://github.com/NaNIsaac/hanfix) · re-run commands typed in the Korean layout |
 | [ReflectoLearn](https://github.com/NaNIsaac/ReflectoLearn) ([docs](https://nanisaac.github.io/docs/reflectolearn/)) · differentiable X-ray reflectivity fitting | [clippath](https://github.com/NaNIsaac/clippath) · clipboard screenshot to a file path for terminal agents |
 | [QoraFlow](https://github.com/NaNIsaac/QoraFlow) · time-resolved X-ray data at PAL-XFEL | [roi_rectangle](https://github.com/NaNIsaac/roi_rectangle) · rectangular ROIs for NumPy images |
-| [TraTT](https://github.com/NaNIsaac/TraTT) · time-dependent Takagi-Taupin diffraction | |
+| [TraTT](https://github.com/NaNIsaac-Research/TraTT) · time-dependent Takagi-Taupin diffraction | |
 | [xray.ooguy](https://xray.ooguy.com) · offline calculators for old beamline PCs | |
 
 ### Upstream
