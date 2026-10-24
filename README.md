@@ -54,6 +54,4 @@ transient formation of acoustic Bragg satellites ([TraTT](https://github.com/NaN
        alt="Pepper harvesting GitHub contributions" />
 </picture>
 
-<sub>Formerly "SJB7777". Renamed to "NaNIsaac" on October 14, 2026, at 00:06:41 KST.
-
-A new name, a continuation of the same journey.</sub>
+<sub>Formerly "SJB7777". Renamed to "NaNIsaac" on October 14, 2026, at 00:06:41 KST.</sub>
