@@ -16,9 +16,19 @@ I study X-ray scattering and diffraction, and build the software around the expe
 simulation, inverse problems, coherent imaging, and beamtime data analysis.
 Longer write-ups live on [my website](https://nanisaac.github.io).
 
-**Current research:** transient formation of acoustic Bragg satellites in time-dependent dynamical X-ray diffraction ([TraTT](https://github.com/NaNIsaac-Research/TraTT)).
+### Research
 
-**Recent presentation:** poster P2.17, KPS 2026 Fall Meeting, Jeju, October 22, 2026.
+Research code, results and poster sources live in the
+[NaNIsaac Research](https://github.com/NaNIsaac-Research) organization.
+
+- [TraTT](https://github.com/NaNIsaac-Research/TraTT): how acoustic Bragg satellites form while a
+  GHz sound wave enters a perfect crystal, from time-dependent Takagi-Taupin dynamical diffraction.
+  Poster P2.17, KPS 2026 Fall Meeting, Jeju, October 22, 2026
+  ([poster](https://github.com/NaNIsaac-Research/TraTT#readme),
+  [docs](https://nanisaac.github.io/docs/tratt/)).
+- XRR inverse problem: how much of a thin film one X-ray reflectivity curve determines, and whether
+  a generative posterior model is needed. Work in progress
+  ([Experiment 001](https://github.com/NaNIsaac/ReflectoLearn/tree/research/identifiability/docs/identifiability)).
 
 ### Selected work
 
