@@ -16,8 +16,9 @@ I study X-ray scattering and diffraction, and build the software around the expe
 simulation, inverse problems, coherent imaging, and beamtime data analysis.
 Longer write-ups live on [my website](https://nanisaac.github.io).
 
-**Now:** poster P2.17 at the KPS 2026 Fall Meeting, Jeju, 22 October:
-transient formation of acoustic Bragg satellites ([TraTT](https://github.com/NaNIsaac/TraTT)).
+**Current research:** transient formation of acoustic Bragg satellites in time-dependent dynamical X-ray diffraction ([TraTT](https://github.com/NaNIsaac/TraTT)).
+
+**Recent presentation:** poster P2.17, KPS 2026 Fall Meeting, Jeju, October 22, 2026.
 
 ### Selected work
 
