@@ -45,12 +45,14 @@ Research code, results and poster sources live in the
 ### Upstream
 
 <!-- contrib:start -->
-- `Q07K/prompt-gallery` [Make accessories optional in X-ray film photo guidance](https://github.com/Q07K/prompt-gallery/pull/21) <sub>merged</sub>
-- `Q07K/prompt-gallery` [Add hospital X-ray film prompt with approved example](https://github.com/Q07K/prompt-gallery/pull/18) <sub>merged</sub>
-- `pydata/xarray` [DOC: Link windowed operations tutorial from computation guide](https://github.com/pydata/xarray/pull/11720) <sub>merged</sub>
-- `dkriegner/xrayutilities` [feat(KinematicalMultiBeamModel): optional non-integer thicknesses](https://github.com/dkriegner/xrayutilities/pull/248) <sub>open</sub>
-- `tomopy/tomopy` [DOC: Describe the roi argument of normalize_roi correctly](https://github.com/tomopy/tomopy/pull/664) <sub>open</sub>
-- `clatlan/cdiutils` [Fix int32 overflow in SpaceConverter.get_transformation_matrix](https://github.com/clatlan/cdiutils/pull/112) <sub>open</sub>
+- `NaNIsaac-Research/TraTT` [docs: give the satellite movie a beginning, a front and an ending](https://github.com/NaNIsaac-Research/TraTT/pull/24) <sub>merged</sub>
+- `NaNIsaac-Research/TraTT` [feat: add a movie of satellites forming as the sound enters the crystal](https://github.com/NaNIsaac-Research/TraTT/pull/23) <sub>merged</sub>
+- `NaNIsaac-Research/.github` [docs: add the organization profile](https://github.com/NaNIsaac-Research/.github/pull/1) <sub>merged</sub>
+- `NaNIsaac-Research/TraTT` [docs: point repository URLs to NaNIsaac-Research](https://github.com/NaNIsaac-Research/TraTT/pull/22) <sub>merged</sub>
+- `NaNIsaac-Research/TraTT` [docs: remove numbered and banner comments](https://github.com/NaNIsaac-Research/TraTT/pull/20) <sub>merged</sub>
+- `NaNIsaac-Research/TraTT` [docs: add an overview and an equations page for the docs site](https://github.com/NaNIsaac-Research/TraTT/pull/18) <sub>merged</sub>
+- `NaNIsaac-Research/TraTT` [docs: add the lineage of TraTT](https://github.com/NaNIsaac-Research/TraTT/pull/17) <sub>merged</sub>
+- `NaNIsaac-Research/TraTT` [research: paper viability (T1, T2)](https://github.com/NaNIsaac-Research/TraTT/pull/16) <sub>open</sub>
 <!-- contrib:end -->
 
 <sub>Pepper (후추), my black-and-tan Shiba Inu, takes care of the contribution garden.</sub>
