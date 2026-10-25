@@ -8,6 +8,7 @@ on:
   push:
     paths:
       - "scripts/pepper_harvest.py"
+      - "scripts/update_contrib.py"
       - "assets/pepper/frames/*.png"
       - ".github/workflows/profile.yml"
 
@@ -19,10 +20,8 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v7
-      - name: Update upstream PR list
+      - name: Update upstream PR list from the stats snapshot
         run: python3 scripts/update_contrib.py
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       - name: Generate Pepper's contribution garden
         run: python3 scripts/pepper_harvest.py --username "$GITHUB_REPOSITORY_OWNER" --output-dir assets/pepper
         env:
