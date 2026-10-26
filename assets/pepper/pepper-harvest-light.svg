@@ -2,11 +2,11 @@
  width="734" height="170" viewBox="0 0 734 170" role="img"
  aria-label="Pepper the Shiba Inu exploring NaNIsaac's GitHub contribution garden">
 <title>Pepper's Harvest — NaNIsaac</title>
-<desc>3,845 contributions · through 2026-10-25. Pepper sniffs out 3 treats among contribution days.</desc>
+<desc>3,945 contributions · through 2026-10-26. Pepper sniffs out 3 treats among contribution days.</desc>
 <rect width="734" height="170" rx="12" fill="#f6f7f5"/>
 <text x="24" y="24" font-family="Arial,sans-serif" font-size="13" font-weight="bold" fill="#252c29">Pepper's Harvest</text>
 <text x="710" y="23" text-anchor="end" font-family="Arial,sans-serif" font-size="10" fill="#66736b">NaNIsaac</text>
-<text x="24" y="157" font-family="Arial,sans-serif" font-size="10" fill="#66736b">3,845 contributions · through 2026-10-25</text>
+<text x="24" y="157" font-family="Arial,sans-serif" font-size="10" fill="#66736b">3,945 contributions · through 2026-10-26</text>
 <rect x="24" y="46" width="10" height="10" rx="1.5" fill="#e8eeea"/>
 <rect x="24" y="59" width="10" height="10" rx="1.5" fill="#e8eeea"/>
 <rect x="24" y="72" width="10" height="10" rx="1.5" fill="#e8eeea"/>
@@ -376,7 +376,9 @@
 <path d="M692 119 l-2 -3 M692 119 l0 -5 M692 119 l2 -3" stroke="#174d32" stroke-width=".8" fill="none" stroke-linecap="round"/>
 <rect x="687" y="124" width="10" height="10" rx="1.5" fill="#276d43"/>
 <path d="M692 132 l-2 -3 M692 132 l0 -5 M692 132 l2 -3" stroke="#174d32" stroke-width=".8" fill="none" stroke-linecap="round"/>
-<rect x="700" y="46" width="10" height="10" rx="1.5" fill="#85c781"/>
+<rect x="700" y="46" width="10" height="10" rx="1.5" fill="#4b9e5b"/>
+<path d="M705 54 l-2 -3 M705 54 l0 -5 M705 54 l2 -3" stroke="#286d3e" stroke-width=".8" fill="none" stroke-linecap="round"/>
+<rect x="700" y="59" width="10" height="10" rx="1.5" fill="#b9ddb3"/>
 <rect class="event" x="166" y="58" width="12" height="12" rx="2" fill="none" stroke="#d9a441" stroke-width="1.4" opacity="0"><animate attributeName="opacity" values="0;1;0;0" keyTimes="0;0.130184;0.20869;1" calcMode="discrete" dur="28.023s" repeatCount="indefinite"/></rect>
 <rect x="167" y="59" width="10" height="10" rx="1.5" fill="#8a6a4a" opacity="0"><animate attributeName="opacity" values="0;0;1;1;0;0" keyTimes="0;0.165869;0.180142;0.429934;0.465618;1" dur="28.023s" repeatCount="indefinite"/></rect>
 <rect x="169" y="62" width="6" height="5" rx="1.5" fill="#4a3626" opacity="0"><animate attributeName="opacity" values="0;0;1;1;0;0" keyTimes="0;0.176574;0.20869;0.30147;0.330017;1" dur="28.023s" repeatCount="indefinite"/></rect>

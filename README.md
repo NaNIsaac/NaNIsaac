@@ -45,14 +45,14 @@ Research code, results and poster sources live in the
 ### Upstream
 
 <!-- contrib:start -->
+- `NaNIsaac-Research/ReflectoLearn` [research: Fisher information against global fits, experiment 005](https://github.com/NaNIsaac-Research/ReflectoLearn/pull/53) <sub>merged</sub>
 - `NaNIsaac-Research/TraTT` [docs: give the satellite movie a beginning, a front and an ending](https://github.com/NaNIsaac-Research/TraTT/pull/24) <sub>merged</sub>
 - `NaNIsaac-Research/TraTT` [feat: add a movie of satellites forming as the sound enters the crystal](https://github.com/NaNIsaac-Research/TraTT/pull/23) <sub>merged</sub>
 - `NaNIsaac-Research/.github` [docs: add the organization profile](https://github.com/NaNIsaac-Research/.github/pull/1) <sub>merged</sub>
 - `NaNIsaac-Research/TraTT` [docs: point repository URLs to NaNIsaac-Research](https://github.com/NaNIsaac-Research/TraTT/pull/22) <sub>merged</sub>
-- `NaNIsaac-Research/TraTT` [docs: remove numbered and banner comments](https://github.com/NaNIsaac-Research/TraTT/pull/20) <sub>merged</sub>
-- `NaNIsaac-Research/TraTT` [docs: add an overview and an equations page for the docs site](https://github.com/NaNIsaac-Research/TraTT/pull/18) <sub>merged</sub>
-- `NaNIsaac-Research/TraTT` [docs: add the lineage of TraTT](https://github.com/NaNIsaac-Research/TraTT/pull/17) <sub>merged</sub>
-- `NaNIsaac-Research/TraTT` [research: paper viability (T1, T2)](https://github.com/NaNIsaac-Research/TraTT/pull/16) <sub>open</sub>
+- `NaNIsaac-Research/TraTT` [docs: study index and a shorter README first screen](https://github.com/NaNIsaac-Research/TraTT/pull/25) <sub>open</sub>
+- `NaNIsaac-Research/.github` [docs: point ReflectoLearn links at NaNIsaac-Research](https://github.com/NaNIsaac-Research/.github/pull/2) <sub>open</sub>
+- `NaNIsaac-Research/ReflectoLearn` [docs: research experiment index and README research section](https://github.com/NaNIsaac-Research/ReflectoLearn/pull/51) <sub>open</sub>
 <!-- contrib:end -->
 
 <sub>Pepper (후추), my black-and-tan Shiba Inu, takes care of the contribution garden.</sub>
