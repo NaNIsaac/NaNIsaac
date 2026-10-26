@@ -1,4 +1,9 @@
-"""Rewrite the upstream-PR block of README.md from the GitHub search API."""
+"""Rewrite the pull-request blocks of README.md from the GitHub search API.
+
+Two blocks: the newest pull requests in the NaNIsaac Research organization, and pull requests
+merged by third-party projects. The second block, heading included, is written only when such a
+merge exists, so the profile never presents the owner's own organization as upstream work.
+"""
 
 import json
 import os
@@ -7,15 +12,16 @@ import urllib.request
 from pathlib import Path
 
 USER = "NaNIsaac"
-SKIP = {"M1zz/TheFirstCommit", "center4upt/XFEL_data"}  # not real contributions
+ORG = "NaNIsaac-Research"
+# Not contributions to the owner's field: a first-commit exercise, a branch-only PR, a prompt gallery.
+SKIP = {"M1zz/TheFirstCommit", "center4upt/XFEL_data", "Q07K/prompt-gallery"}
 LIMIT = 8
 README = Path(__file__).parents[1] / "README.md"
 
 
-def search() -> list[dict]:
-    q = f"author:{USER}+type:pr+-user:{USER}"
+def search(query: str) -> list[dict]:
     req = urllib.request.Request(
-        f"https://api.github.com/search/issues?q={q}&sort=created&per_page=50",
+        f"https://api.github.com/search/issues?q={query}&sort=created&per_page=100",
         headers={"Accept": "application/vnd.github+json"},
     )
     if token := os.environ.get("GITHUB_TOKEN"):
@@ -24,31 +30,53 @@ def search() -> list[dict]:
         return json.load(r)["items"]
 
 
-def line(pr: dict) -> str | None:
-    repo = pr["repository_url"].removeprefix("https://api.github.com/repos/")
-    if repo in SKIP:
-        return None
+def state(pr: dict) -> str | None:
     if pr["pull_request"].get("merged_at"):
-        state = "merged"
-    elif pr["state"] == "open":
-        state = "open"
-    else:
-        return None
-    return f"- `{repo}` [{pr['title']}]({pr['html_url']}) <sub>{state}</sub>"
+        return "merged"
+    return "open" if pr["state"] == "open" else None
+
+
+def repo(pr: dict) -> str:
+    return pr["repository_url"].removeprefix("https://api.github.com/repos/")
+
+
+def line(pr: dict) -> str:
+    return f"- `{repo(pr)}` [{pr['title']}]({pr['html_url']}) <sub>{state(pr)}</sub>"
+
+
+def research_block(prs: list[dict]) -> str:
+    shown = [pr for pr in prs if state(pr)][:LIMIT]
+    # Merged first, newest first within each.
+    shown.sort(key=lambda pr: state(pr) == "open")
+    lines = "\n".join(map(line, shown)) or "- none yet"
+    return f"### Research organization\n\n{lines}"
+
+
+def upstream_block(prs: list[dict]) -> str:
+    merged = [pr for pr in prs if state(pr) == "merged" and repo(pr) not in SKIP]
+    merged = merged[:LIMIT]
+    if not merged:
+        return ""
+    return "### Upstream\n\n" + "\n".join(map(line, merged))
+
+
+def fill(text: str, name: str, block: str) -> str:
+    return re.sub(
+        rf"(<!-- {name}:start -->).*?(<!-- {name}:end -->)",
+        lambda m: f"{m[1]}\n{block}\n{m[2]}" if block else f"{m[1]}\n{m[2]}",
+        text,
+        flags=re.DOTALL,
+    )
 
 
 def main() -> None:
-    lines = [l for pr in search() if (l := line(pr))][:LIMIT]
-    lines.sort(key=lambda l: l.endswith("<sub>open</sub>"))  # merged first, newest first within each
-    block = "\n".join(lines) or "- none yet"
+    research = search(f"author:{USER}+type:pr+org:{ORG}")
+    # A separate query, so a busy organization cannot push outside work out of the results.
+    outside = search(f"author:{USER}+type:pr+-user:{USER}+-org:{ORG}")
     text = README.read_text(encoding="utf-8")
-    new = re.sub(
-        r"(<!-- contrib:start -->).*?(<!-- contrib:end -->)",
-        lambda m: f"{m[1]}\n{block}\n{m[2]}",
-        text,
-        flags=re.S,
-    )
-    README.write_text(new, encoding="utf-8", newline="\n")
+    text = fill(text, "research", research_block(research))
+    text = fill(text, "upstream", upstream_block(outside))
+    README.write_text(text, encoding="utf-8", newline="\n")
 
 
 if __name__ == "__main__":
