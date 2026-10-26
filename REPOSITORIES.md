@@ -67,11 +67,10 @@ Status words come from what was read or run during the 2026-10-23 audit; a row s
 
 | Repository | Visibility | Purpose | Level | Role and related | Unfinished / next |
 |---|---|---|---|---|---|
-| [PlaneFight](https://github.com/NaNIsaac/PlaneFight) | private | Vertical-scrolling shooter in raylib (2023-02) | Menu, play, pause and game-over code exist; builds. Not yet run | Past work; a subtree of games-2023 | Run capture on a desktop session |
-| [ScreenSaver](https://github.com/NaNIsaac/ScreenSaver) | private | openFrameworks particle and animation sketches (2023-03, three co-developers) | 746 lines of code; not built (openFrameworks not installed) | Past work; a subtree of games-2023 | openFrameworks tree and a run (heavy install, needs approval) |
-| [FlatPhysics](https://github.com/NaNIsaac/FlatPhysics) | public | C++ 2D rigid-body engine with a raylib slingshot prototype (2023-03 to 05, three co-developers) | Engine (circles, boxes, convex and concave polygons, AABB broad phase, SAT, impulses) and game; builds. Not yet run | Engine and prototype; ShootingGame continues it. A subtree of games-2023 | Run capture |
-| [ShootingGame](https://github.com/NaNIsaac/ShootingGame) | public | Continuation of the FlatPhysics prototype: slingshot, limited shots, enemy HP (2023-05) | Damage, sound effects and music; builds. Not yet run | Past work; a subtree of games-2023 | Run capture |
-| [games-2023](https://github.com/NaNIsaac/games-2023) | public | Collection of the four 2023 projects as git subtrees | README and four folders | Collection and preservation | Add captured images (PR #1) |
+| [PlaneFight](https://github.com/NaNIsaac/PlaneFight) | public | Vertical-scrolling shooter in raylib (2023-02) | Menu, play, pause and game-over code exist; builds. Not yet run | Past work, written alone | Run capture on a desktop session |
+| [ScreenSaver](https://github.com/NaNIsaac/ScreenSaver) | public | openFrameworks particle and animation sketches (2023-03, study group of three, one scene each) | 746 lines of code; not built (openFrameworks not installed) | Past work | openFrameworks tree and a run (heavy install, needs approval) |
+| [FlatPhysics](https://github.com/NaNIsaac/FlatPhysics) | public | C++ 2D rigid-body engine with a raylib slingshot prototype (2023-03 to 05; the engine is NaNIsaac alone, the game branches are the study group's) | Engine (circles, boxes, convex and concave polygons, AABB broad phase, SAT, impulses) and game; builds. Not yet run | Engine and prototype; ShootingGame continues it. | Run capture |
+| [ShootingGame](https://github.com/NaNIsaac/ShootingGame) | public | Continuation of the FlatPhysics prototype: slingshot, limited shots, enemy HP (2023-05) | Damage, sound effects and music; builds. Not yet run | Past work, made by the study group on a copy of the FlatPhysics engine | Run capture |
 
 ## Developer tools
 
