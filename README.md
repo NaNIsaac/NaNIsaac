@@ -42,18 +42,24 @@ Research code, results and poster sources live in the
 | [TraTT](https://github.com/NaNIsaac-Research/TraTT) · time-dependent Takagi-Taupin diffraction | |
 | [xray.ooguy](https://xray.ooguy.com) · offline calculators for old beamline PCs | |
 
-### Upstream
+<!-- research:start -->
+### Research organization
 
-<!-- contrib:start -->
+- `NaNIsaac-Research/notes` [docs: add the XG4 basin minimum validation records](https://github.com/NaNIsaac-Research/notes/pull/2) <sub>merged</sub>
+- `NaNIsaac-Research/notes` [feat: add record templates and the record checker](https://github.com/NaNIsaac-Research/notes/pull/1) <sub>merged</sub>
+- `NaNIsaac-Research/TraTT` [docs: study index and a shorter README first screen](https://github.com/NaNIsaac-Research/TraTT/pull/25) <sub>merged</sub>
 - `NaNIsaac-Research/ReflectoLearn` [research: Fisher information against global fits, experiment 005](https://github.com/NaNIsaac-Research/ReflectoLearn/pull/53) <sub>merged</sub>
+- `NaNIsaac-Research/ReflectoLearn` [docs: research experiment index and README research section](https://github.com/NaNIsaac-Research/ReflectoLearn/pull/51) <sub>merged</sub>
 - `NaNIsaac-Research/TraTT` [docs: give the satellite movie a beginning, a front and an ending](https://github.com/NaNIsaac-Research/TraTT/pull/24) <sub>merged</sub>
 - `NaNIsaac-Research/TraTT` [feat: add a movie of satellites forming as the sound enters the crystal](https://github.com/NaNIsaac-Research/TraTT/pull/23) <sub>merged</sub>
-- `NaNIsaac-Research/.github` [docs: add the organization profile](https://github.com/NaNIsaac-Research/.github/pull/1) <sub>merged</sub>
-- `NaNIsaac-Research/TraTT` [docs: point repository URLs to NaNIsaac-Research](https://github.com/NaNIsaac-Research/TraTT/pull/22) <sub>merged</sub>
-- `NaNIsaac-Research/TraTT` [docs: study index and a shorter README first screen](https://github.com/NaNIsaac-Research/TraTT/pull/25) <sub>open</sub>
 - `NaNIsaac-Research/.github` [docs: point ReflectoLearn links at NaNIsaac-Research](https://github.com/NaNIsaac-Research/.github/pull/2) <sub>open</sub>
-- `NaNIsaac-Research/ReflectoLearn` [docs: research experiment index and README research section](https://github.com/NaNIsaac-Research/ReflectoLearn/pull/51) <sub>open</sub>
-<!-- contrib:end -->
+<!-- research:end -->
+
+<!-- upstream:start -->
+### Upstream
+
+- `pydata/xarray` [DOC: Link windowed operations tutorial from computation guide](https://github.com/pydata/xarray/pull/11720) <sub>merged</sub>
+<!-- upstream:end -->
 
 <sub>Pepper (후추), my black-and-tan Shiba Inu, takes care of the contribution garden.</sub>
 
