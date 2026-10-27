@@ -45,13 +45,13 @@ Research code, results and poster sources live in the
 <!-- research:start -->
 ### Research organization
 
-- `NaNIsaac-Research/notes` [docs: add the XG4 basin minimum validation records](https://github.com/NaNIsaac-Research/notes/pull/2) <sub>merged</sub>
-- `NaNIsaac-Research/notes` [feat: add record templates and the record checker](https://github.com/NaNIsaac-Research/notes/pull/1) <sub>merged</sub>
+- `NaNIsaac-Research/TraTT` [docs: use physical names and defined scaled quantities in reader-facing equations](https://github.com/NaNIsaac-Research/TraTT/pull/30) <sub>merged</sub>
+- `NaNIsaac-Research/ReflectoLearn` [docs: index the reports and give each hand-written one a summary](https://github.com/NaNIsaac-Research/ReflectoLearn/pull/56) <sub>merged</sub>
+- `NaNIsaac-Research/TraTT` [docs: add a reports index and a Reports section to the README](https://github.com/NaNIsaac-Research/TraTT/pull/29) <sub>merged</sub>
+- `NaNIsaac-Research/TraTT` [test: script for convergence, limit and boundary-flux checks](https://github.com/NaNIsaac-Research/TraTT/pull/27) <sub>merged</sub>
 - `NaNIsaac-Research/TraTT` [docs: study index and a shorter README first screen](https://github.com/NaNIsaac-Research/TraTT/pull/25) <sub>merged</sub>
 - `NaNIsaac-Research/ReflectoLearn` [research: Fisher information against global fits, experiment 005](https://github.com/NaNIsaac-Research/ReflectoLearn/pull/53) <sub>merged</sub>
 - `NaNIsaac-Research/ReflectoLearn` [docs: research experiment index and README research section](https://github.com/NaNIsaac-Research/ReflectoLearn/pull/51) <sub>merged</sub>
-- `NaNIsaac-Research/TraTT` [docs: give the satellite movie a beginning, a front and an ending](https://github.com/NaNIsaac-Research/TraTT/pull/24) <sub>merged</sub>
-- `NaNIsaac-Research/TraTT` [feat: add a movie of satellites forming as the sound enters the crystal](https://github.com/NaNIsaac-Research/TraTT/pull/23) <sub>merged</sub>
 - `NaNIsaac-Research/.github` [docs: point ReflectoLearn links at NaNIsaac-Research](https://github.com/NaNIsaac-Research/.github/pull/2) <sub>open</sub>
 <!-- research:end -->
 
