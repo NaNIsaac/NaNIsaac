@@ -27,8 +27,8 @@ Research code, results and poster sources live in the
   ([poster](https://github.com/NaNIsaac-Research/TraTT#readme),
   [docs](https://nanisaac.github.io/docs/tratt/)).
 - XRR inverse problem: how much of a thin film one X-ray reflectivity curve determines, and whether
-  a generative posterior model is needed. Work in progress
-  ([Experiment 001](https://github.com/NaNIsaac/ReflectoLearn/tree/research/identifiability/docs/identifiability)).
+  a generative posterior model is needed. Five registered experiments
+  ([index](https://github.com/NaNIsaac-Research/ReflectoLearn/blob/main/docs/research/README.md)).
 
 ### Selected work
 
@@ -37,7 +37,7 @@ Research code, results and poster sources live in the
 | [QoraPhase](https://github.com/NaNIsaac/QoraPhase) ([docs](https://nanisaac.github.io/docs/qoraphase/)) · JAX phase retrieval for CDI and BCDI | [codigest](https://github.com/NaNIsaac/codigest) ([docs](https://nanisaac.github.io/codigest/)) · codebase, diffs and terminal output as LLM context |
 | [QoraPhaseCU](https://github.com/NaNIsaac/QoraPhaseCU) · phase retrieval in C++/CUDA, with a measured optimization log | [deai](https://github.com/NaNIsaac/deai) · strip AI co-author trailers from git history |
 | [QoraHolo](https://github.com/NaNIsaac/QoraHolo) · holotomography (ODT) reconstruction in C++/CUDA | [hanfix](https://github.com/NaNIsaac/hanfix) · re-run commands typed in the Korean layout |
-| [ReflectoLearn](https://github.com/NaNIsaac/ReflectoLearn) ([docs](https://nanisaac.github.io/docs/reflectolearn/)) · differentiable X-ray reflectivity fitting | [clippath](https://github.com/NaNIsaac/clippath) · clipboard screenshot to a file path for terminal agents |
+| [ReflectoLearn](https://github.com/NaNIsaac-Research/ReflectoLearn) ([docs](https://nanisaac.github.io/docs/reflectolearn/)) · differentiable X-ray reflectivity fitting | [clippath](https://github.com/NaNIsaac/clippath) · clipboard screenshot to a file path for terminal agents |
 | [QoraFlow](https://github.com/NaNIsaac/QoraFlow) · time-resolved X-ray data at PAL-XFEL | [roi_rectangle](https://github.com/NaNIsaac/roi_rectangle) · rectangular ROIs for NumPy images |
 | [TraTT](https://github.com/NaNIsaac-Research/TraTT) · time-dependent Takagi-Taupin diffraction | |
 | [xray.ooguy](https://xray.ooguy.com) · offline calculators for old beamline PCs | |
