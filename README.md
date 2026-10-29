@@ -45,6 +45,7 @@ Research code, results and poster sources live in the
 <!-- research:start -->
 ### Research organization
 
+- `NaNIsaac-Research/ReflectoLearn` [docs(objective): register experiment 006, the cost of log-type objectives against the Poisson likelihood](https://github.com/NaNIsaac-Research/ReflectoLearn/pull/60) <sub>merged</sub>
 - `NaNIsaac-Research/ReflectoLearn` [fix(genx_fit): oxide under the film, oxide roughness free in the final stage](https://github.com/NaNIsaac-Research/ReflectoLearn/pull/59) <sub>merged</sub>
 - `NaNIsaac-Research/ReflectoLearn` [docs: add a Start here block to the reports index](https://github.com/NaNIsaac-Research/ReflectoLearn/pull/57) <sub>merged</sub>
 - `NaNIsaac-Research/TraTT` [docs: add a Start here block to the reports index](https://github.com/NaNIsaac-Research/TraTT/pull/33) <sub>merged</sub>
@@ -52,7 +53,6 @@ Research code, results and poster sources live in the
 - `NaNIsaac-Research/TraTT` [docs: use physical names and defined scaled quantities in reader-facing equations](https://github.com/NaNIsaac-Research/TraTT/pull/30) <sub>merged</sub>
 - `NaNIsaac-Research/ReflectoLearn` [docs: index the reports and give each hand-written one a summary](https://github.com/NaNIsaac-Research/ReflectoLearn/pull/56) <sub>merged</sub>
 - `NaNIsaac-Research/TraTT` [docs: add a reports index and a Reports section to the README](https://github.com/NaNIsaac-Research/TraTT/pull/29) <sub>merged</sub>
-- `NaNIsaac-Research/ReflectoLearn` [docs(objective): register experiment 006, the cost of log-type objectives against the Poisson likelihood](https://github.com/NaNIsaac-Research/ReflectoLearn/pull/60) <sub>open</sub>
 <!-- research:end -->
 
 <!-- upstream:start -->
