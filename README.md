@@ -28,7 +28,7 @@ Research code, results and poster sources live in the
   [docs](https://nanisaac.github.io/docs/tratt/)).
 - XRR inverse problem: how much of a thin film one X-ray reflectivity curve determines, and whether
   a generative posterior model is needed. Work in progress
-  ([Experiment 001](https://github.com/NaNIsaac-Research/ReflectoLearn/blob/main/docs/research/README.md)).
+  ([research experiment index](https://github.com/NaNIsaac-Research/ReflectoLearn/blob/main/docs/research/README.md), including Experiment 001).
 
 ### Scientific visualization
 
