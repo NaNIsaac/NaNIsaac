@@ -2,10 +2,8 @@
 
 <h1>Isaac Yong (용이삭)</h1>
 
-<p><strong>Physics researcher building scientific software</strong><br>
-X-ray diffraction · Inverse problems · Computational imaging</p>
-
-<p>M.S. student in Physics, Sogang University</p>
+<p><strong>X-ray physics · Inverse problems · Scientific software</strong><br>
+M.S. student in Physics, Sogang University</p>
 
 <p>
   <a href="https://nanisaac.github.io"><strong>Portfolio</strong></a> ·
@@ -17,75 +15,59 @@ X-ray diffraction · Inverse problems · Computational imaging</p>
 
 </div>
 
-**I work at the boundary between X-ray experiments and computation.** My central
-question is: *What can a diffraction measurement actually tell us, and how can
-we check the answer?*
+**I write numerical models, inverse solvers, and data pipelines for X-ray experiments.**
+My work ranges from predicting diffraction patterns to reconstructing objects,
+fitting reflectivity curves, and reducing detector data. My scientific code uses
+Python (NumPy, JAX, PyTorch), with C++20/CUDA explored in QoraPhaseCU.
 
-I build physical models, inverse methods, and experiment-facing software to
-turn scattering data into images, material parameters, and reproducible
-analyses. A convincing reconstruction is not necessarily a unique solution;
-understanding noise, ambiguity, and failure modes matters just as much.
+## Selected work
 
-<img src="./assets/phase-retrieval.gif" width="100%" alt="Animated reconstruction of the synthetic NaNIsaac lettering from a simulated diffraction pattern" />
+- **[TraTT](https://github.com/NaNIsaac-Research/TraTT) — dynamical diffraction.**
+  Time-dependent Takagi–Taupin simulations of Bragg satellites as a GHz acoustic wave
+  enters a crystal. [Calculated findings](https://github.com/NaNIsaac-Research/TraTT/blob/main/docs/FINDINGS.md) ·
+  [KPS 2026 Fall poster preview](https://github.com/NaNIsaac-Research/TraTT/blob/main/figures/poster/poster_preview.jpg).
+- **[ReflectoLearn](https://github.com/NaNIsaac-Research/ReflectoLearn) — X-ray reflectivity inference.**
+  CNN starting estimates and differentiable Abeles fitting, alongside research on
+  parameter identifiability, count statistics, and wrong optimization basins.
+  [Findings and limits](https://github.com/NaNIsaac-Research/ReflectoLearn/blob/main/docs/FINDINGS.md).
+- **[QoraPhase](https://github.com/NaNIsaac/QoraPhase) — coherent diffraction imaging.**
+  Iterative phase retrieval in JAX for 2D/3D CDI and BCDI.
+  [Synthetic reconstruction](https://github.com/NaNIsaac/QoraPhase/blob/main/docs/reconstruction.png) ·
+  [Measured-data comparison and limitations](https://github.com/NaNIsaac/QoraPhase/blob/main/docs/benchmarks/measured.md).
+- **[QoraFlow](https://github.com/NaNIsaac/QoraFlow) — experimental data reduction.**
+  PAL-XFEL pump–probe diffraction frames to laser-on/off averages and delay-resolved
+  ROI intensity and peak shifts.
+  [Reduction steps](https://github.com/NaNIsaac/QoraFlow/blob/main/docs/pipeline.md) ·
+  [Synthetic example](https://github.com/NaNIsaac/QoraFlow/blob/main/docs/pipeline_example.png).
 
-<sub>A small illustration of that idea: <a href="https://github.com/NaNIsaac/QoraPhase">QoraPhase</a>
-recovers a <strong>synthetic</strong> object from simulated diffraction intensity (the phase
-is not supplied). <a href="./scripts/name_gif.py">Generation script</a>. This animation is
-not a measured-data validation.</sub>
+<p align="center">
+  <img src="./assets/phase-retrieval.gif" width="760"
+       alt="Synthetic phase retrieval animation reconstructing the NaNIsaac lettering from simulated diffraction intensity" />
+</p>
+<p align="center"><sub>Not measured data: a simulated diffraction intensity
+reconstructed with <a href="https://github.com/NaNIsaac/QoraPhase">QoraPhase</a>.
+<a href="./scripts/name_gif.py">Reproduce the animation</a>.</sub></p>
 
-## Research questions
+## Beyond the research code
 
-- **How does a Bragg satellite form in time?** I model X-ray diffraction as a
-  GHz acoustic wave enters a crystal using time-dependent Takagi–Taupin theory.
-  [TraTT](https://github.com/NaNIsaac-Research/TraTT) ·
-  [Findings](https://github.com/NaNIsaac-Research/TraTT/blob/main/docs/FINDINGS.md) ·
-  [KPS 2026 Fall poster](https://github.com/NaNIsaac-Research/TraTT#readme).
-- **What can one reflectivity curve actually determine?** I study X-ray
-  reflectivity (XRR) fitting, uncertainty, identifiability, and wrong
-  optimization basins, alongside a differentiable Abeles model and CNN-based
-  initialization. [ReflectoLearn](https://github.com/NaNIsaac-Research/ReflectoLearn) ·
-  [Research reports](https://github.com/NaNIsaac-Research/ReflectoLearn/blob/main/docs/research/README.md).
-- **Can we reconstruct an object when diffraction phase is missing?**
-  [QoraPhase](https://github.com/NaNIsaac/QoraPhase) implements iterative
-  coherent diffraction imaging (CDI/BCDI) in JAX.
-  [Synthetic example](https://github.com/NaNIsaac/QoraPhase/blob/main/docs/reconstruction.png) ·
-  [Measured-data limitations](https://github.com/NaNIsaac/QoraPhase/blob/main/docs/benchmarks/measured.md).
+- **Numerical performance:** [QoraPhaseCU](https://github.com/NaNIsaac/QoraPhaseCU)
+  explores C++20/CUDA phase retrieval; [xray.ooguy](https://xray.ooguy.com)
+  provides beamline calculators.
+- **Scientific figures:** [qoraplot](https://github.com/NaNIsaac/qoraplot)
+  supplies Matplotlib publication layouts;
+  [cvdkit](https://github.com/NaNIsaac/cvdkit) pairs color-vision-aware palettes
+  with markers and line styles.
+- **Developer workflows:** [codigest](https://github.com/NaNIsaac/codigest)
+  packages selected code/diffs/terminal output as AI context;
+  [herdr-courier](https://github.com/NaNIsaac/herdr-courier) is designed to keep
+  agent prompts from interrupting typed human input; [hanfix](https://github.com/NaNIsaac/hanfix)
+  repairs terminal commands typed under the Korean keyboard layout.
 
-The research notebooks, models, figures, and evidence are organized in
-[NaNIsaac-Research](https://github.com/NaNIsaac-Research). I distinguish
-**calculated or synthetic demonstrations** from results validated on
-experimental data.
-
-## Tools around the experiment
-
-- **From detector frames to time traces:**
-  [QoraFlow](https://github.com/NaNIsaac/QoraFlow) reduces PAL-XFEL
-  pump–probe diffraction data into laser-on/off images and delay-dependent
-  observables.
-- **Faster and reproducible computation:**
-  [QoraPhaseCU](https://github.com/NaNIsaac/QoraPhaseCU) explores C++/CUDA
-  phase retrieval; [xray.ooguy](https://xray.ooguy.com) collects beamline
-  calculators.
-- **Figures that are readable, not just attractive:**
-  [qoraplot](https://github.com/NaNIsaac/qoraplot) provides publication-style
-  Matplotlib layouts, while [cvdkit](https://github.com/NaNIsaac/cvdkit)
-  pairs color-vision-aware palettes with markers and line styles.
-
-## Developer tools
-
-I also work on the infrastructure that makes research and coding less
-repetitive: [codigest](https://github.com/NaNIsaac/codigest) packages the
-code, diffs, and terminal context you choose for an AI assistant;
-[herdr-courier](https://github.com/NaNIsaac/herdr-courier) queues agent messages
-without overwriting unfinished human input; and
-[hanfix](https://github.com/NaNIsaac/hanfix) fixes terminal commands typed with
-the Korean keyboard layout.
-
-[Browse the full repository map](REPOSITORIES.md) ·
-[Longer technical notes](https://nanisaac.github.io/docs/)
+[Technical notes](https://nanisaac.github.io/docs/) ·
+[Repository index (last audited 2026-10-23)](REPOSITORIES.md)
 
 <details>
-<summary><strong>Recent research work and upstream contributions</strong></summary>
+<summary><strong>Recent research and upstream contributions</strong></summary>
 
 <!-- research:start -->
 ### Research organization
