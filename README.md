@@ -40,6 +40,18 @@ Python (NumPy, JAX, PyTorch), with C++20/CUDA explored in QoraPhaseCU.
   [Reduction steps](https://github.com/NaNIsaac/QoraFlow/blob/main/docs/pipeline.md) ·
   [Synthetic example](https://github.com/NaNIsaac/QoraFlow/blob/main/docs/pipeline_example.png).
 
+## Evidence at a glance
+
+| Work | Recorded result | What the evidence does **not** establish |
+| --- | --- | --- |
+| [TraTT](https://github.com/NaNIsaac-Research/TraTT/blob/main/docs/FINDINGS.md) | Calculated acoustic-satellite overshoot mapped over **11,211** parameter pairs; selected full Takagi–Taupin checks agree with the reduced model. | No comparison to a measured transient dataset. |
+| [ReflectoLearn](https://github.com/NaNIsaac-Research/ReflectoLearn/blob/main/docs/fisher_global/reports/RESULTS-BASIN.md) | **935** bounded endpoint refinements, with pre-registered rules and recorded verdicts; **5 R2a + 1 X2e** wrong basins remain distinguishable only at high counts. | Not a proof of global uniqueness or a validated measured-film fit. |
+| [Public XRR counts](https://github.com/NaNIsaac-Research/ReflectoLearn/blob/main/docs/fisher_global/reports/RESULTS-HCAL2.md) | **100** repeated public scans: median dispersion index **1.34** versus a Poisson benchmark near 1. | One experimental setup; verdict depends on a documented amendment and the excess-noise source is unknown. |
+| [QoraPhase](https://github.com/NaNIsaac/QoraPhase/blob/main/docs/benchmarks/cxidb.md) | Synthetic reconstructions and measured-data comparisons are documented; both public CXIDB paper reconstructions remain **not reproduced**. | A low Fourier residual alone does not validate the recovered object. |
+
+**[Read the evidence and reproduction guide](EVIDENCE.md)** — sources, commands,
+data-access limits, and the next validation needed for each claim.
+
 <p align="center">
   <img src="./assets/phase-retrieval.gif" width="760"
        alt="Synthetic phase retrieval animation reconstructing the NaNIsaac lettering from simulated diffraction intensity" />
