@@ -2,50 +2,90 @@
 
 <h1>Isaac Yong (용이삭)</h1>
 
-<p><b>X-ray physics · Scientific computing</b><br>M.S. student in Physics, Sogang University</p>
+<p><strong>Physics researcher building scientific software</strong><br>
+X-ray diffraction · Inverse problems · Computational imaging</p>
 
-<p><b><a href="https://nanisaac.github.io">Website</a></b> &nbsp;·&nbsp; <b><a href="https://nanisaac.github.io/docs/">Docs</a></b> &nbsp;·&nbsp; <b><a href="https://nanisaac.github.io/notes/">Notes</a></b> &nbsp;·&nbsp; <b><a href="https://nanisaac.github.io/stats/">Stats</a></b> &nbsp;·&nbsp; <b><a href="https://blog.naver.com/sjbpepper">Blog</a></b> &nbsp;·&nbsp; <b><a href="mailto:isaacyong@naver.com">Email</a></b></p>
+<p>M.S. student in Physics, Sogang University</p>
+
+<p>
+  <a href="https://nanisaac.github.io"><strong>Portfolio</strong></a> ·
+  <a href="https://github.com/NaNIsaac-Research">Research</a> ·
+  <a href="https://nanisaac.github.io/notes/">Notes</a> ·
+  <a href="https://blog.naver.com/sjbpepper">Blog</a> ·
+  <a href="mailto:isaacyong@naver.com">Contact</a>
+</p>
 
 </div>
 
-<img src="./assets/phase-retrieval.gif" width="100%" alt="The name NaNIsaac recovered from its diffraction intensity by phase retrieval" />
+**I work at the boundary between X-ray experiments and computation.** My central
+question is: *What can a diffraction measurement actually tell us, and how can
+we check the answer?*
 
-<sub>Only the intensity |F|² goes in. [QoraPhase](https://github.com/NaNIsaac/QoraPhase) recovers the lost phase and the object; <a href="./scripts/name_gif.py">script</a>.</sub>
+I build physical models, inverse methods, and experiment-facing software to
+turn scattering data into images, material parameters, and reproducible
+analyses. A convincing reconstruction is not necessarily a unique solution;
+understanding noise, ambiguity, and failure modes matters just as much.
 
-I study X-ray scattering and diffraction, and build the software around the experiment:
-simulation, inverse problems, coherent imaging, and beamtime data analysis.
-Longer write-ups live on [my website](https://nanisaac.github.io).
+<img src="./assets/phase-retrieval.gif" width="100%" alt="Animated reconstruction of the synthetic NaNIsaac lettering from a simulated diffraction pattern" />
 
-### Research
+<sub>A small illustration of that idea: <a href="https://github.com/NaNIsaac/QoraPhase">QoraPhase</a>
+recovers a <strong>synthetic</strong> object from simulated diffraction intensity (the phase
+is not supplied). <a href="./scripts/name_gif.py">Generation script</a>. This animation is
+not a measured-data validation.</sub>
 
-Research code, results and poster sources live in the
-[NaNIsaac Research](https://github.com/NaNIsaac-Research) organization.
+## Research questions
 
-- [TraTT](https://github.com/NaNIsaac-Research/TraTT): how acoustic Bragg satellites form while a
-  GHz sound wave enters a perfect crystal, from time-dependent Takagi-Taupin dynamical diffraction.
-  Poster P2.17, KPS 2026 Fall Meeting, Jeju, October 22, 2026
-  ([poster](https://github.com/NaNIsaac-Research/TraTT#readme),
-  [docs](https://nanisaac.github.io/docs/tratt/)).
-- XRR inverse problem: how much of a thin film one X-ray reflectivity curve determines, and whether
-  a generative posterior model is needed. Work in progress
-  ([research experiment index](https://github.com/NaNIsaac-Research/ReflectoLearn/blob/main/docs/research/README.md), including Experiment 001).
+- **How does a Bragg satellite form in time?** I model X-ray diffraction as a
+  GHz acoustic wave enters a crystal using time-dependent Takagi–Taupin theory.
+  [TraTT](https://github.com/NaNIsaac-Research/TraTT) ·
+  [Findings](https://github.com/NaNIsaac-Research/TraTT/blob/main/docs/FINDINGS.md) ·
+  [KPS 2026 Fall poster](https://github.com/NaNIsaac-Research/TraTT#readme).
+- **What can one reflectivity curve actually determine?** I study X-ray
+  reflectivity (XRR) fitting, uncertainty, identifiability, and wrong
+  optimization basins, alongside a differentiable Abeles model and CNN-based
+  initialization. [ReflectoLearn](https://github.com/NaNIsaac-Research/ReflectoLearn) ·
+  [Research reports](https://github.com/NaNIsaac-Research/ReflectoLearn/blob/main/docs/research/README.md).
+- **Can we reconstruct an object when diffraction phase is missing?**
+  [QoraPhase](https://github.com/NaNIsaac/QoraPhase) implements iterative
+  coherent diffraction imaging (CDI/BCDI) in JAX.
+  [Synthetic example](https://github.com/NaNIsaac/QoraPhase/blob/main/docs/reconstruction.png) ·
+  [Measured-data limitations](https://github.com/NaNIsaac/QoraPhase/blob/main/docs/benchmarks/measured.md).
 
-### Scientific visualization
+The research notebooks, models, figures, and evidence are organized in
+[NaNIsaac-Research](https://github.com/NaNIsaac-Research). I distinguish
+**calculated or synthetic demonstrations** from results validated on
+experimental data.
 
-- [qoraplot](https://github.com/NaNIsaac/qoraplot): Origin-like Matplotlib figures for papers, slides and posters, with journal-sized layouts and reusable styles.
-- [cvdkit](https://github.com/NaNIsaac/cvdkit): color-vision-deficiency-aware palettes, markers, dashes and contrast checks. qoraplot uses its series styling.
+## Tools around the experiment
 
-### Selected work
+- **From detector frames to time traces:**
+  [QoraFlow](https://github.com/NaNIsaac/QoraFlow) reduces PAL-XFEL
+  pump–probe diffraction data into laser-on/off images and delay-dependent
+  observables.
+- **Faster and reproducible computation:**
+  [QoraPhaseCU](https://github.com/NaNIsaac/QoraPhaseCU) explores C++/CUDA
+  phase retrieval; [xray.ooguy](https://xray.ooguy.com) collects beamline
+  calculators.
+- **Figures that are readable, not just attractive:**
+  [qoraplot](https://github.com/NaNIsaac/qoraplot) provides publication-style
+  Matplotlib layouts, while [cvdkit](https://github.com/NaNIsaac/cvdkit)
+  pairs color-vision-aware palettes with markers and line styles.
 
-| Science | Tools |
-|---|---|
-| [QoraPhase](https://github.com/NaNIsaac/QoraPhase) ([docs](https://nanisaac.github.io/docs/qoraphase/)) · JAX phase retrieval for CDI and BCDI | [codigest](https://github.com/NaNIsaac/codigest) ([docs](https://nanisaac.github.io/codigest/)) · codebase, diffs and terminal output as LLM context |
-| [QoraPhaseCU](https://github.com/NaNIsaac/QoraPhaseCU) · phase retrieval in C++/CUDA, with a measured optimization log | [deai](https://github.com/NaNIsaac/deai) · strip AI co-author trailers from git history |
-| [QoraHolo](https://github.com/NaNIsaac/QoraHolo) · holotomography (ODT) reconstruction in C++/CUDA | [hanfix](https://github.com/NaNIsaac/hanfix) · re-run commands typed in the Korean layout |
-| [ReflectoLearn](https://github.com/NaNIsaac-Research/ReflectoLearn) ([docs](https://nanisaac.github.io/docs/reflectolearn/)) · differentiable X-ray reflectivity fitting | [clippath](https://github.com/NaNIsaac/clippath) · clipboard screenshot to a file path for terminal agents |
-| [QoraFlow](https://github.com/NaNIsaac/QoraFlow) · time-resolved X-ray data at PAL-XFEL | [roi_rectangle](https://github.com/NaNIsaac/roi_rectangle) · rectangular ROIs for NumPy images |
-| [TraTT](https://github.com/NaNIsaac-Research/TraTT) · time-dependent Takagi-Taupin diffraction | |
-| [xray.ooguy](https://xray.ooguy.com) · offline calculators for old beamline PCs | |
+## Developer tools
+
+I also work on the infrastructure that makes research and coding less
+repetitive: [codigest](https://github.com/NaNIsaac/codigest) packages the
+code, diffs, and terminal context you choose for an AI assistant;
+[herdr-courier](https://github.com/NaNIsaac/herdr-courier) queues agent messages
+without overwriting unfinished human input; and
+[hanfix](https://github.com/NaNIsaac/hanfix) fixes terminal commands typed with
+the Korean keyboard layout.
+
+[Browse the full repository map](REPOSITORIES.md) ·
+[Longer technical notes](https://nanisaac.github.io/docs/)
+
+<details>
+<summary><strong>Recent research work and upstream contributions</strong></summary>
 
 <!-- research:start -->
 ### Research organization
@@ -65,6 +105,8 @@ Research code, results and poster sources live in the
 
 - `pydata/xarray` [DOC: Link windowed operations tutorial from computation guide](https://github.com/pydata/xarray/pull/11720) <sub>merged</sub>
 <!-- upstream:end -->
+
+</details>
 
 <sub>Pepper (후추), my black-and-tan Shiba Inu, takes care of the contribution garden.</sub>
 
