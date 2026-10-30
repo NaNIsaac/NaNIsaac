@@ -28,9 +28,9 @@ understanding noise, ambiguity, and failure modes matters just as much.
 
 <img src="./assets/phase-retrieval.gif" width="100%" alt="Animated reconstruction of the synthetic NaNIsaac lettering from a simulated diffraction pattern" />
 
-<sub>A small illustration of that idea: [QoraPhase](https://github.com/NaNIsaac/QoraPhase)
-recovers a **synthetic** object from simulated diffraction intensity (the phase
-is not supplied). [Generation script](./scripts/name_gif.py). This animation is
+<sub>A small illustration of that idea: <a href="https://github.com/NaNIsaac/QoraPhase">QoraPhase</a>
+recovers a <strong>synthetic</strong> object from simulated diffraction intensity (the phase
+is not supplied). <a href="./scripts/name_gif.py">Generation script</a>. This animation is
 not a measured-data validation.</sub>
 
 ## Research questions
