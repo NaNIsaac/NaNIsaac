@@ -17,15 +17,15 @@ M.S. student in Physics, Sogang University</p>
 
 **I write numerical models, inverse solvers, and data pipelines for X-ray experiments.**
 My work ranges from predicting diffraction patterns to reconstructing objects,
-fitting reflectivity curves, and reducing detector data. Most projects are in
-Python (NumPy, JAX, PyTorch); I also work on C++/CUDA implementations.
+fitting reflectivity curves, and reducing detector data. My scientific code uses
+Python (NumPy, JAX, PyTorch), with C++20/CUDA explored in QoraPhaseCU.
 
 ## Selected work
 
 - **[TraTT](https://github.com/NaNIsaac-Research/TraTT) — dynamical diffraction.**
   Time-dependent Takagi–Taupin simulations of Bragg satellites as a GHz acoustic wave
   enters a crystal. [Calculated findings](https://github.com/NaNIsaac-Research/TraTT/blob/main/docs/FINDINGS.md) ·
-  [KPS 2026 Fall poster](https://github.com/NaNIsaac-Research/TraTT#readme).
+  [KPS 2026 Fall poster preview](https://github.com/NaNIsaac-Research/TraTT/blob/main/figures/poster/poster_preview.jpg).
 - **[ReflectoLearn](https://github.com/NaNIsaac-Research/ReflectoLearn) — X-ray reflectivity inference.**
   CNN starting estimates and differentiable Abeles fitting, alongside research on
   parameter identifiability, count statistics, and wrong optimization basins.
@@ -59,8 +59,8 @@ reconstructed with <a href="https://github.com/NaNIsaac/QoraPhase">QoraPhase</a>
   with markers and line styles.
 - **Developer workflows:** [codigest](https://github.com/NaNIsaac/codigest)
   packages selected code/diffs/terminal output as AI context;
-  [herdr-courier](https://github.com/NaNIsaac/herdr-courier) queues agent prompts
-  without overwriting human input; [hanfix](https://github.com/NaNIsaac/hanfix)
+  [herdr-courier](https://github.com/NaNIsaac/herdr-courier) is designed to keep
+  agent prompts from interrupting typed human input; [hanfix](https://github.com/NaNIsaac/hanfix)
   repairs terminal commands typed under the Korean keyboard layout.
 
 [Technical notes](https://nanisaac.github.io/docs/) ·
