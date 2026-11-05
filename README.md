@@ -111,6 +111,7 @@ reconstructed with <a href="https://github.com/NaNIsaac/QoraPhase">QoraPhase</a>
 <!-- upstream:start -->
 ### Upstream
 
+- `clatlan/cdiutils` [Fix int32 overflow in SpaceConverter.get_transformation_matrix](https://github.com/clatlan/cdiutils/pull/112) <sub>merged</sub>
 - `pydata/xarray` [DOC: Link windowed operations tutorial from computation guide](https://github.com/pydata/xarray/pull/11720) <sub>merged</sub>
 <!-- upstream:end -->
 
