@@ -98,14 +98,14 @@ reconstructed with <a href="https://github.com/NaNIsaac/QoraPhase">QoraPhase</a>
 <!-- research:start -->
 ### Research organization
 
+- `NaNIsaac-Research/ReflectoLearn` [refactor: take the forward physics from reflectosim](https://github.com/NaNIsaac-Research/ReflectoLearn/pull/65) <sub>merged</sub>
+- `NaNIsaac-Research/TraTT` [docs: drop private paths and internal workspace references from tracked text](https://github.com/NaNIsaac-Research/TraTT/pull/37) <sub>merged</sub>
+- `NaNIsaac-Research/TraTT` [docs: paper-form summary (background, method, results, limits)](https://github.com/NaNIsaac-Research/TraTT/pull/36) <sub>merged</sub>
 - `NaNIsaac-Research/ReflectoLearn` [docs(findings): add structured Hypothesis fields for ICC research tab](https://github.com/NaNIsaac-Research/ReflectoLearn/pull/63) <sub>merged</sub>
 - `NaNIsaac-Research/ReflectoLearn` [docs: index research findings and evidence](https://github.com/NaNIsaac-Research/ReflectoLearn/pull/62) <sub>merged</sub>
 - `NaNIsaac-Research/TraTT` [docs: add a findings page and a Findings section to the README](https://github.com/NaNIsaac-Research/TraTT/pull/35) <sub>merged</sub>
 - `NaNIsaac-Research/ReflectoLearn` [docs(identifiability): redraw the experiment 001 figure from the saved results](https://github.com/NaNIsaac-Research/ReflectoLearn/pull/61) <sub>merged</sub>
-- `NaNIsaac-Research/TraTT` [docs: redraw the Entry 67 overshoot figure with residuals and full-TT checks](https://github.com/NaNIsaac-Research/TraTT/pull/34) <sub>merged</sub>
-- `NaNIsaac-Research/ReflectoLearn` [docs(objective): register experiment 006, the cost of log-type objectives against the Poisson likelihood](https://github.com/NaNIsaac-Research/ReflectoLearn/pull/60) <sub>merged</sub>
-- `NaNIsaac-Research/ReflectoLearn` [fix(genx_fit): oxide under the film, oxide roughness free in the final stage](https://github.com/NaNIsaac-Research/ReflectoLearn/pull/59) <sub>merged</sub>
-- `NaNIsaac-Research/ReflectoLearn` [docs: add a Start here block to the reports index](https://github.com/NaNIsaac-Research/ReflectoLearn/pull/57) <sub>merged</sub>
+- `NaNIsaac-Research/ReflectoLearn` [docs: paper draft on identifiability and search reach in XRR fits](https://github.com/NaNIsaac-Research/ReflectoLearn/pull/66) <sub>open</sub>
 <!-- research:end -->
 
 <!-- upstream:start -->
