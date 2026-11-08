@@ -25,7 +25,7 @@ fitting X-ray reflectivity curves, reconstructing images, and turning raw
 beamline data into quantities we can compare. Most of my research code is
 Python (NumPy, JAX, PyTorch); I also explore C++20/CUDA in QoraPhaseCU.
 
-## Selected work
+## Selected research
 
 - **[TraTT](https://github.com/NaNIsaac-Research/TraTT): diffraction while sound enters a crystal.**
   A sound wave can produce extra peaks beside the main Bragg peak. I simulate
@@ -51,20 +51,7 @@ Python (NumPy, JAX, PyTorch); I also explore C++20/CUDA in QoraPhaseCU.
   [Processing steps](https://github.com/NaNIsaac/QoraFlow/blob/main/docs/pipeline.md) ·
   [Simulated example](https://github.com/NaNIsaac/QoraFlow/blob/main/docs/pipeline_example.png).
 
-## What has actually been tested
-
-These are recorded calculations and benchmarks with specific limits—not
-claims that every program has been validated on an experimental sample.
-
-| Work | Recorded result | What this does **not** prove |
-| --- | --- | --- |
-| [TraTT](https://github.com/NaNIsaac-Research/TraTT/blob/main/docs/FINDINGS.md) | Calculated acoustic-satellite overshoot mapped over **11,211** parameter pairs; selected full Takagi–Taupin checks agree with the reduced model. | No comparison to a measured transient dataset. |
-| [ReflectoLearn](https://github.com/NaNIsaac-Research/ReflectoLearn/blob/main/docs/fisher_global/reports/RESULTS-BASIN.md) | **935** bounded local-fit refinements. Six incorrect parameter regions require at least **10⁴ counts** to distinguish from the reference in the studied conditions (5 in test group R2a, 1 in X2e). | Does not search every possible solution or establish accuracy on a measured film. |
-| [Public XRR counts](https://github.com/NaNIsaac-Research/ReflectoLearn/blob/main/docs/fisher_global/reports/RESULTS-HCAL2.md) | **100** repeated public scans: median dispersion index **1.34** versus a Poisson benchmark near 1 (**draft; not independently verified**). | One experimental setup; the supported verdict requires a post-pre-check amendment. Under the original exclusion rule there is **no verdict**; the excess-noise source is unknown. |
-| [QoraPhase](https://github.com/NaNIsaac/QoraPhase/blob/main/docs/benchmarks/cxidb.md) | Synthetic images were reconstructed; on two public coherent-diffraction datasets (CXIDB), the published images were **not reproduced**. | Matching diffraction intensity does not prove the reconstructed image is correct. |
-
-**[Read the evidence and reproduction guide](EVIDENCE.md)** — sources, commands,
-data-access limits, and the next validation needed for each claim.
+## Phase retrieval in motion
 
 <p align="center">
   <img src="./assets/phase-retrieval.gif" width="760"
@@ -74,23 +61,51 @@ data-access limits, and the next validation needed for each claim.
 reconstructed with <a href="https://github.com/NaNIsaac/QoraPhase">QoraPhase</a>.
 <a href="./scripts/name_gif.py">Reproduce the animation</a>.</sub></p>
 
-## Other software I maintain
+## Software and open source
 
-- **Numerical performance:** [QoraPhaseCU](https://github.com/NaNIsaac/QoraPhaseCU)
-  explores C++20/CUDA phase retrieval; [xray.ooguy](https://xray.ooguy.com)
-  provides beamline calculators.
-- **Scientific figures:** [qoraplot](https://github.com/NaNIsaac/qoraplot)
-  supplies Matplotlib publication layouts;
-  [cvdkit](https://github.com/NaNIsaac/cvdkit) pairs color-vision-aware palettes
-  with markers and line styles.
-- **Developer workflows:** [codigest](https://github.com/NaNIsaac/codigest)
-  packages selected code/diffs/terminal output as AI context;
-  [herdr-courier](https://github.com/NaNIsaac/herdr-courier) is designed to keep
-  agent prompts from interrupting typed human input; [hanfix](https://github.com/NaNIsaac/hanfix)
-  repairs terminal commands typed under the Korean keyboard layout.
+Beyond the research models, I build tools for scientific computing and for
+working with code. These projects are independent of any one experiment.
+
+### Scientific software
+
+- **[QoraPhaseCU](https://github.com/NaNIsaac/QoraPhaseCU)** explores
+  C++20/CUDA implementations of phase retrieval, alongside the JAX work.
+- **[xray.ooguy](https://xray.ooguy.com)** provides interactive calculators
+  for X-ray and beamline work.
+- **[qoraplot](https://github.com/NaNIsaac/qoraplot)** provides Matplotlib
+  layouts for publication figures; **[cvdkit](https://github.com/NaNIsaac/cvdkit)**
+  combines color-vision-aware palettes with marker and line styles.
+
+### Developer tools
+
+- **[codigest](https://github.com/NaNIsaac/codigest)** packages selected code,
+  diffs and terminal output into context for coding agents.
+- **[herdr-courier](https://github.com/NaNIsaac/herdr-courier)** is designed to
+  prevent agent prompts from interrupting human typing.
+- **[hanfix](https://github.com/NaNIsaac/hanfix)** repairs terminal commands
+  entered with the Korean keyboard layout.
 
 [Technical notes](https://nanisaac.github.io/docs/) ·
-[Repository index (last audited 2026-10-23)](REPOSITORIES.md)
+[Repository index (2026-10-23 snapshot)](REPOSITORIES.md)
+
+## Evidence and reproducibility
+
+The research repositories include calculations, benchmarks and explicit
+validation boundaries. A few recorded results are summarized below;
+the [evidence and reproduction guide](EVIDENCE.md) documents the sources,
+commands and remaining checks.
+
+<details>
+<summary><strong>Recorded results and limitations</strong></summary>
+
+| Work | Recorded result | What this does **not** prove |
+| --- | --- | --- |
+| [TraTT](https://github.com/NaNIsaac-Research/TraTT/blob/main/docs/FINDINGS.md) | Calculated acoustic-satellite overshoot mapped over **11,211** parameter pairs; selected full Takagi–Taupin checks agree with the reduced model. | No comparison to a measured transient dataset. |
+| [ReflectoLearn](https://github.com/NaNIsaac-Research/ReflectoLearn/blob/main/docs/fisher_global/reports/RESULTS-BASIN.md) | **935** bounded local-fit refinements. Six incorrect parameter regions require at least **10⁴ counts** to distinguish from the reference in the studied conditions (5 in test group R2a, 1 in X2e). | Does not search every possible solution or establish accuracy on a measured film. |
+| [Public XRR counts](https://github.com/NaNIsaac-Research/ReflectoLearn/blob/main/docs/fisher_global/reports/RESULTS-HCAL2.md) | **100** repeated public scans: median dispersion index **1.34** versus a Poisson benchmark near 1 (**draft; not independently verified**). | One experimental setup; the supported verdict requires a post-pre-check amendment. Under the original exclusion rule there is **no verdict**; the excess-noise source is unknown. |
+| [QoraPhase](https://github.com/NaNIsaac/QoraPhase/blob/main/docs/benchmarks/cxidb.md) | Synthetic images were reconstructed; on two public coherent-diffraction datasets (CXIDB), the published images were **not reproduced**. | Matching diffraction intensity does not prove the reconstructed image is correct. |
+
+</details>
 
 <details>
 <summary><strong>Recent research and upstream contributions</strong></summary>
