@@ -15,44 +15,6 @@ M.S. student in Physics, Sogang University</p>
 
 </div>
 
-When X-rays scatter from a crystal or a thin film, a detector records
-intensities—not a ready-made image of the structure or a list of layer
-thicknesses. Those have to be worked out from the measurements, and sometimes
-more than one answer appears plausible.
-
-**I build the software for that work:** predicting diffraction patterns,
-fitting X-ray reflectivity curves, reconstructing images, and turning raw
-beamline data into quantities we can compare. Most of my research code is
-Python (NumPy, JAX, PyTorch); I also explore C++20/CUDA in QoraPhaseCU.
-
-## Selected research
-
-- **[TraTT](https://github.com/NaNIsaac-Research/TraTT): diffraction while sound enters a crystal.**
-  A sound wave can produce extra peaks beside the main Bragg peak. I simulate
-  how those peaks form before the wave has crossed the crystal, using
-  time-dependent Takagi–Taupin equations.
-  [Calculated findings](https://github.com/NaNIsaac-Research/TraTT/blob/main/docs/FINDINGS.md) ·
-  [KPS 2026 Fall poster](https://github.com/NaNIsaac-Research/TraTT/blob/main/figures/poster/poster_preview.jpg).
-- **[ReflectoLearn](https://github.com/NaNIsaac-Research/ReflectoLearn): film structure from X-ray reflection.**
-  An X-ray reflectivity curve contains information about film thickness,
-  roughness, and scattering strength. I use a neural-network starting guess
-  and a physics-based fit, then study when that estimate goes wrong or cannot
-  be distinguished from another structure.
-  [Findings and limits](https://github.com/NaNIsaac-Research/ReflectoLearn/blob/main/docs/FINDINGS.md).
-- **[QoraPhase](https://github.com/NaNIsaac/QoraPhase): images from diffraction intensities.**
-  Diffraction measurements lose the wave's phase. This JAX package iteratively
-  estimates the missing phase and the object that produced the pattern.
-  [Synthetic demonstration](https://github.com/NaNIsaac/QoraPhase/blob/main/docs/reconstruction.png) ·
-  [Measured-data limitations](https://github.com/NaNIsaac/QoraPhase/blob/main/docs/benchmarks/measured.md).
-- **[QoraFlow](https://github.com/NaNIsaac/QoraFlow): raw detector frames to time traces.**
-  At PAL-XFEL, a laser excites the sample and X-rays probe it after different
-  delays. The pipeline groups detector shots by laser state and delay, corrects
-  the images, and tracks changes in a selected diffraction peak.
-  [Processing steps](https://github.com/NaNIsaac/QoraFlow/blob/main/docs/pipeline.md) ·
-  [Simulated example](https://github.com/NaNIsaac/QoraFlow/blob/main/docs/pipeline_example.png).
-
-## Phase retrieval in motion
-
 <p align="center">
   <img src="./assets/phase-retrieval.gif" width="760"
        alt="Synthetic phase retrieval animation reconstructing the NaNIsaac lettering from simulated diffraction intensity" />
@@ -61,10 +23,36 @@ Python (NumPy, JAX, PyTorch); I also explore C++20/CUDA in QoraPhaseCU.
 reconstructed with <a href="https://github.com/NaNIsaac/QoraPhase">QoraPhase</a>.
 <a href="./scripts/name_gif.py">Reproduce the animation</a>.</sub></p>
 
-## Software and open source
+X-ray measurements record intensities, not structures directly. I develop
+numerical models and software to extract structural information from diffraction,
+reflectivity and coherent imaging data.
 
-Beyond the research models, I build tools for scientific computing and for
-working with code. These projects are independent of any one experiment.
+My work spans inverse problems, time-dependent scattering and beamline data
+processing, primarily in Python (NumPy, JAX and PyTorch).
+
+## Selected research
+
+- **[TraTT](https://github.com/NaNIsaac-Research/TraTT) — transient acoustic diffraction.**
+  Simulates Bragg satellites during acoustic-wave propagation using
+  time-dependent Takagi–Taupin equations.
+  [Calculated findings](https://github.com/NaNIsaac-Research/TraTT/blob/main/docs/FINDINGS.md) ·
+  [KPS 2026 Fall poster](https://github.com/NaNIsaac-Research/TraTT/blob/main/figures/poster/poster_preview.jpg).
+- **[ReflectoLearn](https://github.com/NaNIsaac-Research/ReflectoLearn) — XRR inverse problems.**
+  Combines neural-network initialization with physics-based fitting and
+  investigates parameter ambiguity and identifiability.
+  [Findings and limits](https://github.com/NaNIsaac-Research/ReflectoLearn/blob/main/docs/FINDINGS.md).
+- **[QoraPhase](https://github.com/NaNIsaac/QoraPhase) — phase retrieval.**
+  A JAX package for iterative reconstruction of objects from diffraction
+  intensities with missing phase information.
+  [Synthetic demonstration](https://github.com/NaNIsaac/QoraPhase/blob/main/docs/reconstruction.png) ·
+  [Measured-data limitations](https://github.com/NaNIsaac/QoraPhase/blob/main/docs/benchmarks/measured.md).
+- **[QoraFlow](https://github.com/NaNIsaac/QoraFlow) — XFEL data processing.**
+  Groups pump–probe detector frames by laser state and delay, applies corrections
+  and extracts time traces from diffraction peaks.
+  [Processing steps](https://github.com/NaNIsaac/QoraFlow/blob/main/docs/pipeline.md) ·
+  [Simulated example](https://github.com/NaNIsaac/QoraFlow/blob/main/docs/pipeline_example.png).
+
+## Software and open source
 
 ### Scientific software
 
@@ -90,10 +78,8 @@ working with code. These projects are independent of any one experiment.
 
 ## Evidence and reproducibility
 
-The research repositories include calculations, benchmarks and explicit
-validation boundaries. A few recorded results are summarized below;
-the [evidence and reproduction guide](EVIDENCE.md) documents the sources,
-commands and remaining checks.
+Results and limitations are recorded in the
+[evidence and reproduction guide](EVIDENCE.md).
 
 <details>
 <summary><strong>Recorded results and limitations</strong></summary>
@@ -144,4 +130,4 @@ commands and remaining checks.
        alt="Pepper harvesting GitHub contributions" />
 </picture>
 
-<sub>Formerly "SJB7777". Renamed to "NaNIsaac" on October 14, 2026, at 00:06:41 KST.</sub>
+<sub>Previously SJB7777 (renamed October 2026).</sub>
