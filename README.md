@@ -112,8 +112,14 @@ Results and limitations are recorded in the
 <!-- upstream:start -->
 ### Upstream
 
-- `clatlan/cdiutils` [Fix int32 overflow in SpaceConverter.get_transformation_matrix](https://github.com/clatlan/cdiutils/pull/112) <sub>merged</sub>
-- `pydata/xarray` [DOC: Link windowed operations tutorial from computation guide](https://github.com/pydata/xarray/pull/11720) <sub>merged</sub>
+- `tendlane/pepperpaw` [fix: report a ghost left in an input box, refuse a message ending in a backslash](https://github.com/tendlane/pepperpaw/pull/47) <sub>merged</sub>
+- `tendlane/pepperpaw` [feat: deliver messages waiting for one pane as a single prompt](https://github.com/tendlane/pepperpaw/pull/46) <sub>merged</sub>
+- `tendlane/pepperpaw` [fix: name a Codex pane by its own session, not the pane that started the shared app-server](https://github.com/tendlane/pepperpaw/pull/45) <sub>merged</sub>
+- `tendlane/pepperpaw` [feat: locate panes with ppw where](https://github.com/tendlane/pepperpaw/pull/44) <sub>merged</sub>
+- `tendlane/pepperpaw` [fix: verify courier submission and expose receiver outcomes](https://github.com/tendlane/pepperpaw/pull/43) <sub>merged</sub>
+- `tendlane/pepperpaw` [Add ppw: list, read and answer questions from providers](https://github.com/tendlane/pepperpaw/pull/41) <sub>merged</sub>
+- `tendlane/pepperpaw` [Configure task notices and execution checks in [ledger]](https://github.com/tendlane/pepperpaw/pull/40) <sub>merged</sub>
+- `tendlane/pepperpaw` [Spec message delivery; split the queue record into message and delivery](https://github.com/tendlane/pepperpaw/pull/37) <sub>merged</sub>
 <!-- upstream:end -->
 
 </details>
