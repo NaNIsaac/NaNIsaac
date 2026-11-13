@@ -112,14 +112,14 @@ Results and limitations are recorded in the
 <!-- upstream:start -->
 ### Upstream
 
+- `tendlane/pepperpaw` [feat: courier presses Enter again on its own text left in a box](https://github.com/tendlane/pepperpaw/pull/55) <sub>merged</sub>
+- `tendlane/pepperpaw` [feat: a reader's message is sent when its hook shows it, not when the box clears](https://github.com/tendlane/pepperpaw/pull/54) <sub>merged</sub>
+- `tendlane/pepperpaw` [fix: file courier's own notices to a mailbox reader before the pointer](https://github.com/tendlane/pepperpaw/pull/52) <sub>merged</sub>
+- `tendlane/pepperpaw` [chore: release 0.3.0](https://github.com/tendlane/pepperpaw/pull/50) <sub>merged</sub>
+- `tendlane/pepperpaw` [feat: mailbox readers get one pointer line per message; the hook brings the text once](https://github.com/tendlane/pepperpaw/pull/49) <sub>merged</sub>
 - `tendlane/pepperpaw` [fix: report a ghost left in an input box, refuse a message ending in a backslash](https://github.com/tendlane/pepperpaw/pull/47) <sub>merged</sub>
 - `tendlane/pepperpaw` [feat: deliver messages waiting for one pane as a single prompt](https://github.com/tendlane/pepperpaw/pull/46) <sub>merged</sub>
 - `tendlane/pepperpaw` [fix: name a Codex pane by its own session, not the pane that started the shared app-server](https://github.com/tendlane/pepperpaw/pull/45) <sub>merged</sub>
-- `tendlane/pepperpaw` [feat: locate panes with ppw where](https://github.com/tendlane/pepperpaw/pull/44) <sub>merged</sub>
-- `tendlane/pepperpaw` [fix: verify courier submission and expose receiver outcomes](https://github.com/tendlane/pepperpaw/pull/43) <sub>merged</sub>
-- `tendlane/pepperpaw` [Add ppw: list, read and answer questions from providers](https://github.com/tendlane/pepperpaw/pull/41) <sub>merged</sub>
-- `tendlane/pepperpaw` [Configure task notices and execution checks in [ledger]](https://github.com/tendlane/pepperpaw/pull/40) <sub>merged</sub>
-- `tendlane/pepperpaw` [Spec message delivery; split the queue record into message and delivery](https://github.com/tendlane/pepperpaw/pull/37) <sub>merged</sub>
 <!-- upstream:end -->
 
 </details>
