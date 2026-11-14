@@ -99,27 +99,27 @@ Results and limitations are recorded in the
 <!-- research:start -->
 ### Research organization
 
+- `NaNIsaac-Research/TraTT` [chore: declare the test command for pr-land](https://github.com/NaNIsaac-Research/TraTT/pull/38) <sub>merged</sub>
 - `NaNIsaac-Research/ReflectoLearn` [refactor: take the forward physics from reflectosim](https://github.com/NaNIsaac-Research/ReflectoLearn/pull/65) <sub>merged</sub>
 - `NaNIsaac-Research/TraTT` [docs: drop private paths and internal workspace references from tracked text](https://github.com/NaNIsaac-Research/TraTT/pull/37) <sub>merged</sub>
 - `NaNIsaac-Research/TraTT` [docs: paper-form summary (background, method, results, limits)](https://github.com/NaNIsaac-Research/TraTT/pull/36) <sub>merged</sub>
 - `NaNIsaac-Research/ReflectoLearn` [docs(findings): add structured Hypothesis fields for ICC research tab](https://github.com/NaNIsaac-Research/ReflectoLearn/pull/63) <sub>merged</sub>
 - `NaNIsaac-Research/ReflectoLearn` [docs: index research findings and evidence](https://github.com/NaNIsaac-Research/ReflectoLearn/pull/62) <sub>merged</sub>
 - `NaNIsaac-Research/TraTT` [docs: add a findings page and a Findings section to the README](https://github.com/NaNIsaac-Research/TraTT/pull/35) <sub>merged</sub>
-- `NaNIsaac-Research/ReflectoLearn` [docs(identifiability): redraw the experiment 001 figure from the saved results](https://github.com/NaNIsaac-Research/ReflectoLearn/pull/61) <sub>merged</sub>
 - `NaNIsaac-Research/ReflectoLearn` [docs: paper draft on identifiability and search reach in XRR fits](https://github.com/NaNIsaac-Research/ReflectoLearn/pull/66) <sub>open</sub>
 <!-- research:end -->
 
 <!-- upstream:start -->
 ### Upstream
 
+- `tendlane/pepperpaw` [fix(dispatch): a pointer typed into a usage-stopped Claude Code pane is not sent](https://github.com/tendlane/pepperpaw/pull/62) <sub>merged</sub>
+- `tendlane/pepperpaw` [fix: held mail for a returning reader, no pointer for mail already shown, typed commands marked done](https://github.com/tendlane/pepperpaw/pull/61) <sub>merged</sub>
+- `tendlane/pepperpaw` [fix(mailbox): hooks and the waiter skip slash commands](https://github.com/tendlane/pepperpaw/pull/60) <sub>merged</sub>
+- `tendlane/pepperpaw` [fix: the hook shows read copies again only for a day and keeps the pointed message when capped](https://github.com/tendlane/pepperpaw/pull/59) <sub>merged</sub>
+- `tendlane/pepperpaw` [fix: the SessionStart hook leaves the messages it shows new](https://github.com/tendlane/pepperpaw/pull/58) <sub>merged</sub>
+- `tendlane/pepperpaw` [feat: courier inbox --wait wakes an idle reader through an asyncRewake Stop hook](https://github.com/tendlane/pepperpaw/pull/57) <sub>merged</sub>
+- `tendlane/pepperpaw` [feat: inbox --show marks a message shown; a filed message is woken soon after its busy reader goes idle](https://github.com/tendlane/pepperpaw/pull/56) <sub>merged</sub>
 - `tendlane/pepperpaw` [feat: courier presses Enter again on its own text left in a box](https://github.com/tendlane/pepperpaw/pull/55) <sub>merged</sub>
-- `tendlane/pepperpaw` [feat: a reader's message is sent when its hook shows it, not when the box clears](https://github.com/tendlane/pepperpaw/pull/54) <sub>merged</sub>
-- `tendlane/pepperpaw` [fix: file courier's own notices to a mailbox reader before the pointer](https://github.com/tendlane/pepperpaw/pull/52) <sub>merged</sub>
-- `tendlane/pepperpaw` [chore: release 0.3.0](https://github.com/tendlane/pepperpaw/pull/50) <sub>merged</sub>
-- `tendlane/pepperpaw` [feat: mailbox readers get one pointer line per message; the hook brings the text once](https://github.com/tendlane/pepperpaw/pull/49) <sub>merged</sub>
-- `tendlane/pepperpaw` [fix: report a ghost left in an input box, refuse a message ending in a backslash](https://github.com/tendlane/pepperpaw/pull/47) <sub>merged</sub>
-- `tendlane/pepperpaw` [feat: deliver messages waiting for one pane as a single prompt](https://github.com/tendlane/pepperpaw/pull/46) <sub>merged</sub>
-- `tendlane/pepperpaw` [fix: name a Codex pane by its own session, not the pane that started the shared app-server](https://github.com/tendlane/pepperpaw/pull/45) <sub>merged</sub>
 <!-- upstream:end -->
 
 </details>
