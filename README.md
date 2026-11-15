@@ -68,13 +68,13 @@ processing, primarily in Python (NumPy, JAX and PyTorch).
 
 - **[codigest](https://github.com/NaNIsaac/codigest)** packages selected code,
   diffs and terminal output into context for coding agents.
-- **[herdr-courier](https://github.com/NaNIsaac/herdr-courier)** is designed to
-  prevent agent prompts from interrupting human typing.
+- **[pepperpaw](https://github.com/tendlane/pepperpaw)** (the
+  `herdr-courier` package) is designed to prevent agent prompts from interrupting human typing.
 - **[hanfix](https://github.com/NaNIsaac/hanfix)** repairs terminal commands
   entered with the Korean keyboard layout.
 
 [Technical notes](https://nanisaac.github.io/docs/) ·
-[Repository index (2026-10-23 snapshot)](REPOSITORIES.md)
+[Repository index](REPOSITORIES.md)
 
 ## Evidence and reproducibility
 

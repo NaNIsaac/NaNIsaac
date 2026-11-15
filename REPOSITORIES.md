@@ -1,8 +1,8 @@
 # Repositories
 
-Index of every repository in the `NaNIsaac` account (68 on 2026-10-23). It lists what each repository is for, how far it is, how it relates to the others and what is next. It does not rank projects: a repository with no recent commits is not ended, and two repositories with similar code are not one project.
+Index of every repository of the `NaNIsaac` account and its organizations (94 on 2026-11-16: 80 in `NaNIsaac`, 4 in `NaNIsaac-Research`, 6 in `Torvren`, 2 in `tendlane`, 2 in `xrayreflectometry`). The tables were read on 2026-10-23 and the changes since then are in [the section below](#since-the-2026-10-23-audit). It lists what each repository is for, how far it is, how it relates to the others and what is next. It does not rank projects: a repository with no recent commits is not ended, and two repositories with similar code are not one project.
 
-Status words come from what was read or run during the 2026-10-23 audit; a row says "not run" where that is true. Sensitive details of private repositories are kept in `local-notes`, not here. Archived on 2026-10-23 by explicit decision: `eng_cook_book` and `reflexauto_site`; no other repository is archived.
+Status words come from what was read or run during the 2026-10-23 audit; a row says "not run" where that is true, and a row added after the audit says so. Sensitive details of private repositories are kept in `local-notes`, not here. Archived by explicit decision: `eng_cook_book` and `reflexauto_site` (2026-10-23), then `NaNIsaac/pepperpaw` and `ReflexAuto`.
 
 | Reading the tables | |
 |---|---|
@@ -10,6 +10,55 @@ Status words come from what was read or run during the 2026-10-23 audit; a row s
 | Level | what was verified: releases, tests, CI |
 | Role and related | where it sits and what it is related to |
 | Unfinished / next | open work, with issue or PR numbers where they exist |
+
+## Since the 2026-10-23 audit
+
+Read on 2026-11-16. Rows here have not been audited: they say what the repository is for and what
+was seen at that address, not how far the work is.
+
+### Renamed, moved or archived
+
+| Then | Now | What changed |
+|---|---|---|
+| `NaNIsaac/deai` | [uncredit](https://github.com/NaNIsaac/uncredit) | Renamed; the PyPI package is still `git-deai` |
+| `NaNIsaac/spec_manager` | [splotter](https://github.com/NaNIsaac/splotter) | Renamed; the SPEC parser and the rocking-curve and FWHM scripts are the same code |
+| `NaNIsaac/herdr-courier` | [tendlane/pepperpaw](https://github.com/tendlane/pepperpaw) | The prompt dispatcher moved to the `tendlane` organization and was renamed. The package and its commands are still `herdr-courier`, `courier` and `hc` |
+| `NaNIsaac/pepperpaw` | archived 2026-11-04 | A copy kept archived; the live repository is the `tendlane` one |
+| `NaNIsaac/cohere` | not there | The fork of `AdvancedPhotonSource/cohere` is no longer at that address |
+| `Torvren/scaldr` | [Torvren/AMG](https://github.com/Torvren/AMG) | The old name no longer resolves. The organization profile now points at `AMG`, which was created on 2026-11-07 and describes a device and setup model plus a measurement console for the D8 |
+
+### Repositories added since the audit
+
+| Repository | Visibility | Purpose | Seen |
+|---|---|---|---|
+| [ReflectoFit](https://github.com/NaNIsaac/ReflectoFit) | public | XRR fitting engine and command line: layer models, an instrument model, least squares, differential evolution and MCMC, model selection, fit reports | PyPI `reflectofit` 0.1.0; README install and first-run blocks run in CI |
+| [ReflectoSim](https://github.com/NaNIsaac/ReflectoSim) | public | Synthetic XRR data for machine learning on top of the shared forward physics (Parratt, resolution, footprint, Kα₂, Poisson counts) | PyPI; ReflectoLearn and ReflectoFit build on it |
+| [docs](https://github.com/NaNIsaac/docs) | public | Documentation hub (VitePress) built from each project's `docs/` | The scheduled build failed on 2026-11-15 on a broken anchor, so publishing stopped |
+| [qoraplot](https://github.com/NaNIsaac/qoraplot) | public | Origin-like publication style for matplotlib, with colour-vision-deficiency-safe cycles | PyPI |
+| [cvdkit](https://github.com/NaNIsaac/cvdkit) | public | Colour-vision-deficiency-safe palettes, markers, dash patterns and a check for series told apart by colour alone | PyPI |
+| [mplume](https://github.com/NaNIsaac/mplume) | public | Publication-ready Matplotlib styles and figure composition: inward ticks, closed frames, paper and slide type, zoom insets | PyPI 0.2.0 |
+| [slideforge](https://github.com/NaNIsaac/slideforge) | public | PowerPoint decks from Python and TOML: native equations, vector figures, PDF export | Not read |
+| [isaac-corpus](https://github.com/NaNIsaac/isaac-corpus) | public | Conversation corpus tooling for RussellLM, stylometry and persona research | Not read |
+| [orc-canary](https://github.com/NaNIsaac/orc-canary) | public | External quality probe for the multi-agent setup: a small coding task planned by Codex, sent through the secretary, and the resulting PR reviewed independently | Not read |
+| [witnox](https://github.com/NaNIsaac/witnox) | public | Local-first, read-only observability for AI coding agents: how sessions spend tools, time and tokens | v0.1.0 |
+| [isaac-control-center](https://github.com/NaNIsaac/isaac-control-center) | private | Local web page that reads GitHub, herdr and a personal task list: PRs, CI, agents, token use, to-dos, and a message box for one agent | In daily use; changes arrive as pull requests |
+| [orc-overlay](https://github.com/NaNIsaac/orc-overlay) | private | Per-user overlay: config and workspace files for the ORC setup | Not read |
+| [.desk](https://github.com/NaNIsaac/.desk) | private | Agent records: prompts, orders, logs. Not code | Not read |
+| [chammo](https://github.com/NaNIsaac/chammo) | private | Workbench for Chammo (ChatGPT) as a second contributor: an issue inventory, audits and small verifiable deliverables | Tests run with `python -m unittest` |
+| [dev-starter](https://github.com/NaNIsaac/dev-starter) | private | A Windows dev machine setup in one folder for a new PC: apps, a PowerShell profile, coding-agent rules and a git hook that keeps AI credit lines out | `START.cmd` runs the setup; a second run changes nothing |
+
+### The other organizations
+
+| Organization | Repositories | Note |
+|---|---|---|
+| `NaNIsaac-Research` | 4: [TraTT](https://github.com/NaNIsaac-Research/TraTT) and [ReflectoLearn](https://github.com/NaNIsaac-Research/ReflectoLearn), both in the tables above, `.github` (organization profile) and `notes` (private research records) | Research projects that outgrew the personal account |
+| `tendlane` | 2: [pepperpaw](https://github.com/tendlane/pepperpaw) (public) and `tendlane` (private) | The rules layer and the prompt dispatcher the agents run on |
+| `xrayreflectometry` | 2: [xrayreflectometry.github.io](https://github.com/xrayreflectometry/xrayreflectometry.github.io) and `DFXM` (both public, no description on `DFXM`) | XRR AI fitting |
+| `Torvren` | 6, all private | The instrument-automation company; its projects are described in the organization profile, not here |
+
+Two more repositories are owned by other people's organizations, where they are single
+contributions rather than projects: `kimnoa/2023_1_project` and `speddiikga-code/guichanism`.
+
 
 ## XRR research and products
 
@@ -20,7 +69,7 @@ Status words come from what was read or run during the 2026-10-23 audit; a row s
 | [XRefine](https://github.com/NaNIsaac/XRefine) | private | PINN-style network with a differentiable Abeles model inside (multilayer, complex SLD, six instrument parameters) and staged DE/hybrid refinement | Code complete; training and evaluation metrics were never committed | XRR research branch. ReflectoLearn took the Abeles code, utilities and refine loss. Not replaced: which fitting strategy is best is not established | No retraining since the forward-model unification; no PINN-loss versus supervised comparison; PRs #1, #3, #4 open |
 | [ReflectoLearn](https://github.com/NaNIsaac-Research/ReflectoLearn) | public | XRR library (CNN initial values, differentiable Abeles refinement, MCMC, GenX and stitch ports) plus six registered experiments (identifiability, fit policy, Fisher information against global fits, log-type objectives against the Poisson likelihood); in the NaNIsaac-Research organisation | Main works; no trained-model metrics (a 40-epoch demo only); experiments 001-006 indexed in docs/research (001-005 run, 006 registered, not run) | XRR research branch and the maintained library. Master research index: PR #33 | README sentence about superseding other repositories is Isaac's decision; issues #25, #29, #14, #8, #32 |
 | [xrr_combine](https://github.com/NaNIsaac/xrr_combine) | private | Independent beamline CLI that joins XRR scan segments taken with different attenuators | Works (example outputs 297 points); 6 tests added in PR #1 | Standalone practical tool, not a predecessor of the XRR research. ReflectoLearn `stitch.py` ports the same idea (reuse) | Shared boundary point is not checked (warning deferred as a behaviour change); long term: a normalization, conversion and quality-check toolkit |
-| [ReflexAuto](https://github.com/NaNIsaac/ReflexAuto) | private | Earlier attempt to sell licences for automatic XRR fitting software; the business plan has ended | Repository holds documentation and example data; product history written in `docs/history.md` (PR #3) | Product history kept; separate from the research repositories (similar function only). Not archived | Location of the engine source and archival of the executable (Isaac) |
+| [ReflexAuto](https://github.com/NaNIsaac/ReflexAuto) | private, archived | Earlier attempt to sell licences for automatic XRR fitting software; the business plan has ended | Repository holds documentation and example data; product history written in `docs/history.md` (PR #3) | Product history kept; separate from the research repositories (similar function only). Archived | None; the executable stays archived with the repository |
 | [reflexauto_site](https://github.com/NaNIsaac/reflexauto_site) | private, archived | Promotional site for ReflexAuto that was never deployed | Unfinished; archived by Isaac's decision (2026-10-23), code and history kept | Product-side | None |
 | [calculate](https://github.com/NaNIsaac/calculate) | private | Early sketch of TT diffraction in a crystal carrying an acoustic wave (`FTTSolver`) with sideband and satellite-angle notebooks | No code change since 2026-01-15; preserved | Early code of the FTT research line; one RK45 integrator was copied into TraTT `explore/`. The directive calls it the predecessor of xray_ooguy; the lineage lane found evidence against that and asks Isaac (xray_ooguy PR #10 is draft) | None (kept); README correction PR #1 |
 | [xray_ooguy](https://github.com/NaNIsaac/xray_ooguy) | public | Offline X-ray calculators and a beamtime log as a single page for beamline PCs | Works; `check.js` passes | Independent tool; its DATA view has its own XRR stitching (median ratio, two or more overlapping points) | README history paragraph awaits Isaac's confirmation (PR #10, draft) |
@@ -113,7 +162,7 @@ Kept for contributions and experiments. The upstream README and license are unto
 |---|---|---|---|---|
 | [cpython](https://github.com/NaNIsaac/cpython) | [python/cpython](https://github.com/python/cpython) | public | IDLE pull request #159189 closed; branch `idle-syntaxerror-shell` | Behind 306; not cloned |
 | [xarray](https://github.com/NaNIsaac/xarray) | [pydata/xarray](https://github.com/pydata/xarray) | public | PR #11720 merged; branch `fix-decode-cf-float32-fillvalue` | Behind 52 |
-| [cohere](https://github.com/NaNIsaac/cohere) | [AdvancedPhotonSource/cohere](https://github.com/AdvancedPhotonSource/cohere) | public | No upstream PR; fork main has one own commit (pyproject and beamlines submodule) | Ahead 1, behind 29 |
+| `cohere` | [AdvancedPhotonSource/cohere](https://github.com/AdvancedPhotonSource/cohere) | public | No upstream PR; fork main had one own commit (pyproject and beamlines submodule) | Not at that address on 2026-11-16 |
 | [cdiutils](https://github.com/NaNIsaac/cdiutils) | [clatlan/cdiutils](https://github.com/clatlan/cdiutils) | public | PR #112 open | In sync |
 | [pyFAI](https://github.com/NaNIsaac/pyFAI) | [silx-kit/pyFAI](https://github.com/silx-kit/pyFAI) | public | No upstream PR; branch `2474_f` unexplained | Behind 4 |
 | [xrayutilities](https://github.com/NaNIsaac/xrayutilities) | [dkriegner/xrayutilities](https://github.com/dkriegner/xrayutilities) | public | PR #248 open | In sync |
