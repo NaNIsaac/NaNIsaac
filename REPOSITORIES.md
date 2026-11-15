@@ -23,7 +23,7 @@ was seen at that address, not how far the work is.
 | `NaNIsaac/deai` | [uncredit](https://github.com/NaNIsaac/uncredit) | Renamed; the PyPI package is still `git-deai` |
 | `NaNIsaac/spec_manager` | [splotter](https://github.com/NaNIsaac/splotter) | Renamed; the SPEC parser and the rocking-curve and FWHM scripts are the same code |
 | `NaNIsaac/herdr-courier` | [tendlane/pepperpaw](https://github.com/tendlane/pepperpaw) | The prompt dispatcher moved to the `tendlane` organization and was renamed. The package and its commands are still `herdr-courier`, `courier` and `hc` |
-| `NaNIsaac/pepperpaw` | archived 2026-11-04 | A copy kept archived; the live repository is the `tendlane` one |
+| `NaNIsaac/pepperpaw` | archived (created 2026-11-04) | A copy kept archived; the live repository is the `tendlane` one |
 | `NaNIsaac/cohere` | not there | The fork of `AdvancedPhotonSource/cohere` is no longer at that address |
 | `Torvren/scaldr` | [Torvren/AMG](https://github.com/Torvren/AMG) | The old name no longer resolves. The organization profile now points at `AMG`, which was created on 2026-11-07 and describes a device and setup model plus a measurement console for the D8 |
 
