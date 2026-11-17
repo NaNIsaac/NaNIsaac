@@ -99,27 +99,27 @@ Results and limitations are recorded in the
 <!-- research:start -->
 ### Research organization
 
+- `NaNIsaac-Research/TraTT` [ci(publish): run the shared publish gates before the tratt upload](https://github.com/NaNIsaac-Research/TraTT/pull/41) <sub>merged</sub>
+- `NaNIsaac-Research/ReflectoLearn` [feat(predict): negative intensity option, recorded with the prediction](https://github.com/NaNIsaac-Research/ReflectoLearn/pull/67) <sub>merged</sub>
 - `NaNIsaac-Research/TraTT` [docs: one scientific report replaces PAPER.md; prior-art reading of the referee list (Entry 91)](https://github.com/NaNIsaac-Research/TraTT/pull/40) <sub>merged</sub>
 - `NaNIsaac-Research/TraTT` [docs: drop duplicate summaries and process references from reader docs](https://github.com/NaNIsaac-Research/TraTT/pull/39) <sub>merged</sub>
 - `NaNIsaac-Research/TraTT` [chore: declare the test command for pr-land](https://github.com/NaNIsaac-Research/TraTT/pull/38) <sub>merged</sub>
 - `NaNIsaac-Research/ReflectoLearn` [refactor: take the forward physics from reflectosim](https://github.com/NaNIsaac-Research/ReflectoLearn/pull/65) <sub>merged</sub>
 - `NaNIsaac-Research/TraTT` [docs: drop private paths and internal workspace references from tracked text](https://github.com/NaNIsaac-Research/TraTT/pull/37) <sub>merged</sub>
-- `NaNIsaac-Research/TraTT` [docs: paper-form summary (background, method, results, limits)](https://github.com/NaNIsaac-Research/TraTT/pull/36) <sub>merged</sub>
-- `NaNIsaac-Research/ReflectoLearn` [docs(findings): add structured Hypothesis fields for ICC research tab](https://github.com/NaNIsaac-Research/ReflectoLearn/pull/63) <sub>merged</sub>
 - `NaNIsaac-Research/ReflectoLearn` [docs: paper draft on identifiability and search reach in XRR fits](https://github.com/NaNIsaac-Research/ReflectoLearn/pull/66) <sub>open</sub>
 <!-- research:end -->
 
 <!-- upstream:start -->
 ### Upstream
 
+- `tendlane/pepperpaw` [ci: run the shared publish gates before the PyPI upload](https://github.com/tendlane/pepperpaw/pull/66) <sub>merged</sub>
+- `tendlane/pepperpaw` [fix(inputline): skip agy background-task rows under the input box](https://github.com/tendlane/pepperpaw/pull/65) <sub>merged</sub>
+- `tendlane/pepperpaw` [fix: release held messages to returning new sessions without repeats](https://github.com/tendlane/pepperpaw/pull/64) <sub>merged</sub>
+- `tendlane/pepperpaw` [fix: dismiss agy CLI experience survey with Escape](https://github.com/tendlane/pepperpaw/pull/63) <sub>merged</sub>
 - `tendlane/pepperpaw` [fix(dispatch): a pointer typed into a usage-stopped Claude Code pane is not sent](https://github.com/tendlane/pepperpaw/pull/62) <sub>merged</sub>
 - `tendlane/pepperpaw` [fix: held mail for a returning reader, no pointer for mail already shown, typed commands marked done](https://github.com/tendlane/pepperpaw/pull/61) <sub>merged</sub>
 - `tendlane/pepperpaw` [fix(mailbox): hooks and the waiter skip slash commands](https://github.com/tendlane/pepperpaw/pull/60) <sub>merged</sub>
 - `tendlane/pepperpaw` [fix: the hook shows read copies again only for a day and keeps the pointed message when capped](https://github.com/tendlane/pepperpaw/pull/59) <sub>merged</sub>
-- `tendlane/pepperpaw` [fix: the SessionStart hook leaves the messages it shows new](https://github.com/tendlane/pepperpaw/pull/58) <sub>merged</sub>
-- `tendlane/pepperpaw` [feat: courier inbox --wait wakes an idle reader through an asyncRewake Stop hook](https://github.com/tendlane/pepperpaw/pull/57) <sub>merged</sub>
-- `tendlane/pepperpaw` [feat: inbox --show marks a message shown; a filed message is woken soon after its busy reader goes idle](https://github.com/tendlane/pepperpaw/pull/56) <sub>merged</sub>
-- `tendlane/pepperpaw` [feat: courier presses Enter again on its own text left in a box](https://github.com/tendlane/pepperpaw/pull/55) <sub>merged</sub>
 <!-- upstream:end -->
 
 </details>
