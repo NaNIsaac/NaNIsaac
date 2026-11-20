@@ -2,11 +2,11 @@
  width="734" height="170" viewBox="0 0 734 170" role="img"
  aria-label="Pepper the Shiba Inu exploring NaNIsaac's GitHub contribution garden">
 <title>Pepper's Harvest — NaNIsaac</title>
-<desc>6,854 contributions · through 2026-11-19. Pepper sniffs out 3 treats among contribution days.</desc>
+<desc>6,882 contributions · through 2026-11-20. Pepper sniffs out 3 treats among contribution days.</desc>
 <rect width="734" height="170" rx="12" fill="#0d1117"/>
 <text x="24" y="24" font-family="Arial,sans-serif" font-size="13" font-weight="bold" fill="#e6edf3">Pepper's Harvest</text>
 <text x="710" y="23" text-anchor="end" font-family="Arial,sans-serif" font-size="10" fill="#9aa7aa">NaNIsaac</text>
-<text x="24" y="157" font-family="Arial,sans-serif" font-size="10" fill="#9aa7aa">6,854 contributions · through 2026-11-19</text>
+<text x="24" y="157" font-family="Arial,sans-serif" font-size="10" fill="#9aa7aa">6,882 contributions · through 2026-11-20</text>
 <rect x="24" y="46" width="10" height="10" rx="1.5" fill="#133d2a"/>
 <rect x="24" y="59" width="10" height="10" rx="1.5" fill="#133d2a"/>
 <rect x="24" y="72" width="10" height="10" rx="1.5" fill="#18221e"/>
@@ -385,6 +385,7 @@
 <path d="M705 80 l-2 -3 M705 80 l0 -5 M705 80 l2 -3" stroke="#54d77c" stroke-width=".8" fill="none" stroke-linecap="round"/>
 <rect x="700" y="85" width="10" height="10" rx="1.5" fill="#18683c"/>
 <rect x="700" y="98" width="10" height="10" rx="1.5" fill="#133d2a"/>
+<rect x="700" y="111" width="10" height="10" rx="1.5" fill="#18221e"/>
 <rect class="event" x="127" y="58" width="12" height="12" rx="2" fill="none" stroke="#e8b44b" stroke-width="1.4" opacity="0"><animate attributeName="opacity" values="0;1;0;0" keyTimes="0;0.112204;0.192333;1" calcMode="discrete" dur="27.456s" repeatCount="indefinite"/></rect>
 <rect x="128" y="59" width="10" height="10" rx="1.5" fill="#6f5640" opacity="0"><animate attributeName="opacity" values="0;0;1;1;0;0" keyTimes="0;0.148626;0.163195;0.41815;0.454572;1" dur="27.456s" repeatCount="indefinite"/></rect>
 <rect x="130" y="62" width="6" height="5" rx="1.5" fill="#2a1f16" opacity="0"><animate attributeName="opacity" values="0;0;1;1;0;0" keyTimes="0;0.159553;0.192333;0.28703;0.316168;1" dur="27.456s" repeatCount="indefinite"/></rect>
