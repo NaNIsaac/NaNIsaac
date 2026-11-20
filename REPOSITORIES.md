@@ -1,6 +1,6 @@
 # Repositories
 
-Index of every repository of the `NaNIsaac` account and its organizations (94 on 2026-11-16: 80 in `NaNIsaac`, 4 in `NaNIsaac-Research`, 6 in `Torvren`, 2 in `tendlane`, 2 in `xrayreflectometry`). The tables were read on 2026-10-23 and the changes since then are in [the section below](#since-the-2026-10-23-audit). It lists what each repository is for, how far it is, how it relates to the others and what is next. It does not rank projects: a repository with no recent commits is not ended, and two repositories with similar code are not one project.
+Index of every repository of the `NaNIsaac` account and its organizations (95 on 2026-11-20: 81 in `NaNIsaac`, 4 in `NaNIsaac-Research`, 6 in `Torvren`, 2 in `tendlane`, 2 in `xrayreflectometry`). The tables were read on 2026-10-23 and the changes since then are in [the section below](#since-the-2026-10-23-audit). It lists what each repository is for, how far it is, how it relates to the others and what is next. It does not rank projects: a repository with no recent commits is not ended, and two repositories with similar code are not one project.
 
 Status words come from what was read or run during the 2026-10-23 audit; a row says "not run" where that is true, and a row added after the audit says so. Sensitive details of private repositories are kept in `local-notes`, not here. Archived by explicit decision: `eng_cook_book` and `reflexauto_site` (2026-10-23), then `NaNIsaac/pepperpaw` and `ReflexAuto`.
 
@@ -13,7 +13,7 @@ Status words come from what was read or run during the 2026-10-23 audit; a row s
 
 ## Since the 2026-10-23 audit
 
-Read on 2026-11-16. Rows here have not been audited: they say what the repository is for and what
+Read on 2026-11-20. Rows here have not been audited: they say what the repository is for and what
 was seen at that address, not how far the work is.
 
 ### Renamed, moved or archived
@@ -31,9 +31,10 @@ was seen at that address, not how far the work is.
 
 | Repository | Visibility | Purpose | Seen |
 |---|---|---|---|
+| [coverlyric](https://github.com/NaNIsaac/coverlyric) | public | A song, an album cover and the lyrics into a lyric video (mp4) on Windows, from a local page; short vertical cuts, a segment picker and a chat-AI timing route for machines with little memory | README and `docs/` (guide, command line, agent notes) in Korean with English mirrors; no release published yet, so the README's `coverlyric-setup.exe` link has nothing to download yet |
 | [ReflectoFit](https://github.com/NaNIsaac/ReflectoFit) | public | XRR fitting engine and command line: layer models, an instrument model, least squares, differential evolution and MCMC, model selection, fit reports | PyPI `reflectofit` 0.1.0; README install and first-run blocks run in CI |
 | [ReflectoSim](https://github.com/NaNIsaac/ReflectoSim) | public | Synthetic XRR data for machine learning on top of the shared forward physics (Parratt, resolution, footprint, Kα₂, Poisson counts) | PyPI; ReflectoLearn and ReflectoFit build on it |
-| [docs](https://github.com/NaNIsaac/docs) | public | Documentation hub (VitePress) built from each project's `docs/` | The scheduled build failed on 2026-11-15 on a broken anchor, so publishing stopped |
+| [docs](https://github.com/NaNIsaac/docs) | public | Documentation hub (VitePress) built from each project's `docs/` | GitHub-style heading anchors and three more projects (QoraGeom, CXD, splotter) went in on 2026-11-16 (PR #19); the scheduled build has succeeded every day since, so the site is publishing again |
 | [qoraplot](https://github.com/NaNIsaac/qoraplot) | public | Origin-like publication style for matplotlib, with colour-vision-deficiency-safe cycles | PyPI |
 | [cvdkit](https://github.com/NaNIsaac/cvdkit) | public | Colour-vision-deficiency-safe palettes, markers, dash patterns and a check for series told apart by colour alone | PyPI |
 | [mplume](https://github.com/NaNIsaac/mplume) | public | Publication-ready Matplotlib styles and figure composition: inward ticks, closed frames, paper and slide type, zoom insets | PyPI 0.2.0 |
