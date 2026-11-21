@@ -112,14 +112,14 @@ Results and limitations are recorded in the
 <!-- upstream:start -->
 ### Upstream
 
+- `tendlane/pepperpaw` [docs: keep the record word tombstone as the English term](https://github.com/tendlane/pepperpaw/pull/68) <sub>merged</sub>
+- `tendlane/pepperpaw` [docs: mirror the task-dispatch examples and human questions in Korean](https://github.com/tendlane/pepperpaw/pull/67) <sub>merged</sub>
 - `tendlane/pepperpaw` [ci: run the shared publish gates before the PyPI upload](https://github.com/tendlane/pepperpaw/pull/66) <sub>merged</sub>
 - `tendlane/pepperpaw` [fix(inputline): skip agy background-task rows under the input box](https://github.com/tendlane/pepperpaw/pull/65) <sub>merged</sub>
 - `tendlane/pepperpaw` [fix: release held messages to returning new sessions without repeats](https://github.com/tendlane/pepperpaw/pull/64) <sub>merged</sub>
 - `tendlane/pepperpaw` [fix: dismiss agy CLI experience survey with Escape](https://github.com/tendlane/pepperpaw/pull/63) <sub>merged</sub>
 - `tendlane/pepperpaw` [fix(dispatch): a pointer typed into a usage-stopped Claude Code pane is not sent](https://github.com/tendlane/pepperpaw/pull/62) <sub>merged</sub>
 - `tendlane/pepperpaw` [fix: held mail for a returning reader, no pointer for mail already shown, typed commands marked done](https://github.com/tendlane/pepperpaw/pull/61) <sub>merged</sub>
-- `tendlane/pepperpaw` [fix(mailbox): hooks and the waiter skip slash commands](https://github.com/tendlane/pepperpaw/pull/60) <sub>merged</sub>
-- `tendlane/pepperpaw` [fix: the hook shows read copies again only for a day and keeps the pointed message when capped](https://github.com/tendlane/pepperpaw/pull/59) <sub>merged</sub>
 <!-- upstream:end -->
 
 </details>
