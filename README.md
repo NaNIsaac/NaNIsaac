@@ -32,13 +32,22 @@ processing, primarily in Python (NumPy, JAX and PyTorch).
 
 ## Organizations
 
-- **[NaNIsaac-Research](https://github.com/NaNIsaac-Research)** holds research
-  code with recorded results and limits: TraTT and ReflectoLearn.
-- **[tendlane](https://github.com/tendlane)** builds tools for running several
-  AI coding agents side by side, starting with pepperpaw.
-- **[neurin-ocha](https://github.com/neurin-ocha)** is 느린 오차, a music
-  project: songwriting and lyric videos made with
-  [coverlyric](https://github.com/neurin-ocha/coverlyric).
+<table align="center">
+  <tr>
+    <td align="center" width="240">
+      <a href="https://github.com/NaNIsaac-Research"><img src="https://github.com/NaNIsaac-Research.png?size=160" width="80" alt="NaNIsaac-Research" /><br><strong>NaNIsaac-Research</strong></a><br>
+      <sub>X-ray research code<br>TraTT · ReflectoLearn</sub>
+    </td>
+    <td align="center" width="240">
+      <a href="https://github.com/tendlane"><img src="https://github.com/tendlane.png?size=160" width="80" alt="tendlane" /><br><strong>tendlane</strong></a><br>
+      <sub>AI coding agents, side by side<br>pepperpaw</sub>
+    </td>
+    <td align="center" width="240">
+      <a href="https://github.com/neurin-ocha"><img src="https://github.com/neurin-ocha.png?size=160" width="80" alt="neurin-ocha" /><br><strong>느린 오차</strong></a><br>
+      <sub>Music: songs and lyric videos<br>coverlyric</sub>
+    </td>
+  </tr>
+</table>
 
 ## Selected research
 
