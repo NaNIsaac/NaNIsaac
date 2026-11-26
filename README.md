@@ -30,6 +30,16 @@ reflectivity and coherent imaging data.
 My work spans inverse problems, time-dependent scattering and beamline data
 processing, primarily in Python (NumPy, JAX and PyTorch).
 
+## Organizations
+
+- **[NaNIsaac-Research](https://github.com/NaNIsaac-Research)** holds research
+  code with recorded results and limits: TraTT and ReflectoLearn.
+- **[tendlane](https://github.com/tendlane)** builds tools for running several
+  AI coding agents side by side, starting with pepperpaw.
+- **[neurin-ocha](https://github.com/neurin-ocha)** is 느린 오차, a music
+  project: songwriting and lyric videos made with
+  [coverlyric](https://github.com/neurin-ocha/coverlyric).
+
 ## Selected research
 
 - **[TraTT](https://github.com/NaNIsaac-Research/TraTT) — transient acoustic diffraction.**
