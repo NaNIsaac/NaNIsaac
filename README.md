@@ -124,21 +124,21 @@ Results and limitations are recorded in the
 - `NaNIsaac-Research/TraTT` [docs: one scientific report replaces PAPER.md; prior-art reading of the referee list (Entry 91)](https://github.com/NaNIsaac-Research/TraTT/pull/40) <sub>merged</sub>
 - `NaNIsaac-Research/TraTT` [docs: drop duplicate summaries and process references from reader docs](https://github.com/NaNIsaac-Research/TraTT/pull/39) <sub>merged</sub>
 - `NaNIsaac-Research/TraTT` [chore: declare the test command for pr-land](https://github.com/NaNIsaac-Research/TraTT/pull/38) <sub>merged</sub>
-- `NaNIsaac-Research/ReflectoLearn` [refactor: take the forward physics from reflectosim](https://github.com/NaNIsaac-Research/ReflectoLearn/pull/65) <sub>merged</sub>
+- `NaNIsaac-Research/TraTT` [docs(poster): physical notation, one sign convention, v4 story and a plain layout](https://github.com/NaNIsaac-Research/TraTT/pull/43) <sub>open</sub>
 - `NaNIsaac-Research/ReflectoLearn` [docs: paper draft on identifiability and search reach in XRR fits](https://github.com/NaNIsaac-Research/ReflectoLearn/pull/66) <sub>open</sub>
 <!-- research:end -->
 
 <!-- upstream:start -->
 ### Upstream
 
+- `neurin-ocha/coverlyric` [docs: point links at the neurin-ocha organization](https://github.com/neurin-ocha/coverlyric/pull/78) <sub>merged</sub>
 - `tendlane/pepperpaw` [feat(agents): show lanes stopped on purpose from a configured stops command](https://github.com/tendlane/pepperpaw/pull/69) <sub>merged</sub>
-- `tendlane/pepperpaw` [docs: keep the record word tombstone as the English term](https://github.com/tendlane/pepperpaw/pull/68) <sub>merged</sub>
-- `tendlane/pepperpaw` [docs: mirror the task-dispatch examples and human questions in Korean](https://github.com/tendlane/pepperpaw/pull/67) <sub>merged</sub>
-- `tendlane/pepperpaw` [ci: run the shared publish gates before the PyPI upload](https://github.com/tendlane/pepperpaw/pull/66) <sub>merged</sub>
-- `tendlane/pepperpaw` [fix(inputline): skip agy background-task rows under the input box](https://github.com/tendlane/pepperpaw/pull/65) <sub>merged</sub>
-- `tendlane/pepperpaw` [fix: release held messages to returning new sessions without repeats](https://github.com/tendlane/pepperpaw/pull/64) <sub>merged</sub>
-- `tendlane/pepperpaw` [fix: dismiss agy CLI experience survey with Escape](https://github.com/tendlane/pepperpaw/pull/63) <sub>merged</sub>
-- `tendlane/pepperpaw` [fix(dispatch): a pointer typed into a usage-stopped Claude Code pane is not sent](https://github.com/tendlane/pepperpaw/pull/62) <sub>merged</sub>
+- `neurin-ocha/coverlyric` [fix(project): a save gives up after 10 s when the lock is held](https://github.com/neurin-ocha/coverlyric/pull/76) <sub>merged</sub>
+- `neurin-ocha/coverlyric` [feat(mcp): print the client setting with --config; usage notes in the server instructions](https://github.com/neurin-ocha/coverlyric/pull/74) <sub>merged</sub>
+- `neurin-ocha/coverlyric` [feat(tall): Shorts hook caption, top crop, one loop blend, English words lit whole](https://github.com/neurin-ocha/coverlyric/pull/73) <sub>merged</sub>
+- `neurin-ocha/coverlyric` [feat: coverlyric mcp, and the page on a project folder](https://github.com/neurin-ocha/coverlyric/pull/71) <sub>merged</sub>
+- `neurin-ocha/coverlyric` [fix(cli): project set deletes only the file the project lists](https://github.com/neurin-ocha/coverlyric/pull/70) <sub>merged</sub>
+- `neurin-ocha/coverlyric` [feat(cli): output import for a Short kept as its own project](https://github.com/neurin-ocha/coverlyric/pull/68) <sub>merged</sub>
 <!-- upstream:end -->
 
 </details>
