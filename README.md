@@ -118,27 +118,27 @@ Results and limitations are recorded in the
 <!-- research:start -->
 ### Research organization
 
+- `NaNIsaac-Research/TraTT` [docs(poster): i-QMS final, editable PowerPoint copy, review fixes and A-C overshoot traces](https://github.com/NaNIsaac-Research/TraTT/pull/47) <sub>merged</sub>
+- `NaNIsaac-Research/TraTT` [docs(poster): i-QMS merged formation section and an overshoot section](https://github.com/NaNIsaac-Research/TraTT/pull/46) <sub>merged</sub>
+- `NaNIsaac-Research/TraTT` [docs(poster): i-QMS rocking curve at L = 296 um and a 4:3 depth-time map](https://github.com/NaNIsaac-Research/TraTT/pull/44) <sub>merged</sub>
+- `NaNIsaac-Research/TraTT` [docs(poster): physical notation, one sign convention, v4 story and a plain layout](https://github.com/NaNIsaac-Research/TraTT/pull/43) <sub>merged</sub>
 - `NaNIsaac-Research/TraTT` [fix: README figures on an opaque white background](https://github.com/NaNIsaac-Research/TraTT/pull/42) <sub>merged</sub>
 - `NaNIsaac-Research/TraTT` [ci(publish): run the shared publish gates before the tratt upload](https://github.com/NaNIsaac-Research/TraTT/pull/41) <sub>merged</sub>
 - `NaNIsaac-Research/ReflectoLearn` [feat(predict): negative intensity option, recorded with the prediction](https://github.com/NaNIsaac-Research/ReflectoLearn/pull/67) <sub>merged</sub>
 - `NaNIsaac-Research/TraTT` [docs: one scientific report replaces PAPER.md; prior-art reading of the referee list (Entry 91)](https://github.com/NaNIsaac-Research/TraTT/pull/40) <sub>merged</sub>
-- `NaNIsaac-Research/TraTT` [docs: drop duplicate summaries and process references from reader docs](https://github.com/NaNIsaac-Research/TraTT/pull/39) <sub>merged</sub>
-- `NaNIsaac-Research/TraTT` [chore: declare the test command for pr-land](https://github.com/NaNIsaac-Research/TraTT/pull/38) <sub>merged</sub>
-- `NaNIsaac-Research/TraTT` [docs(poster): physical notation, one sign convention, v4 story and a plain layout](https://github.com/NaNIsaac-Research/TraTT/pull/43) <sub>open</sub>
-- `NaNIsaac-Research/ReflectoLearn` [docs: paper draft on identifiability and search reach in XRR fits](https://github.com/NaNIsaac-Research/ReflectoLearn/pull/66) <sub>open</sub>
 <!-- research:end -->
 
 <!-- upstream:start -->
 ### Upstream
 
+- `neurin-ocha/coverlyric` [feat(web): zoom the part's waveform with bar lines; keep named parts to compare](https://github.com/neurin-ocha/coverlyric/pull/80) <sub>merged</sub>
+- `neurin-ocha/coverlyric` [feat(web): loop the hand-set part with the render's seam; move its ends by a bar or a beat](https://github.com/neurin-ocha/coverlyric/pull/79) <sub>merged</sub>
 - `neurin-ocha/coverlyric` [docs: point links at the neurin-ocha organization](https://github.com/neurin-ocha/coverlyric/pull/78) <sub>merged</sub>
 - `tendlane/pepperpaw` [feat(agents): show lanes stopped on purpose from a configured stops command](https://github.com/tendlane/pepperpaw/pull/69) <sub>merged</sub>
 - `neurin-ocha/coverlyric` [fix(project): a save gives up after 10 s when the lock is held](https://github.com/neurin-ocha/coverlyric/pull/76) <sub>merged</sub>
 - `neurin-ocha/coverlyric` [feat(mcp): print the client setting with --config; usage notes in the server instructions](https://github.com/neurin-ocha/coverlyric/pull/74) <sub>merged</sub>
 - `neurin-ocha/coverlyric` [feat(tall): Shorts hook caption, top crop, one loop blend, English words lit whole](https://github.com/neurin-ocha/coverlyric/pull/73) <sub>merged</sub>
 - `neurin-ocha/coverlyric` [feat: coverlyric mcp, and the page on a project folder](https://github.com/neurin-ocha/coverlyric/pull/71) <sub>merged</sub>
-- `neurin-ocha/coverlyric` [fix(cli): project set deletes only the file the project lists](https://github.com/neurin-ocha/coverlyric/pull/70) <sub>merged</sub>
-- `neurin-ocha/coverlyric` [feat(cli): output import for a Short kept as its own project](https://github.com/neurin-ocha/coverlyric/pull/68) <sub>merged</sub>
 <!-- upstream:end -->
 
 </details>
